@@ -1,48 +1,79 @@
 <?php
-/**
- * The Sidebar containing the main widget area.
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
- */
-
 $options = twentyeleven_get_theme_options();
 $current_layout = $options['theme_layout'];
 
 if ( 'content' != $current_layout ) :
 ?>
-	<div id="navBoxBlog">
-            <ul class="tabs">
-                <li style="border-top:none"><a href="<?php echo $GLOBALS["foundopsLink"]; ?>">Home</a></li>
-                <li><a href="<?php echo $GLOBALS["blogLink"]; ?>/beta" >FoundOPS</a></li>
-                <li><a href="<?php echo $GLOBALS["blogLink"]; ?>/team">About Us</a></li>
-                <li><a href="<?php echo $GLOBALS["blogLink"]; ?>">Blog</a></li>
-            </ul>
-        </div>	
-    
-		<div id="secondary" class="widget-area" role="complementary" style="margin-left:20px; position:relative; top:50px; left:0px;">
-        	<!--<div id="banner"><h3 style="font-size:30px; color:#fff;">Some Awesome Header</h3></div>-->
+		<div id="secondary" class="widget-area" role="complementary">
+        <?php if(is_author()){ ?>
+        	<script type="text/javascript">
+				function $style(ElementId, CssProperty)
+				{
+					function $(stringId)
+					{
+						return document.getElementById(stringId);
+					}
+					if($(ElementId).currentStyle)
+					{
+						var convertToCamelCase = CssProperty.replace(/\-(.)/g, function(m, l){return l.toUpperCase()});
+						return $(ElementId).currentStyle[convertToCamelCase];
+					}
+					else if (window.getComputedStyle)
+					{
+						var elementStyle = window.getComputedStyle($(ElementId), "");
+						return elementStyle.getPropertyValue(CssProperty);
+					}
+				}
+			
+            	var sec = document.getElementById('secondary');
+				var abc = $style('author-info', "height");
+				sec.style.top = abc;
+				sec.style.marginTop = "67px";
+            </script>
+        <?php } ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 				
-                <?php if( function_exists('subscribe_sidebar') ) { ?>
-                <p><?php subscribe_sidebar(); ?></p>
-                <?php } ?>
-
+                <aside id="topics" class="widget">
+					<h3 class="widget-title"><?php _e( 'Topics', 'twentyeleven' ); ?></h3>
+					<ul>
+						<?php wp_list_categories() ?>
+					</ul>
+				</aside>
+                
+                <aside id="getConnected" class="widget">
+                <?php if(is_author()){ ?>
+					<h3 class="widget-title"><?php echo 'Connect with ' . get_the_author_meta( 'first_name' ); ?></h3>
+				<?php }else{ ?>
+					<h3 class="widget-title"><?php _e( 'Get Connected', 'twentyeleven' ); ?></h3>
+                    <?php } ?>
+					<table>
+						<tr>
+                        	<td id="getFacebook">
+                            <a href="<?php if(is_author()){echo get_the_author_meta( 'facebook' );}else{?>http://www.facebook.com/foundops<?php } ?>"></a>
+                            </td>
+                            <td id="getRss">
+                            <a href="<?php echo $GLOBALS["blogLink"];?>/feed"></a>
+                            </td>
+                            <td id="getTwitter">
+                            <a href="<?php if(is_author()){echo get_the_author_meta( 'twitter' );}else{?>http://twitter.com/#!/FoundOPS<?php } ?>"></a>
+                            </td>
+                            <td id="getGoogle">
+                            <a href="<?php if(is_author()){echo get_the_author_meta( 'google' );}else{?>https://plus.google.com/b/116861256577185051449/<?php } ?>"></a>
+                            </td>
+                            <td id="getLinkedin">
+                            <a href="<?php if(is_author()){echo get_the_author_meta( 'linkedin' );}else{?>http://www.linkedin.com/company/foundops<?php } ?>"></a>
+                            </td>
+                        </tr>
+					</table>
+                    <div id="or">or</div>
+                    <span style="color:#aaa;">&nbsp;&nbsp;__________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__________</span>
+                    <?php mailchimpSF_signup_form(); ?>
+				</aside>
                 
 				<aside id="archives" class="widget">
 					<h3 class="widget-title"><?php _e( 'Archives', 'twentyeleven' ); ?></h3>
 					<ul>
 						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-
-				<aside id="meta" class="widget">
-					<h3 class="widget-title"><?php _e( 'Meta', 'twentyeleven' ); ?></h3>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
 					</ul>
 				</aside>
 

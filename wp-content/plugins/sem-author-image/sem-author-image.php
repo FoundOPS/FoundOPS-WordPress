@@ -26,10 +26,10 @@ if ( !defined('sem_author_image_debug') )
 	define('sem_author_image_debug', false);
 
 if (!defined('SEM_AUTHOR_IMAGE_WIDTH'))
-	define('SEM_AUTHOR_IMAGE_WIDTH', 250);
+	define('SEM_AUTHOR_IMAGE_WIDTH', 200);
 
 if (!defined('SEM_AUTHOR_IMAGE_HEIGHT'))
-	define('SEM_AUTHOR_IMAGE_HEIGHT', 250);
+	define('SEM_AUTHOR_IMAGE_HEIGHT', 200);
 
 
 /**

@@ -79,7 +79,7 @@ function get_file_description( $file ) {
 function get_home_path() {
 	$home = get_option( 'home' );
 	$siteurl = get_option( 'siteurl' );
-	if ( $home != '' && $home != $siteurl && $siteurl != '' && $_SERVER["SCRIPT_FILENAME"] != '') {
+	if ( $home != '' && $home != $siteurl ) {
 		$wp_path_rel_to_home = str_replace($home, '', $siteurl); /* $siteurl - $home */
 		$pos = strpos($_SERVER["SCRIPT_FILENAME"], $wp_path_rel_to_home);
 		$home_path = substr($_SERVER["SCRIPT_FILENAME"], 0, $pos);
@@ -227,10 +227,6 @@ function validate_file_to_edit( $file, $allowed_files = '' ) {
  * @param array $overrides Optional. An associative array of names=>values to override default variables with extract( $overrides, EXTR_OVERWRITE ).
  * @return array On success, returns an associative array of file attributes. On failure, returns $overrides['upload_error_handler'](&$file, $message ) or array( 'error'=>$message ).
  */
- 
- // custom modification for Overwrite Uploads plugin
- define('OVUP_FILTER_ADDED', true); 
- 
 function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 	// The default error handler.
 	if ( ! function_exists( 'wp_handle_upload_error' ) ) {
@@ -238,12 +234,10 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 			return array( 'error'=>$message );
 		}
 	}
-	
-	// custom modification for Overwrite Uploads plugin
-	$overrides = apply_filters( 'wp_handle_upload_overrides', $overrides ); 
-	
-	$file = apply_filters( 'wp_handle_upload_prefilter', $file );
 
+	$file = apply_filters( 'wp_handle_upload_prefilter', $file );
+	$overrides = apply_filters( 'wp_handle_upload_overrides', $overrides );
+	
 	// You may define your own function and pass the name in $overrides['upload_error_handler']
 	$upload_error_handler = 'wp_handle_upload_error';
 
@@ -268,7 +262,7 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 		__( "Failed to write file to disk." ),
 		__( "File upload stopped by extension." ));
 
-	// All tests are on by default. Most can be turned off by $override[{test_name}] = false;
+	// All tests are on by default. Most can be turned off by $overrides[{test_name}] = false;
 	$test_form = true;
 	$test_size = true;
 	$test_upload = true;
@@ -330,10 +324,30 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 
 	$filename = wp_unique_filename( $uploads['path'], $file['name'], $unique_filename_callback );
 
+	$tmp_file = wp_tempnam($filename);
+
 	// Move the file to the uploads dir
-	$new_file = $uploads['path'] . "/$filename";
-	if ( false === @ move_uploaded_file( $file['tmp_name'], $new_file ) )
+	if ( false === @ move_uploaded_file( $file['tmp_name'], $tmp_file ) )
 		return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $uploads['path'] ) );
+
+	// If a resize was requested, perform the resize.
+	$image_resize = isset( $_POST['image_resize'] ) && 'true' == $_POST['image_resize'];
+	$do_resize = apply_filters( 'wp_upload_resize', $image_resize );
+	$size = @getimagesize( $tmp_file );
+	if ( $do_resize && $size ) {
+		$old_temp = $tmp_file;
+		$tmp_file = image_resize( $tmp_file, (int) get_option('large_size_w'), (int) get_option('large_size_h'), 0, 'resized');
+		if ( ! is_wp_error($tmp_file) ) {
+			unlink($old_temp);
+		} else {
+			$tmp_file = $old_temp;
+		}
+	}
+
+	// Copy the temporary file into its destination
+	$new_file = $uploads['path'] . "/$filename";
+	copy( $tmp_file, $new_file );
+	unlink($tmp_file);
 
 	// Set correct file permissions
 	$stat = stat( dirname( $new_file ));
@@ -350,7 +364,7 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 }
 
 /**
- * Handle sideloads, which is the process of retriving a media item from another server instead of
+ * Handle sideloads, which is the process of retrieving a media item from another server instead of
  * a traditional media upload.  This process involves sanitizing the filename, checking extensions
  * for mime type, and moving the file to the appropriate directory within the uploads directory.
  *
@@ -394,7 +408,7 @@ function wp_handle_sideload( &$file, $overrides = false ) {
 		__( "Failed to write file to disk." ),
 		__( "File upload stopped by extension." ));
 
-	// All tests are on by default. Most can be turned off by $override[{test_name}] = false;
+	// All tests are on by default. Most can be turned off by $overrides[{test_name}] = false;
 	$test_form = true;
 	$test_size = true;
 
@@ -506,7 +520,7 @@ function download_url( $url, $timeout = 300 ) {
 }
 
 /**
- * Unzip's a specified ZIP file to a location on the Filesystem via the WordPress Filesystem Abstraction.
+ * Unzips a specified ZIP file to a location on the Filesystem via the WordPress Filesystem Abstraction.
  * Assumes that WP_Filesystem() has already been called and set up. Does not extract a root-level __MACOSX directory, if present.
  *
  * Attempts to increase the PHP Memory limit to 256M before uncompressing,
@@ -820,7 +834,7 @@ function WP_Filesystem( $args = false, $context = false ) {
 		return false;
 
 	if ( !$wp_filesystem->connect() )
-		return false; //There was an erorr connecting to the server.
+		return false; //There was an error connecting to the server.
 
 	// Set the permission constants if not already set.
 	if ( ! defined('FS_CHMOD_DIR') )
@@ -833,7 +847,7 @@ function WP_Filesystem( $args = false, $context = false ) {
 
 /**
  * Determines which Filesystem Method to use.
- * The priority of the Transports are: Direct, SSH2, FTP PHP Extension, FTP Sockets (Via Sockets class, or fsoxkopen())
+ * The priority of the Transports are: Direct, SSH2, FTP PHP Extension, FTP Sockets (Via Sockets class, or fsockopen())
  *
  * Note that the return value of this function can be overridden in 2 ways
  *  - By defining FS_METHOD in your <code>wp-config.php</code> file
@@ -952,7 +966,7 @@ function request_filesystem_credentials($form_post, $type = '', $error = false, 
 	if ( !empty($credentials) )
 		extract($credentials, EXTR_OVERWRITE);
 	if ( $error ) {
-		$error_string = __('<strong>Error:</strong> There was an error connecting to the server, Please verify the settings are correct.');
+		$error_string = __('<strong>ERROR:</strong> There was an error connecting to the server, Please verify the settings are correct.');
 		if ( is_wp_error($error) )
 			$error_string = esc_html( $error->get_error_message() );
 		echo '<div id="message" class="error"><p>' . $error_string . '</p></div>';

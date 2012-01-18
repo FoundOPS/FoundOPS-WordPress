@@ -2,7 +2,7 @@
 /*
 Plugin Name: Overwrite Uploads
 Description: Lets you choose whether or not Wordpress should overwrite files uploaded to the Media Library
-Version: 1.0.1
+Version: 1.0.2
 Author: Ian Dunn
 Author URI: http://iandunn.name
 License: GPL2
@@ -36,11 +36,10 @@ if( !class_exists('overwriteUploads') )
 	/**
 	 * A Wordpress plugin that allows the user to override files uploaded to the Media Library
 	 * Requires PHP5+ because of various OOP features, pass by reference, etc
-	 * Requires Wordpress 3.1+ because the issue in the link referenced in nonUniqueFilename()
+	 * Requires Wordpress 3.1+ because the issue in the link referenced in nonUniqueFilename(), WP_Query() meta_query
 	 *
 	 * @package OverwriteUploads
 	 * @author Ian Dunn <ian@iandunn.name>
-
 	 */
 	class overwriteUploads
 	{
@@ -61,7 +60,6 @@ if( !class_exists('overwriteUploads') )
 			$this->options						= array_merge( get_option( self::PREFIX . 'options', array() ), $defaultOptions );			//  need to sanitize
 			$this->updatedOptions				= false;
 			$this->userMessageCount				= array( 'updates' => 0, 'errors' => 0 );
-			$this->settings['overwriteUploads']	= get_option( self::PREFIX . 'overwrite-uploads' );			// need to sanitize
 			$this->environmentOK				= $this->checkEnvironment();
 			
 			// Register action for error messages and updates
@@ -70,13 +68,8 @@ if( !class_exists('overwriteUploads') )
 			// Register remaining actions and filters
 			if($this->environmentOK)
 			{
-				add_action( 'admin_init',		array($this, 'addSettings') );
 				add_action( 'wpmu_new_blog', 	array( $this, 'activateNewSite' ) );
-				
-				add_filter( 'plugin_action_links_'. plugin_basename(__FILE__), array($this, 'addSettingsLink') );
-				
-				if($this->settings['overwriteUploads'])
-					add_filter( 'wp_handle_upload_overrides', array($this, 'addUniqueFilenameCallback') );
+				add_filter( 'wp_handle_upload_overrides', array($this, 'addUniqueFilenameCallback') );
 					
 				register_activation_hook( dirname(__FILE__) . '/overwrite-uploads.php', array( $this, 'networkActivate') );
 			}
@@ -102,7 +95,7 @@ if( !class_exists('overwriteUploads') )
 			
 			if( !defined('OVUP_FILTER_ADDED') || OVUP_FILTER_ADDED !== true )
 			{
-				$this->enqueueMessage(OVUP_NAME . ' requires a new filter to be added to Wordpress. If this is a new installation or you recently upgraded Wordpress, please see the installation instructions in readme.txt for information on adding it.', 'error');
+				$this->enqueueMessage(OVUP_NAME . ' requires a new filter to be added to Wordpress. If this is a new installation or you recently upgraded Wordpress, please see the installation instructions on <a href="http://wordpress.org/extend/plugins/overwrite-uploads/installation/">the Installation page</a> for information on adding it.', 'error');
 				$environmentOK = false;
 			}
 		
@@ -161,48 +154,6 @@ if( !class_exists('overwriteUploads') )
 			$this->singleActivate();
 			restore_current_blog();
 		}
-
-		/**
-		 * Adds our custom settings to the admin Settings pages
-		 * @author Ian Dunn <ian@iandunn.name>
-		 */
-		public function addSettings()
-		{
-			add_settings_section(self::PREFIX . 'media-settings', 'Overwrite Uploaded Files', array($this, 'settingsSectionCallback'), 'media');
-			add_settings_field(self::PREFIX . 'overwrite-uploads', 'Overwrite uploaded files', array($this, 'settingsCallback'), 'media', self::PREFIX . 'media-settings');
-			register_setting('media', self::PREFIX . 'overwrite-uploads');
-		}
-		
-		/**
-		 * Adds the section introduction text to the Settings page
-		 * @author Ian Dunn <ian@iandunn.name>
-		 */
-		public function settingsSectionCallback()
-		{
-			// Intentionally blank
-		}
-		
-		/**
-		 * Adds the input field to the Settings page
-		 * @author Ian Dunn <ian@iandunn.name>
-		 */
-		public function settingsCallback()
-		{
-			echo '<input id="'. self::PREFIX .'overwrite-uploads" name="'. self::PREFIX .'overwrite-uploads" type="checkbox" value="true" class="code" ' . checked('true', $this->settings['overwriteUploads'], false) . ' /> ';
-			echo '<label for="'. self::PREFIX .'overwrite-uploads">If this is checked, files uploaded to the Media Library will overwrite any existing files with the same name.</label>';
-		}
-		
-		/**
-		 * Adds a 'Settings' link to the Plugins page
-		 * @author Ian Dunn <ian@iandunn.name>
-		 * @param array $links The links currently mapped to the plugin
-		 * @return array
-		 */
-		public function addSettingsLink($links)
-		{
-			array_unshift($links, '<a href="options-media.php">Settings</a>');
-			return $links; 
-		}
 		
 		/**
 		 * Adds the callback necessary to avoid creating unique filenames
@@ -222,6 +173,7 @@ if( !class_exists('overwriteUploads') )
 		 * Returns the filename to be assigned by wp_handle_upload()
 		 * This does the same thing that the comparable section of wp_unique_filename() does, except it doesn't postfix a number if the file already exists, which allows files to be overwritten.
 		 * Requires WP 3.1 (see link below)
+		 *
 		 * @author Ian Dunn <ian@iandunn.name>
 		 * @link http://core.trac.wordpress.org/ticket/14627 Before WP 3.1 there was a bug where $extension didn't get passed in
 		 * @param string $directory The directory the file will be stored in
@@ -242,19 +194,34 @@ if( !class_exists('overwriteUploads') )
 		 * @author Ian Dunn <ian@iandunn.name>
 		 * @param string $filename
 		 */
-		function removeOldAttachments($filename)
-		{
-			$arguments = array(
+		function removeOldAttachments( $filename )
+		{	
+			$metaQueryParams = array(
+				array(
+					'key'		=> '_wp_attached_file',
+					'value'		=> $filename,
+					'compare'	=> 'LIKE'
+				)
+			);
+			
+			$params = array(
 				'numberposts'	=> -1,
-				'meta_key'		=> '_wp_attached_file',
-				'meta_value'	=> $filename,
+				'meta_query'	=> $metaQueryParams,
 				'post_type'		=> 'attachment'
 			);
-			$oldAttachments = get_posts($arguments);
 			
-			foreach($oldAttachments as $oa)
-				if( !wp_delete_attachment($oa->ID, true) )
-					$this->enqueueMessage(OVUP_NAME . ': Old attachment <strong>#'. $oa->ID .'</strong> deletion failed.', 'error', 'debug');
+			$oldAttachments = get_posts( $params );
+			
+			foreach( $oldAttachments as $post )
+			{
+				setup_postdata( $post );			// @todo - get_the_ID() isn't working
+				$oaFilename = get_post_meta( $post->ID, '_wp_attached_file', true );
+				
+				if( basename( $oaFilename ) == $filename )
+					if( !wp_delete_attachment( $post->ID, true ) )
+						$this->enqueueMessage( OVUP_NAME . ': Old attachment <strong>#'. $post->ID .'</strong> deletion failed.', 'error' );
+			}
+			wp_reset_postdata();
 		}
 		
 		/**
@@ -310,6 +277,82 @@ if( !class_exists('overwriteUploads') )
 		{
 			if($this->updatedOptions)
 				update_option(self::PREFIX . 'options', $this->options);
+		}
+		
+				/**
+		 * Prints the output in various ways for debugging.
+		 * @author Ian Dunn <ian.dunn@mpangodev.com>
+		 * @param mixed $data
+		 * @param string $output 'message' will be sent to an admin notice; 'die' will be output inside wp_die(); 'transient' will create a transient in the database; 'return' will be returned;
+		 * @param string $message Optionally message to output before description
+		 */
+		protected function describe( $data, $output = 'die', $message = '' )
+		{
+			$type = gettype( $data );
+
+			// Build description
+			switch( $type )
+			{
+				case 'array':
+				case 'object':
+					$length = count( $data );
+					$data = print_r( $data, true );
+				break;
+				
+				case 'string';
+					$length = strlen( $data );
+				break;
+				
+				default:
+					$length = count( $data );
+					
+					ob_start();
+					var_dump( $data );
+					$data = ob_get_contents();
+					ob_end_clean();
+					
+					$data = print_r( $data, true );
+				break;
+			}
+			
+			$description = sprintf('
+				<p>
+					%s
+					Type: %s<br />
+					Length: %s<br />
+					Content: <br /><blockquote><pre>%s</pre></blockquote>
+				</p>',
+				( $message ? 'Message: '. $message .'<br />' : '' ),
+				$type,
+				$length,
+				htmlspecialchars( $data )
+			);
+			
+			// Output description
+			switch( $output )
+			{
+				case 'notice':
+					$this->enqueueMessage( $description, 'error' );
+				break;
+				
+				case 'die':
+					wp_die( $description );
+				break;
+				
+				case 'output':
+					return $description;
+				break;
+				
+				case 'transient':
+					$uniqueKey = $message ? str_replace( array( ' ', '-', '/', '\\', '.' ), '_', $message ) : mt_rand();	// removes characters that are invalid in MySQL column names
+					set_transient( self::PREFIX . 'describe_' . $uniqueKey, $description, 60 * 5 );
+				break;
+				
+				case 'echo':
+				default:
+					echo $description;		// @todo - want to esc_html on message, but not entire description. can't do to $message above because don't want to escape for other switch cases
+				break;
+			}
 		}
 	} // end overwriteUploads
 }

@@ -27,7 +27,7 @@
 				var s = str.substr(0, 150);
 				var words = s.split(' ');
 				words[words.length-1] = '';
-				str = words.join(' ') + '... <i><a href="' + Link + '" target="_parent">Continue Reading</a></i>';
+				str = words.join(' ') + '... <i><a href="' + Link + '" target="_parent">Read More</a></i>';
 				}
 				return str;
 			}

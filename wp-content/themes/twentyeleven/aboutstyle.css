@@ -1,0 +1,315 @@
+/* FoundOps Colors
+   Orange - #D9591E
+   Red - #991A36
+   Blue - #488FCD
+   Green - #659A41*/
+article.intro, article.intro .entry-content{
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+#page, #main, #primary, #content, #article{
+	top:0px;
+	width:100%;
+	margin:0px;
+	max-width:none;
+}
+#main{
+	position:relative;
+	top:30px;	
+}
+p{
+	margin-bottom: 0px;
+}
+#team, #values, #jobs, #contactUs{
+	width:930px;
+	margin:0 auto;
+	
+}
+#teamWrapper, #valuesWrapper, #jobsWrapper, #contactUsWrapper{
+	width:100%;
+	z-index:-1000;
+}
+#teamWrapper{
+	min-height:1000px;
+	background-image:url('images/GreyToCharcoal.png');
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+#valuesWrapper{
+	min-height:1000px;
+	padding-bottom:200px;
+	background-color:#333335;
+	background-image:url('images/CharcoalToWhite.png');
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+#jobsWrapper{
+	min-height:1200px;
+	background-color:#fff;
+	background-image:url('images/WhiteToGrey.png');
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+#contactUsWrapper{
+	min-height:800px;
+}
+#team{
+	position:relative;
+	top:30px;
+}
+#values{
+	position:relative;
+	top:50px;
+	left:62px;
+	width:700px;
+	color:#fff;
+}
+#jobs{
+	position:relative;
+	top:50px;
+	left:62px;
+	width:700px;
+	height:600px;
+}
+#jobsText1, #jobsText2{
+	font-style:normal;
+	font-size:13px;
+	width:700px;
+}
+#jobsPic1{
+	height:220px;
+	background-image:url('images/Sign.png');
+	background-repeat:no-repeat;
+	margin-bottom:-225px;
+}
+#jobsText1 p{
+	margin-left:288px;
+}
+#jobsText2{
+	margin-bottom:20px;
+}
+#jobsText3{
+	width:480px;
+	margin-bottom:-105px;
+	text-align:justify;
+}
+#jobsPic2{
+	height:270px;
+	background-image:url('images/cooking.png');
+	background-position:right;
+	background-repeat:no-repeat;
+}
+#contactUs{
+	position:relative;
+	top:0px;
+	left:62px;
+}
+
+/* Side Navigation
+-------------------------------------------------------------*/
+#navBox{
+    position:fixed;
+    top:155px;
+	left:190px;
+    width: 100px;
+	z-index:1000;
+	margin-bottom:-100px;
+}
+#navList li{
+    position:relative;
+    top:-2px;
+    left:-2px;
+    width:100px;
+    font-size:14px;
+    list-style:none;
+	text-align:right;
+    margin-bottom:0px;
+}
+#navList{
+	margin:0px;
+}
+#navList li a{
+    position:relative;
+	margin-left:5px;
+	font-size:16px;
+}
+#navBox a:link, #navBox a:visited{
+    color:#aaa;	
+}
+#navBox a.activeonlight:link, #navBox a.activeonlight:visited{
+	font-weight:bold;
+	color:#666;
+}
+#navBox a.activeondark:link, #navBox a.activeondark:visited{
+	font-weight:bold;
+	color:#fff;
+}
+#navBox a.notactiveonlight:link, #navBox a.notactiveonlight:visited{
+	font-weight:normal;
+	color:#aaa;
+}
+#navBox a.notactiveondark:link, #navBox a.notactiveondark:visited{
+	font-weight:normal;
+	color:#aaa;
+}
+#navBox li a.notactiveonlight:hover, #navBox li a.notactiveonlight:active, #navBox li a.notactiveonlight:focus, 
+#navBox li a.activeonlight:hover, #navBox li a.activeonlight:active, #navBox li a.activeonlight:focus{
+    color:#666;
+	text-decoration:none;
+}
+#navBox li a.notactiveondark:hover, #navBox li a.notactiveondark:active, #navBox li a.notactiveondark:focus, 
+#navBox li a.activeondark:hover, #navBox li a.activeondark:active, #navBox li a.activeondark:focus{
+    color:#fff;
+	text-decoration:none;
+}
+/* ---------- End Navigation ------------ */
+/* ---------- About Us ------------ */
+#authorlist{
+	position:relative;
+	top:15px;
+	left:102px;
+}
+#authorlist li{
+	float: left;
+	margin: 0 0 10px 72px;
+	list-style:none;
+	max-width:204px;
+}	
+.entry_author_image{
+	width: 200px;
+	height: 200px;
+	border:2px ridge #ccc;
+}
+.info{
+	height:40px;
+	padding:10px;
+	text-align:center;
+	visibility:collapse;
+}
+.info a{
+	font-size:16px;
+	font-weight:bold;
+	color:#991A36;
+}
+.hovered .info{
+	visibility:visible;
+}
+.nothovered .info{
+	visibility:collapse;
+}
+/*------Values Page------*/
+#values ul{
+	margin:0px;
+}
+#values ul li{
+	margin-left:20px;
+}
+#EnvironmentImg, #AccessabilityImg, #CommunityImg, #IntegrityImg{
+    position: relative;
+	margin-bottom:-247px;
+    width: 200px;
+    height: 200px;
+	border: 2px ridge #ccc;
+}
+#EnvironmentImg{
+	background-image:url('images/Environment.png');
+}
+#AccessabilityImg{
+	margin-left:620px;
+	background-image:url('images/Accessability.png');
+}
+#CommunityImg{
+	background-image:url('images/Community.png');
+}
+#IntegrityImg{
+	margin-left:620px;
+	background-image:url('images/Integrity.png');
+}
+#EnvironmentDesc1, #AccessabilityDesc1, #CommunityDesc, #IntegrityDesc{
+	position:relative;
+	width: 600px;
+	text-align:justify;
+}
+#EnvironmentDesc1{
+	margin-left:200px;
+}
+#EnvironmentDesc2{
+	margin-left:-20px;
+	width: 820px;
+	text-align:justify;
+}
+#EnvironmentDesc1 .bigText{
+	margin-left:20px;
+}
+#AccessabilityDesc1{
+	margin-left:0px;
+}
+#AccessabilityDesc2{
+	margin-left:0px;
+	width: 820px;
+	text-align:justify;
+}
+#AccessabilityDesc1 .bigText{
+	margin-left:0px;
+}
+#AccessabilityDesc1 ul li, #AccessabilityDesc2 ul li{
+	margin-left:0px;
+}
+#CommunityDesc{
+	margin-left:220px;
+	margin-bottom:50px;
+}
+#IntegrityDesc{
+	margin-bottom:50px;	
+}
+.bigText{
+	font-size:20px;
+	font-weight:bold;
+}
+/*------ End Values Page------*/
+
+/*Contact Page*/
+#info{
+    position: relative;
+    top: 50px;
+    left: 62px;
+    font-size: 14px;
+    font-family: Verdana;
+    color: #333335;
+    width: 300px;
+}
+#info a:link, #info a:visited{
+    color: #666666;
+    text-decoration: none;
+}
+#info a:focus, #info a:hover, #info a:active{
+    color: #333335;
+    outline: none;
+}
+#map{
+    position: relative;
+    top: -200px;
+    left: 580px;
+    border:1px solid #000;
+	padding:0px;
+    margin-bottom: -95px;
+	background-image:url('images/Map.png');
+}
+#findUs, #followUs, #viewProfile{
+    position: relative;
+    top: -153px;
+    left: 125px;
+	background-image:url('images/findus.png');
+}
+#followUs{
+    top: -200px;
+    left: 270px;
+	background-image:url('images/followus.png');
+}
+#viewProfile{
+    top: -247px;
+    left: 395px;
+	background-image:url('images/viewprofile.png');
+}
+/*End Contact Page*/

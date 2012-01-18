@@ -8,7 +8,6 @@
  
 if( defined('WP_UNINSTALL_PLUGIN') && WP_UNINSTALL_PLUGIN == 'overwrite-uploads/overwrite-uploads.php' )
 {
-	delete_option('ovup_overwrite-uploads');
 	delete_option('ovup_options');
 }
 else

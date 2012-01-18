@@ -20,17 +20,17 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title">
+					<h4 class="page-title">
 						<?php if ( is_day() ) : ?>
-							<?php printf( __( 'Daily Archives: %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' ); ?>
+							<?php printf( __( 'Posts on %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' ); ?>
 						<?php elseif ( is_month() ) : ?>
-							<?php printf( __( 'Monthly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+							<?php printf( __( 'Posts in %s', 'twentyeleven' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
 						<?php elseif ( is_year() ) : ?>
-							<?php printf( __( 'Yearly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+							<?php printf( __( 'Posts in: %s', 'twentyeleven' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
 						<?php else : ?>
 							<?php _e( 'Blog Archives', 'twentyeleven' ); ?>
 						<?php endif; ?>
-					</h1>
+					</h4>
 				</header>
 
 				<?php twentyeleven_content_nav( 'nav-above' ); ?>

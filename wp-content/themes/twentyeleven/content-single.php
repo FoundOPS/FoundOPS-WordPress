@@ -1,16 +1,9 @@
-<?php
-/**
- * The template for displaying content in the single.php template
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
- */
-?>
-
+<?php ?>
+<div id="articleWeekday"><?php echo strtoupper(get_post_time('D')); ?></div>
+<div id="articleDate"><?php echo strtoupper(get_post_time('M j')); ?></div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-    	<?php the_author_image();?>
+    	<?php //the_author_image();?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -51,22 +44,31 @@
 			);
 		?>
 		<?php edit_post_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
-
-		<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
-		<div id="author-info">
-			<div id="author-avatar">
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyeleven_author_bio_avatar_size', 68 ) ); ?>
-			</div><!-- #author-avatar -->
-			<div id="author-description">
-				<h2><?php printf( esc_attr__( 'About %s', 'twentyeleven' ), get_the_author() ); ?></h2>
-				<?php the_author_meta( 'description' ); ?>
-				<div id="author-link">
-					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentyeleven' ), get_the_author() ); ?>
-					</a>
-				</div><!-- #author-link	-->
-			</div><!-- #author-description -->
-		</div><!-- #entry-author-info -->
-		<?php endif; ?>
+        
+        <!-- tweet button -->
+		<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        <center><table><tr><td width="130px" style="padding-left:0px;"><a href="http://twitter.com/share" class="twitter-share-button"
+             data-url="<?php the_permalink(); ?>"
+             data-text="<?php echo "Check out this @FoundOPS blog post, "; the_title(); echo ", by "; the_author(); echo " at "; ?>"
+             data-count="horizontal">Tweet</a></td>
+        
+        <!-- +1 button -->
+        <td><g:plusone size="medium" href="<?php the_permalink(); ?>" width="60"></g:plusone>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script></td>
+        
+        <!-- Facebook share button -->
+        <td width="110px" style="vertical-align:top;padding-top:10px;"><?php if (function_exists('fbshare_manual')) echo fbshare_manual();?></td>
+        
+        <!-- Linkedin share button -->
+        <td><div style="padding-top:5px;"><script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+        <script type="IN/Share" data-url="http://www.linkedin.com/company/2130457" data-counter="right"></script></div>
+        </td></tr></table></center>
+        
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

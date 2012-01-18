@@ -37,7 +37,42 @@
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
-
+function pagination($pages = '', $range = 4)
+{
+     $showitems = ($range * 2)+1;  
+ 
+     global $paged;
+     if(empty($paged)) $paged = 1;
+ 
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;
+         if(!$pages)
+         {
+             $pages = 1;
+         }
+     }   
+ 
+     if(1 != $pages)
+     {
+         echo "<div class=\"pagination\"><span>Page ".$paged." of ".$pages."</span>";
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; First</a>";
+         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo; Previous</a>";
+ 
+         for ($i=1; $i <= $pages; $i++)
+         {
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+             {
+                 echo ($paged == $i)? "<span class=\"current\">".$i."</span>":"<a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a>";
+             }
+         }
+ 
+         if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">Next &rsaquo;</a>";
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>Last &raquo;</a>";
+         echo "</div>\n";
+     }
+}
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -324,7 +359,7 @@ add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function twentyeleven_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Read More', 'twentyeleven' ) . '</a>';
 }
 
 /**
@@ -559,11 +594,7 @@ if ( ! function_exists( 'twentyeleven_posted_on' ) ) :
  * @since Twenty Eleven 1.0
  */
 function twentyeleven_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'twentyeleven' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
+	printf( __( '<span class="by-author"> <span class="sep">Posted by </span> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'twentyeleven' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		sprintf( esc_attr__( 'View all posts by %s', 'twentyeleven' ), get_the_author() ),
 		esc_html( get_the_author() )
