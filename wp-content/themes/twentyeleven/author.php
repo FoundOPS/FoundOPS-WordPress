@@ -15,23 +15,22 @@ if($randNum == 1){
 	$color = "#659A41";
 }
 
-get_header(); 
-	the_post();
-	// If a user has filled out their description, show a bio on their entries.
-	if ( get_the_author_meta( 'description' ) ) : ?>
+get_header();
+?>
 	<div id="author-info">
 		<div id="author-avatar">
 			<?php echo the_author_image(); ?>
 		</div><!-- #author-avatar -->
 		<div id="author-description">
-			<h2 style="color:<?php echo $color;?>;"><?php echo get_the_author(); echo " "; echo get_the_author_meta( 'last_name' ); ?></h2>
-			<h3><?php echo get_the_author_meta( 'title' ); ?></h3>
-			<?php 
-			$desc = apply_filters("the_excerpt",get_the_author_meta('description'));
-			echo $desc; ?>
+        
+            <?php  $userid = $_GET["author"];
+			$user_info = get_userdata($userid); ?>
+			<h2 style="color:<?php echo $color;?>;"><?php echo $user_info->user_firstname; echo " "; echo $user_info->user_lastname; ?></h2>
+			<h3><?php echo get_usermeta($userid, 'title'); ?></h3>
+			<?php echo apply_filters("the_content",$user_info->user_description); ?>
+              
 		</div><!-- #author-description -->
 	</div><!-- #entry-author-info -->
-	<?php endif; ?>
 
 	<section id="primary">
 		<div id="content" role="main">
@@ -60,7 +59,12 @@ get_header();
 				get_template_part( 'content', get_post_format() );
 			endwhile; 
 
-			twentyeleven_content_nav( 'nav-below' ); ?>
+			twentyeleven_content_nav( 'nav-below' ); 
+			
+			//Case that author has no posts
+			if(count_user_posts( $userid ) == 0){ ?>
+				<h2><?php echo $user_info->user_firstname; echo " "; ?>is apparently too cool to blog.</h2>
+			<?php }	?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->

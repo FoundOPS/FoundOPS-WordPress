@@ -104,8 +104,8 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
                     <li class="hoverGreen" id="home"><a href="<?php echo $GLOBALS["foundopsLink"]; ?>">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     <li class="hoverRed" id="featuresNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/product" >&nbsp;Features&nbsp;</a></li>
                     <li class="hoverBlue" id="customersNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/beta">Customers</a></li>
-                    <li class="hoverGreen" id="pricingNav" style="width:89px;"><a href="<?php echo $GLOBALS["blogLink"]; ?>/pricing">&nbsp;&nbsp;&nbsp;Pricing&nbsp;&nbsp;&nbsp;</a></li>
-                    <li class="hoverRed" id="aboutUsNav" style="width:88px;"><a href="<?php echo $GLOBALS["blogLink"]; ?>/aboutUs">&nbsp;About Us&nbsp;</a></li>
+                    <li class="hoverGreen" id="pricingNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/pricing">&nbsp;&nbsp;&nbsp;Pricing&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class="hoverRed" id="aboutUsNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/aboutUs">&nbsp;About Us&nbsp;</a></li>
                     <li class="hoverBlue" id="blogNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     <li></li><li></li><li style="width:121px;"></li>
                     <li class="hoverOrange" id="freeTrialNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/beta">Free Trial</a></li>

@@ -225,21 +225,8 @@ function get_author_posts_url($author_id, $author_nicename = '') {
 	global $wp_rewrite;
 	$auth_ID = (int) $author_id;
 	$link = $wp_rewrite->get_author_permastruct();
-
-	if ( empty($link) ) {
-		$file = home_url( '/' );
-		$link = $file . '?author=' . $auth_ID;
-	} else {
-		if ( '' == $author_nicename ) {
-			$user = get_userdata($author_id);
-			if ( !empty($user->user_nicename) )
-				$author_nicename = $user->user_nicename;
-		}
-		$link = str_replace('%author%', $author_nicename, $link);
-		$link = home_url( user_trailingslashit( $link ) );
-	}
-
-	$link = apply_filters('author_link', $link, $author_id, $author_nicename);
+	$file = home_url( '/' );
+	$link = $file . '?author=' . $auth_ID;
 
 	return $link;
 }

@@ -21,12 +21,12 @@ article.intro, article.intro .entry-content{
 p{
 	margin-bottom: 0px;
 }
-#team, #values, #jobs, #contactUs{
+#team, #advisors, #values, #jobs, #contactUs{
 	width:930px;
 	margin:0 auto;
 	
 }
-#teamWrapper, #valuesWrapper, #jobsWrapper, #contactUsWrapper{
+#teamWrapper, #advisorsWrapper, #valuesWrapper, #jobsWrapper, #contactUsWrapper{
 	width:100%;
 	z-index:-1000;
 }
@@ -36,84 +36,41 @@ p{
 	background-repeat:repeat-x;
 	background-position:bottom;
 }
-#valuesWrapper{
+#advisorsWrapper{
 	min-height:1000px;
 	padding-bottom:200px;
 	background-color:#333335;
-	background-image:url('images/CharcoalToWhite.png');
+	background-image:url('images/CharcoalToGrey.png');
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+#valuesWrapper{
+	min-height:1000px;
+	padding-bottom:200px;
+	background-image:url('images/GreyToCharcoal.png');
 	background-repeat:repeat-x;
 	background-position:bottom;
 }
 #jobsWrapper{
 	min-height:1200px;
-	background-color:#fff;
-	background-image:url('images/WhiteToGrey.png');
+	background-color:#333335;
+	background-image:url('images/CharcoalToGrey.png');
 	background-repeat:repeat-x;
 	background-position:bottom;
 }
 #contactUsWrapper{
 	min-height:800px;
 }
-#team{
-	position:relative;
-	top:30px;
-}
-#values{
-	position:relative;
-	top:50px;
-	left:62px;
-	width:700px;
-	color:#fff;
-}
-#jobs{
-	position:relative;
-	top:50px;
-	left:62px;
-	width:700px;
-	height:600px;
-}
-#jobsText1, #jobsText2{
-	font-style:normal;
-	font-size:13px;
-	width:700px;
-}
-#jobsPic1{
-	height:220px;
-	background-image:url('images/Sign.png');
-	background-repeat:no-repeat;
-	margin-bottom:-225px;
-}
-#jobsText1 p{
-	margin-left:288px;
-}
-#jobsText2{
-	margin-bottom:20px;
-}
-#jobsText3{
-	width:480px;
-	margin-bottom:-105px;
-	text-align:justify;
-}
-#jobsPic2{
-	height:270px;
-	background-image:url('images/cooking.png');
-	background-position:right;
-	background-repeat:no-repeat;
-}
-#contactUs{
-	position:relative;
-	top:0px;
-	left:62px;
-}
-
 /* Side Navigation
 -------------------------------------------------------------*/
 #navBox{
     position:fixed;
     top:155px;
-	left:190px;
-    width: 100px;
-	z-index:1000;
+    width: 890px;
+	z-index:0;
+	left:0px;
+	right:0px;
+	margin:0 auto;
 	margin-bottom:-100px;
 }
 #navList li{
@@ -163,8 +120,11 @@ p{
     color:#fff;
 	text-decoration:none;
 }
-/* ---------- End Navigation ------------ */
-/* ---------- About Us ------------ */
+/* ---------- TEAM ------------ */
+#team{
+	position:relative;
+	top:30px;
+}
 #authorlist{
 	position:relative;
 	top:15px;
@@ -179,7 +139,7 @@ p{
 .entry_author_image{
 	width: 200px;
 	height: 200px;
-	border:2px ridge #ccc;
+	border:1px solid #999;
 }
 .info{
 	height:40px;
@@ -190,27 +150,97 @@ p{
 .info a{
 	font-size:16px;
 	font-weight:bold;
-	color:#991A36;
 }
 .hovered .info{
 	visibility:visible;
 }
+#hoveredRed .info a:hover, #hoveredOrange .info a:hover, #hoveredGreen .info a:hover, #hoveredBlue .info a:hover{
+	text-decoration:none;
+}
+#hoveredRed .info a{
+	color:#991A36;
+}
+#hoveredOrange .info a{
+	color:#D9591E;
+}
+#hoveredGreen .info a{
+	color:#659A41;
+}
+#hoveredBlue .info a{
+	color:#488FCD;
+}
 .nothovered .info{
 	visibility:collapse;
 }
-/*------Values Page------*/
+/* ----------- Advisors ---------- */
+#advisors{
+	position:relative;
+	top:50px;
+	left:62px;
+	width:700px;
+	color:#fff;
+}
+#advisors h1{
+	color:#ededed;
+	margin-bottom:0px;
+}
+#advisor1Pic, #advisor2Pic, #advisor3Pic{
+	width:200px;
+	height:200px;
+	margin-bottom:-217px;
+	background-repeat:no-repeat;
+	border:1px solid #666;	
+}
+#advisor1Pic{
+	background-image:url('images/Steve.png');
+	width:200px;
+	height:200px;
+	margin-bottom:-215px;
+}
+#advisor2Pic{
+	background-image:url('images/Ken.png');
+	margin-top:-40px;
+}
+#advisor3Pic{
+	background-image:url('images/Eric.png');
+}
+.advisorDesc, .advisorDesc2{
+	width:580px;
+	text-align:justify;
+	margin-left:220px;
+	margin-bottom:100px;
+}
+.advisorDesc2{
+	margin-bottom:60px;
+}
+.wrapLeft{
+	margin-left:-220px;
+	width:800px;
+}
+/* ----------- Values ---------- */
+#values{
+	position:relative;
+	top:50px;
+	left:62px;
+	width:700px;
+	color:#333335;
+}
 #values ul{
 	margin:0px;
 }
 #values ul li{
 	margin-left:20px;
 }
+.big{
+	margin-top:10px;
+	font-size:14px;
+	font-weight:bold;
+}
 #EnvironmentImg, #AccessabilityImg, #CommunityImg, #IntegrityImg{
     position: relative;
-	margin-bottom:-247px;
+	margin-bottom:-213px;
     width: 200px;
     height: 200px;
-	border: 2px ridge #ccc;
 }
 #EnvironmentImg{
 	background-image:url('images/Environment.png');
@@ -236,6 +266,7 @@ p{
 }
 #EnvironmentDesc2{
 	margin-left:-20px;
+	margin-bottom:50px;
 	width: 820px;
 	text-align:justify;
 }
@@ -244,53 +275,90 @@ p{
 }
 #AccessabilityDesc1{
 	margin-left:0px;
+	margin-bottom:0px;
+	margin-top:4px;
 }
 #AccessabilityDesc2{
 	margin-left:0px;
+	margin-bottom:50px;
 	width: 820px;
 	text-align:justify;
 }
 #AccessabilityDesc1 .bigText{
-	margin-left:0px;
+	margin-left:455px;
+}
+#IntegrityDesc .bigText{
+	margin-left:505px;
 }
 #AccessabilityDesc1 ul li, #AccessabilityDesc2 ul li{
 	margin-left:0px;
 }
 #CommunityDesc{
 	margin-left:220px;
-	margin-bottom:50px;
+	margin-bottom:120px;
 }
 #IntegrityDesc{
 	margin-bottom:50px;	
 }
 .bigText{
-	font-size:20px;
+	font-size:24px;
 	font-weight:bold;
 }
-/*------ End Values Page------*/
-
+/* ---------- JOBS ---------- */
+#jobs{
+	position:relative;
+	top:50px;
+	left:62px;
+	width:700px;
+	height:600px;
+	color:#fff;
+}
+#slideShow{
+	margin-left:150px;
+	margin-bottom:20px;
+}
+#jobsText{
+	font-style:normal;
+	font-size:13px;
+	width:700px;
+	text-align:justify;
+}
+#jobsText a:link{
+	color:#fff;
+}
+#jobsText a:hover{
+	text-decoration:none;
+	color:#ccc;
+}
 /*Contact Page*/
+#contactUs{
+	position:relative;
+	top:0px;
+	left:120px;
+}
 #info{
     position: relative;
-    top: 50px;
-    left: 62px;
+    top: 40px;
+    left: -4px;
     font-size: 14px;
     font-family: Verdana;
     color: #333335;
     width: 300px;
 }
 #info a:link, #info a:visited{
-    color: #666666;
+    color: #333335;
     text-decoration: none;
 }
 #info a:focus, #info a:hover, #info a:active{
-    color: #333335;
+    color: #666;
     outline: none;
 }
 #map{
     position: relative;
     top: -200px;
-    left: 580px;
+    left: 530px;
+	width:320px;
+	height:320px;
     border:1px solid #000;
 	padding:0px;
     margin-bottom: -95px;
@@ -298,18 +366,27 @@ p{
 }
 #findUs, #followUs, #viewProfile{
     position: relative;
-    top: -153px;
-    left: 125px;
+    top: -148px;
+    left: 60px;
+	width:118px;
+	height:36px;
+	font-size:32px;
+	text-decoration:none;
 	background-image:url('images/findus.png');
+	background-repeat:no-repeat;
 }
 #followUs{
     top: -200px;
-    left: 270px;
+    left: 205px;
+	width:100px;
+	height:36px;
 	background-image:url('images/followus.png');
 }
 #viewProfile{
-    top: -247px;
-    left: 395px;
+    top: -252px;
+    left: 335px;
+	width:160px;
+	height:36px;
 	background-image:url('images/viewprofile.png');
 }
 /*End Contact Page*/

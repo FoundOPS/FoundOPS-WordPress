@@ -61,37 +61,52 @@ jQuery.extend( jQuery.easing,
 }); //end jQuery Easing Plugin
 
 $(document).ready(function(){
-	
 	var list = document.getElementById('authorlist').getElementsByTagName('li');
-	for(var i in list){
-			list.item(i).onmouseover = function(){
-					this.className = "hovered";
-			}
-			list.item(i).onmouseout = function(){
-					this.className = "nothovered";
-			}
+	for(i = 0; i < list.length; i++) {
+		
+		if(i%4 == 0 || i == 0){
+			list.item(i).id = "hoveredRed";
+		} else if(i%4 == 1 || i == 1){
+			list.item(i).id = "hoveredGreen";
+		}else if(i%4 == 2 || i == 2){
+			list.item(i).id = "hoveredOrange";
+		}else {
+			list.item(i).id = "hoveredBlue";
+		}
+		
+		list.item(i).onmouseover = function(){
+				this.className = "hovered";
+		}
+		list.item(i).onmouseout = function(){
+			this.className = "nothovered";
+		}
 	}
 	
 	$('#nav_team').click(function(){
-			$.scrollTo( '#team', 1000, { easing: 'easeInOutQuart', offset:{ top:-150 }});
-			return false;
+		$.scrollTo( '#team', 1000, { easing: 'easeInOutQuart', offset:{ top:-150 }});
+		return false;
+	});
+	$('#nav_advisors').click(function(){
+		$.scrollTo( '#advisors', 1000, { easing: 'easeInOutQuart', offset:{ top:-50 }});
+		return false;
 	});
 	$('#nav_values').click(function(){
-			$.scrollTo( '#values', 1000, { easing: 'easeInOutQuart', offset:{ top:20 }});
-			return false;
+		$.scrollTo( '#values', 1000, { easing: 'easeInOutQuart', offset:{ top:-50 }});
+		return false;
 	});
 	$('#nav_jobs').click(function(){
-			$.scrollTo( '#jobs', 1000, { easing: 'easeInOutQuart', offset:{ top:-40 }});
-			return false;
+		$.scrollTo( '#jobs', 1000, { easing: 'easeInOutQuart', offset:{ top:-50 }});
+		return false;
 	});
 	$('#nav_contact').click(function(){
-			$.scrollTo( '#contactUs', 1000, { easing: 'easeInOutQuart', offset:{ top:0 }});
-			return false;
+		$.scrollTo( '#contactUs', 1000, { easing: 'easeInOutQuart', offset:{ top:0 }});
+		return false;
 	});
 		
  // Scroll Position Actions
     var team = $("#team");
-    var values = $("#values");
+    var advisors = $("#advisors");
+	var values = $("#values");
     var jobs = $("#jobs");
     var contact = $("#contactUs");
     scrollStop = setTimeout(updateScrollInfo, 100);
@@ -115,21 +130,31 @@ $(document).ready(function(){
 		document.getElementById('nav_values').className = 'notactiveonlight';
 		document.getElementById('nav_jobs').className = 'notactiveonlight';
 		document.getElementById('nav_contact').className = 'notactiveonlight';
-      } else if (isValues()){
-        document.getElementById('nav_values').className = 'activeondark';
+		document.getElementById('nav_advisors').className = 'notactiveonlight';
+      } else if (isAdvisors()){
+		  document.getElementById('nav_advisors').className = 'activeondark';
+        document.getElementById('nav_values').className = 'notactiveondark';
 		document.getElementById('nav_team').className = 'notactiveondark';
 		document.getElementById('nav_jobs').className = 'notactiveondark';
 		document.getElementById('nav_contact').className = 'notactiveondark';
-      }  else if (isJobs()){
-        document.getElementById('nav_jobs').className = 'activeonlight';
-		document.getElementById('nav_values').className = 'notactiveonlight';
+      } else if (isValues()){
+        document.getElementById('nav_values').className = 'activeonlight';
 		document.getElementById('nav_team').className = 'notactiveonlight';
+		document.getElementById('nav_jobs').className = 'notactiveonlight';
 		document.getElementById('nav_contact').className = 'notactiveonlight';
+		document.getElementById('nav_advisors').className = 'notactiveonlight';
+      }  else if (isJobs()){
+        document.getElementById('nav_jobs').className = 'activeondark';
+		document.getElementById('nav_values').className = 'notactiveondark';
+		document.getElementById('nav_team').className = 'notactiveondark';
+		document.getElementById('nav_contact').className = 'notactiveondark';
+		document.getElementById('nav_advisors').className = 'notactiveondark';
       } else if (isContact()){
         document.getElementById('nav_contact').className = 'activeonlight';
 		document.getElementById('nav_values').className = 'notactiveonlight';
 		document.getElementById('nav_jobs').className = 'notactiveonlight';
 		document.getElementById('nav_team').className = 'notactiveonlight';
+		document.getElementById('nav_advisors').className = 'notactiveonlight';
       }
     }
   
@@ -138,6 +163,15 @@ $(document).ready(function(){
             docViewBottom = docViewTop + $(window).height(),
             elemTop = $(team).offset().top,
          elemBottom = elemTop + $(team).height();
+       //Is more than half of the element visible
+       return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+    }
+	
+	function isAdvisors() {
+        var docViewTop = $(window).scrollTop(),
+            docViewBottom = docViewTop + $(window).height(),
+            elemTop = $(advisors).offset().top,
+         elemBottom = elemTop + $(advisors).height();
        //Is more than half of the element visible
        return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
     }

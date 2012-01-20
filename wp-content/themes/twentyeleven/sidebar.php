@@ -33,7 +33,9 @@ if ( 'content' != $current_layout ) :
         <?php } ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 				
-                <aside id="topics" class="widget">
+                <?php  ?>
+                
+                 <aside id="topics" class="widget">
 					<h3 class="widget-title"><?php _e( 'Topics', 'twentyeleven' ); ?></h3>
 					<ul>
 						<?php wp_list_categories() ?>
@@ -48,28 +50,34 @@ if ( 'content' != $current_layout ) :
                     <?php } ?>
 					<table>
 						<tr>
-                        	<td id="getFacebook">
-                            <a href="<?php if(is_author()){echo get_the_author_meta( 'facebook' );}else{?>http://www.facebook.com/foundops<?php } ?>"></a>
-                            </td>
-                            <td id="getRss">
-                            <a href="<?php echo $GLOBALS["blogLink"];?>/feed"></a>
-                            </td>
-                            <td id="getTwitter">
-                            <a href="<?php if(is_author()){echo get_the_author_meta( 'twitter' );}else{?>http://twitter.com/#!/FoundOPS<?php } ?>"></a>
-                            </td>
-                            <td id="getGoogle">
-                            <a href="<?php if(is_author()){echo get_the_author_meta( 'google' );}else{?>https://plus.google.com/b/116861256577185051449/<?php } ?>"></a>
-                            </td>
-                            <td id="getLinkedin">
-                            <a href="<?php if(is_author()){echo get_the_author_meta( 'linkedin' );}else{?>http://www.linkedin.com/company/foundops<?php } ?>"></a>
-                            </td>
+                        	<?php $userid = $_GET["author"]; ?>
+                        	<?php if((is_author() && get_usermeta($userid, 'facebook') != "") || !(is_author())){ ?>
+                                <td id="getFacebook">
+                                <a href="<?php if(is_author()){echo get_usermeta($userid, 'facebook');}else{?>http://www.facebook.com/foundops<?php } ?>"></a>
+                                </td>
+                            <?php } if(!(is_author())){ ?>
+                                <td id="getRss">
+                                <?php if( class_exists('Add_to_Any_Subscribe_Widget') ) { Add_to_Any_Subscribe_Widget::display(); } ?>
+                                </td>
+                            <?php } if((is_author() && get_usermeta($userid, 'twitter') != "") || !(is_author())){ ?>
+                                <td id="getTwitter">
+                                <a href="<?php if(is_author()){echo get_usermeta($userid, 'twitter');}else{?>http://twitter.com/#!/FoundOPS<?php } ?>"></a>
+                                </td>
+                            <?php } if((is_author() && get_usermeta($userid, 'google') != "") || !(is_author())){ ?>
+                                <td id="getGoogle">
+                                <a href="<?php if(is_author()){echo get_usermeta($userid, 'google');}else{?>https://plus.google.com/b/116861256577185051449/<?php } ?>"></a>
+                                </td>
+                            <?php } if((is_author() && get_usermeta($userid, 'linkedin') != "") || !(is_author())){ ?>
+                                <td id="getLinkedin">
+                                <a href="<?php if(is_author()){echo get_usermeta($userid, 'linkedin');}else{?>http://www.linkedin.com/company/foundops<?php } ?>"></a>
+                                </td>
+                            <?php } ?>
                         </tr>
 					</table>
                     <div id="or">or</div>
                     <span style="color:#aaa;">&nbsp;&nbsp;__________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__________</span>
                     <?php mailchimpSF_signup_form(); ?>
 				</aside>
-                
 				<aside id="archives" class="widget">
 					<h3 class="widget-title"><?php _e( 'Archives', 'twentyeleven' ); ?></h3>
 					<ul>
