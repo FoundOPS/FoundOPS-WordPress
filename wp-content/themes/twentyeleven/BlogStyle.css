@@ -282,13 +282,23 @@ table td{
 .home #blogNav, .archive #blogNav, .single-post #blogNav{
 	background:#488FCD;
 }
+.page-id-624 #home{
+	background:#659A41;
+}
 .page-id-21 #aboutUsNav{
 	background:#991A36;
 }
 .page-id-303 #pricingNav{
 	background:#659A41;
 }
-.home #blogNav a, .archive #blogNav a, .single-post #blogNav a, .page-id-21 #aboutUsNav a, .page-id-303 #pricingNav a{
+.page-id-153 #featuresNav{
+	background:#991a36;
+}
+.page-id-69 #customersNav{
+	background:#488fcd;
+}
+.home #blogNav a, .archive #blogNav a, .single-post #blogNav a, .page-id-21 #aboutUsNav a, 
+.page-id-303 #pricingNav a, .page-id-153 #featuresNav a, .page-id-69 #customersNav a, .page-id-624 #home a{
 	color:#fff;
 }
 #nav-single{
@@ -1242,7 +1252,6 @@ a:active img[class*="wp-image-"],
 /* Comments link */
 .entry-header .comments-link a {
 	display:none;
-	background: #eee url(images/comment-bubble.png) no-repeat;
 	color: #666;
 	font-size: 13px;
 	font-weight: normal;

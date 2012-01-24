@@ -25,28 +25,28 @@
     <div><table id="bottomTable" class="tabs">
             <tr>
                 <td></td>
-                <td class="bigFooterText"> <a href="<?php echo $GLOBALS["blogLink"];?>/beta" style="font-size:13px;">FoundOPS</a></td>
-                <td class="bigFooterText"> <a href="<?php echo $GLOBALS["blogLink"];?>/team" style="font-size:13px;">About Us</a> </td>
+                <td class="bigFooterText"> <a href="<?php echo $GLOBALS["blogLink"];?>/features" style="font-size:13px;">Features</a></td>
+                <td class="bigFooterText"> <a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs" style="font-size:13px;">About Us</a> </td>
             </tr>
             <tr>
             	<td></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/beta">Beta</a> </td>
-                <td> <a href="<?php echo $GLOBALS["blogLink"];?>/team">The Team</a></td>
+                <td><a href="<?php echo $GLOBALS["blogLink"];?>/customers">Customers</a> </td>
+                <td> <a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs">The Team</a></td>
             </tr>
             <tr>
             	<td></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/product">Features</a></td>
-                <td> <a href="<?php echo $GLOBALS["blogLink"];?>/values">Our Values</a> </td>
+                <td><a href="<?php echo $GLOBALS["blogLink"];?>/pricing">Pricing</a></td>
+                <td> <a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#values">Our Values</a> </td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/jobs">Jobs</a></td>
+                <td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#jobs">Jobs</a></td>
             </tr>
             <tr>
-            	<td rowspan="3"> <div id="navLogo"><a style="line-height:50px;font-size:50px;" href="<?php echo $GLOBALS["foundopsLink"];?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div></td>
+            	<td rowspan="3"> <div id="navLogo"><a style="line-height:50px;font-size:50px;" href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div></td>
                 <td class="bigFooterText"><a style="position:relative; top:-10px; left:0px;font-size:13px;" href="<?php echo $GLOBALS["blogLink"];?>" style="font-size:13px;">Blog</a></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/contact">Contact Us</a></td>
+                <td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#contactUs">Contact Us</a></td>
             </tr>
         </table></div>
     <div style="font-size:12px">&copy;2012&nbsp;FOUNDOPS&nbsp;LLC</div><br/>

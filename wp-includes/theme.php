@@ -95,6 +95,12 @@ function get_blogstylesheet_uri() {
 	return apply_filters('stylesheet_uri', $stylesheet_uri, $stylesheet_dir_uri);
 }
 
+function get_homestylesheet_uri() {
+	$stylesheet_dir_uri = get_stylesheet_directory_uri();
+	$stylesheet_uri = $stylesheet_dir_uri . '/home.css';
+	return apply_filters('stylesheet_uri', $stylesheet_uri, $stylesheet_dir_uri);
+}
+
 /**
  * Retrieve localized stylesheet URI.
  *

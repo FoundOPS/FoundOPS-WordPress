@@ -215,7 +215,6 @@ input#s {
 }
 /* Comments link */
 .entry-header .comments-link a {
-	background-image: url(images/comment-bubble-rtl.png);
 	right: auto;
 	left: 0;
 }

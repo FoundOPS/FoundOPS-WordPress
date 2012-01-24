@@ -2,19 +2,41 @@
 	
 	var member  = getUrlVars()["id"];
 	//Check if the url is a name.
-	//If so, scroll to the user's section.
-	if (member == 'apohl') {
-		window.scrollTo(0, findPos(document.getElementById('andrewBg')));
-	} else if (member == 'jperl') {
-		window.scrollTo(0, findPos(document.getElementById('jonBg')));
-	} else if (member == 'zbright') {
-		window.scrollTo(0, findPos(document.getElementById('zachBg')));
-	} else if (member == 'oshatken') {
-		window.scrollTo(0, findPos(document.getElementById('orenBg')));
-	}else if (member == 'jmahoney') {
-		window.scrollTo(0, findPos(document.getElementById('johnBg')));
-	}else if (member == 'cmcpherson') {
-		window.scrollTo(0, findPos(document.getElementById('caitlinBg')));
+	//If so, go to the user's page.
+	
+	var url = window.location.host;
+	if(url.substr(0,3) != "loc"){
+		if (member == 'apohl') {
+			window.location = "http://wp.foundops.com/?author=2";
+		} else if (member == 'jperl') {
+			window.location = "http://wp.foundops.com/?author=3";
+		} else if (member == 'zbright') {
+			window.location = "http://wp.foundops.com/?author=5";
+		} else if (member == 'oshatken') {
+			window.location = "http://wp.foundops.com/?author=4";
+		}else if (member == 'jmahoney') {
+			window.location = "http://wp.foundops.com/?author=8";
+		}else if (member == 'cmcpherson') {
+			window.location = "http://wp.foundops.com/?author=6";
+		}else if (member == 'pbrown') {
+			window.location = "http://wp.foundops.com/?author=7";
+		}
+	} else {
+		if (member == 'apohl') {
+			window.location = "http://localhost:55206/?author=2";
+		} else if (member == 'jperl') {
+			window.location = "http://localhost:55206/?author=3";
+		} else if (member == 'zbright') {
+			window.location = "http://localhost:55206/?author=5";
+		} else if (member == 'oshatken') {
+			window.location = "http://localhost:55206/?author=4";
+		}else if (member == 'jmahoney') {
+			window.location = "http://localhost:55206/?author=8";
+		}else if (member == 'cmcpherson') {
+			window.location = "http://localhost:55206/?author=6";
+		}else if (member == 'pbrown') {
+			window.location = "http://localhost:55206/?author=7";
+		}
 	}
 });
 
@@ -61,147 +83,321 @@ jQuery.extend( jQuery.easing,
 }); //end jQuery Easing Plugin
 
 $(document).ready(function(){
-	var list = document.getElementById('authorlist').getElementsByTagName('li');
-	for(i = 0; i < list.length; i++) {
-		
-		if(i%4 == 0 || i == 0){
-			list.item(i).id = "hoveredRed";
-		} else if(i%4 == 1 || i == 1){
-			list.item(i).id = "hoveredGreen";
-		}else if(i%4 == 2 || i == 2){
-			list.item(i).id = "hoveredOrange";
-		}else {
-			list.item(i).id = "hoveredBlue";
-		}
-		
-		list.item(i).onmouseover = function(){
-				this.className = "hovered";
-		}
-		list.item(i).onmouseout = function(){
-			this.className = "nothovered";
+	if(document.getElementById('authorlist')){
+		var list = document.getElementById('authorlist').getElementsByTagName('li');
+		for(i = 0; i < list.length; i++) {
+			
+			if(i%4 == 0 || i == 0){
+				list.item(i).id = "hoveredRed";
+			} else if(i%4 == 1 || i == 1){
+				list.item(i).id = "hoveredGreen";
+			}else if(i%4 == 2 || i == 2){
+				list.item(i).id = "hoveredOrange";
+			}else {
+				list.item(i).id = "hoveredBlue";
+			}
+			
+			list.item(i).onmouseover = function(){
+					this.className = "hovered";
+			}
+			list.item(i).onmouseout = function(){
+				this.className = "nothovered";
+			}
 		}
 	}
+	/* ---------- FEATURES PAGE ---------- */
+	if(document.getElementById('crm')){
+		$('#nav_crm').click(function(){
+			$.scrollTo( '#crm', 1000, { easing: 'easeInOutQuart', offset:{ top:-185, left:-205 }});
+			return false;
+		});
+		$('#nav_dispatcher').click(function(){
+			$.scrollTo( '#dispatcher', 1000, { easing: 'easeInOutQuart', offset:{ top:-40, left:-205 }});
+			return false;
+		});
+		$('#nav_templates').click(function(){
+			$.scrollTo( '#templates', 1000, { easing: 'easeInOutQuart', offset:{ top:-40, left:-205 }});
+			return false;
+		});
+		$('#nav_employee').click(function(){
+			$.scrollTo( '#employee', 1000, { easing: 'easeInOutQuart', offset:{ top:-40, left:-205 }});
+			return false;
+		});
+		$('#nav_vehicle').click(function(){
+			$.scrollTo( '#vehicle', 1000, { easing: 'easeInOutQuart', offset:{ top:-40, left:-205 }});
+			return false;
+		});
+		$('#nav_mobile').click(function(){
+			$.scrollTo( '#mobile', 1000, { easing: 'easeInOutQuart', offset:{ top:-40, left:-205 }});
+			return false;
+		});
+		$('#nav_integrations').click(function(){
+			$.scrollTo( '#integrations', 1000, { easing: 'easeInOutQuart', offset:{ top:-40, left:-205 }});
+			return false;
+		});
+			
+		// Scroll Position Actions
+		var crm = $("#crm");
+		var dispatcher = $("#dispatcher");
+		var templates = $("#templates");
+		var employee = $("#employee");
+		var vehicle = $("#vehicle");
+		var mobile = $("#mobile");
+		var integrations = $("#integrations");
+		scrollStop = setTimeout(updateFeaturesScrollInfo, 100);
 	
-	$('#nav_team').click(function(){
-		$.scrollTo( '#team', 1000, { easing: 'easeInOutQuart', offset:{ top:-150 }});
-		return false;
-	});
-	$('#nav_advisors').click(function(){
-		$.scrollTo( '#advisors', 1000, { easing: 'easeInOutQuart', offset:{ top:-50 }});
-		return false;
-	});
-	$('#nav_values').click(function(){
-		$.scrollTo( '#values', 1000, { easing: 'easeInOutQuart', offset:{ top:-50 }});
-		return false;
-	});
-	$('#nav_jobs').click(function(){
-		$.scrollTo( '#jobs', 1000, { easing: 'easeInOutQuart', offset:{ top:-50 }});
-		return false;
-	});
-	$('#nav_contact').click(function(){
-		$.scrollTo( '#contactUs', 1000, { easing: 'easeInOutQuart', offset:{ top:0 }});
-		return false;
-	});
+		$(window).scroll(function(){ 
+		  tick++;
+		  clearTimeout(scrollStop);
+		  scrollStop = setTimeout(updateFeaturesScrollInfo, 100);
+		  if (tick > 10)
+		  {
+			updateFeaturesScrollInfo();
+		  }
+		});
+	  
+		//change active link color
+		function updateFeaturesScrollInfo()
+		{
+		  tick = 0;
+		  if(isCrm()){
+			document.getElementById('nav_crm').className = 'activeonlight';
+			document.getElementById('nav_dispatcher').className = 'notactiveonlight';
+			document.getElementById('nav_templates').className = 'notactiveonlight';
+			document.getElementById('nav_employee').className = 'notactiveonlight';
+			document.getElementById('nav_vehicle').className = 'notactiveonlight';
+			document.getElementById('nav_mobile').className = 'notactiveonlight';
+			document.getElementById('nav_integrations').className = 'notactiveonlight';
+		  } else if (isDispatcher()){
+			document.getElementById('nav_dispatcher').className = 'activeonlight';
+			document.getElementById('nav_crm').className = 'notactiveonlight';
+			document.getElementById('nav_templates').className = 'notactiveonlight';
+			document.getElementById('nav_employee').className = 'notactiveonlight';
+			document.getElementById('nav_vehicle').className = 'notactiveonlight';
+			document.getElementById('nav_mobile').className = 'notactiveonlight';
+			document.getElementById('nav_integrations').className = 'notactiveonlight';
+		  } else if (isTemplates()){
+			document.getElementById('nav_templates').className = 'activeonlight';
+			document.getElementById('nav_dispatcher').className = 'notactiveonlight';
+			document.getElementById('nav_crm').className = 'notactiveonlight';
+			document.getElementById('nav_employee').className = 'notactiveonlight';
+			document.getElementById('nav_vehicle').className = 'notactiveonlight';
+			document.getElementById('nav_mobile').className = 'notactiveonlight';
+			document.getElementById('nav_integrations').className = 'notactiveonlight';
+		  }  else if (isEmployee()){
+			document.getElementById('nav_employee').className = 'activeonlight';
+			document.getElementById('nav_dispatcher').className = 'notactiveonlight';
+			document.getElementById('nav_templates').className = 'notactiveonlight';
+			document.getElementById('nav_crm').className = 'notactiveonlight';
+			document.getElementById('nav_vehicle').className = 'notactiveonlight';
+			document.getElementById('nav_mobile').className = 'notactiveonlight';
+			document.getElementById('nav_integrations').className = 'notactiveonlight';
+		  } else if (isVehicle()){
+			document.getElementById('nav_vehicle').className = 'activeonlight';
+			document.getElementById('nav_dispatcher').className = 'notactiveonlight';
+			document.getElementById('nav_templates').className = 'notactiveonlight';
+			document.getElementById('nav_employee').className = 'notactiveonlight';
+			document.getElementById('nav_crm').className = 'notactiveonlight';
+			document.getElementById('nav_mobile').className = 'notactiveonlight';
+			document.getElementById('nav_integrations').className = 'notactiveonlight';
+		  }else if (isMobile()){
+			document.getElementById('nav_mobile').className = 'activeonlight';
+			document.getElementById('nav_dispatcher').className = 'notactiveonlight';
+			document.getElementById('nav_templates').className = 'notactiveonlight';
+			document.getElementById('nav_employee').className = 'notactiveonlight';
+			document.getElementById('nav_vehicle').className = 'notactiveonlight';
+			document.getElementById('nav_crm').className = 'notactiveonlight';
+			document.getElementById('nav_integrations').className = 'notactiveonlight';
+		  }else if (isIntegrations()){
+			document.getElementById('nav_integrations').className = 'activeonlight';
+			document.getElementById('nav_dispatcher').className = 'notactiveonlight';
+			document.getElementById('nav_templates').className = 'notactiveonlight';
+			document.getElementById('nav_employee').className = 'notactiveonlight';
+			document.getElementById('nav_vehicle').className = 'notactiveonlight';
+			document.getElementById('nav_mobile').className = 'notactiveonlight';
+			document.getElementById('nav_crm').className = 'notactiveonlight';
+		  }
+		}
+		function isCrm() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(crm).offset().top,
+			 elemBottom = elemTop + $(crm).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+		function isDispatcher() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(dispatcher).offset().top,
+			 elemBottom = elemTop + $(dispatcher).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+		function isTemplates() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(templates).offset().top,
+			 elemBottom = elemTop + $(templates).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+		function isEmployee() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(employee).offset().top,
+			 elemBottom = elemTop + $(employee).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+		function isVehicle() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(vehicle).offset().top,
+			 elemBottom = elemTop + $(vehicle).height();
+		   //Is more than half of the element visible
+			return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+		function isMobile() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(mobile).offset().top,
+			 elemBottom = elemTop + $(mobile).height();
+		   //Is more than half of the element visible
+			return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+		function isIntegrations() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(integrations).offset().top,
+			 elemBottom = elemTop + $(integrations).height();
+		   //Is more than half of the element visible
+			return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+	}
+	/* ---------- ABOUT US PAGE ---------- */
+	if(document.getElementById('authorlist')){
+		$('#nav_team').click(function(){
+			$.scrollTo( '#team', 1000, { easing: 'easeInOutQuart', offset:{ top:-150, left:-157 }});
+			return false;
+		});
+		$('#nav_advisors').click(function(){
+			$.scrollTo( '#advisors', 1000, { easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }});
+			return false;
+		});
+		$('#nav_values').click(function(){
+			$.scrollTo( '#values', 1000, { easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }});
+			return false;
+		});
+		$('#nav_jobs').click(function(){
+			$.scrollTo( '#jobs', 1000, { easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }});
+			return false;
+		});
+		$('#nav_contact').click(function(){
+			$.scrollTo( '#contactUs', 1000, { easing: 'easeInOutQuart', offset:{ top:0, left:-157 }});
+			return false;
+		});
+			
+	 // Scroll Position Actions
+		var team = $("#team");
+		var advisors = $("#advisors");
+		var values = $("#values");
+		var jobs = $("#jobs");
+		var contact = $("#contactUs");
+		scrollStop = setTimeout(updateScrollInfo, 100);
+	
+		$(window).scroll(function(){ 
+		  tick++;
+		  clearTimeout(scrollStop);
+		  scrollStop = setTimeout(updateScrollInfo, 100);
+		  if (tick > 10)
+		  {
+			updateScrollInfo();
+		  }
+		});
+	  
+		//change active link color
+		function updateScrollInfo()
+		{
+		  tick = 0;
+		  if(isTeam()){
+			document.getElementById('nav_team').className = 'activeonlight';
+			document.getElementById('nav_values').className = 'notactiveonlight';
+			document.getElementById('nav_jobs').className = 'notactiveonlight';
+			document.getElementById('nav_contact').className = 'notactiveonlight';
+			document.getElementById('nav_advisors').className = 'notactiveonlight';
+		  } else if (isAdvisors()){
+			  document.getElementById('nav_advisors').className = 'activeondark';
+			document.getElementById('nav_values').className = 'notactiveondark';
+			document.getElementById('nav_team').className = 'notactiveondark';
+			document.getElementById('nav_jobs').className = 'notactiveondark';
+			document.getElementById('nav_contact').className = 'notactiveondark';
+		  } else if (isValues()){
+			document.getElementById('nav_values').className = 'activeonlight';
+			document.getElementById('nav_team').className = 'notactiveonlight';
+			document.getElementById('nav_jobs').className = 'notactiveonlight';
+			document.getElementById('nav_contact').className = 'notactiveonlight';
+			document.getElementById('nav_advisors').className = 'notactiveonlight';
+		  }  else if (isJobs()){
+			document.getElementById('nav_jobs').className = 'activeondark';
+			document.getElementById('nav_values').className = 'notactiveondark';
+			document.getElementById('nav_team').className = 'notactiveondark';
+			document.getElementById('nav_contact').className = 'notactiveondark';
+			document.getElementById('nav_advisors').className = 'notactiveondark';
+		  } else if (isContact()){
+			document.getElementById('nav_contact').className = 'activeonlight';
+			document.getElementById('nav_values').className = 'notactiveonlight';
+			document.getElementById('nav_jobs').className = 'notactiveonlight';
+			document.getElementById('nav_team').className = 'notactiveonlight';
+			document.getElementById('nav_advisors').className = 'notactiveonlight';
+		  }
+		}
+	  
+		function isTeam() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(team).offset().top,
+			 elemBottom = elemTop + $(team).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
 		
- // Scroll Position Actions
-    var team = $("#team");
-    var advisors = $("#advisors");
-	var values = $("#values");
-    var jobs = $("#jobs");
-    var contact = $("#contactUs");
-    scrollStop = setTimeout(updateScrollInfo, 100);
-
-    $(window).scroll(function(){ 
-      tick++;
-      clearTimeout(scrollStop);
-      scrollStop = setTimeout(updateScrollInfo, 100);
-      if (tick > 10)
-      {
-        updateScrollInfo();
-      }
-    });
-  
-  	//change active link color
-    function updateScrollInfo()
-    {
-      tick = 0;
-      if(isTeam()){
-        document.getElementById('nav_team').className = 'activeonlight';
-		document.getElementById('nav_values').className = 'notactiveonlight';
-		document.getElementById('nav_jobs').className = 'notactiveonlight';
-		document.getElementById('nav_contact').className = 'notactiveonlight';
-		document.getElementById('nav_advisors').className = 'notactiveonlight';
-      } else if (isAdvisors()){
-		  document.getElementById('nav_advisors').className = 'activeondark';
-        document.getElementById('nav_values').className = 'notactiveondark';
-		document.getElementById('nav_team').className = 'notactiveondark';
-		document.getElementById('nav_jobs').className = 'notactiveondark';
-		document.getElementById('nav_contact').className = 'notactiveondark';
-      } else if (isValues()){
-        document.getElementById('nav_values').className = 'activeonlight';
-		document.getElementById('nav_team').className = 'notactiveonlight';
-		document.getElementById('nav_jobs').className = 'notactiveonlight';
-		document.getElementById('nav_contact').className = 'notactiveonlight';
-		document.getElementById('nav_advisors').className = 'notactiveonlight';
-      }  else if (isJobs()){
-        document.getElementById('nav_jobs').className = 'activeondark';
-		document.getElementById('nav_values').className = 'notactiveondark';
-		document.getElementById('nav_team').className = 'notactiveondark';
-		document.getElementById('nav_contact').className = 'notactiveondark';
-		document.getElementById('nav_advisors').className = 'notactiveondark';
-      } else if (isContact()){
-        document.getElementById('nav_contact').className = 'activeonlight';
-		document.getElementById('nav_values').className = 'notactiveonlight';
-		document.getElementById('nav_jobs').className = 'notactiveonlight';
-		document.getElementById('nav_team').className = 'notactiveonlight';
-		document.getElementById('nav_advisors').className = 'notactiveonlight';
-      }
-    }
-  
-    function isTeam() {
-        var docViewTop = $(window).scrollTop(),
-            docViewBottom = docViewTop + $(window).height(),
-            elemTop = $(team).offset().top,
-         elemBottom = elemTop + $(team).height();
-       //Is more than half of the element visible
-       return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-    }
-	
-	function isAdvisors() {
-        var docViewTop = $(window).scrollTop(),
-            docViewBottom = docViewTop + $(window).height(),
-            elemTop = $(advisors).offset().top,
-         elemBottom = elemTop + $(advisors).height();
-       //Is more than half of the element visible
-       return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-    }
-  
-    function isValues() {
-        var docViewTop = $(window).scrollTop(),
-            docViewBottom = docViewTop + $(window).height(),
-            elemTop = $(values).offset().top,
-         elemBottom = elemTop + $(values).height();
-       //Is more than half of the element visible
-       return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-    }
-  
-    function isJobs() {
-        var docViewTop = $(window).scrollTop(),
-            docViewBottom = docViewTop + $(window).height(),
-            elemTop = $(jobs).offset().top,
-         elemBottom = elemTop + $(jobs).height();
-       //Is more than half of the element visible
-       return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-    }
-  
-    function isContact() {
-        var docViewTop = $(window).scrollTop(),
-            docViewBottom = docViewTop + $(window).height(),
-            elemTop = $(contact).offset().top,
-         elemBottom = elemTop + $(contact).height();
-       //Is more than half of the element visible
-        return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-    }
+		function isAdvisors() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(advisors).offset().top,
+			 elemBottom = elemTop + $(advisors).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+	  
+		function isValues() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(values).offset().top,
+			 elemBottom = elemTop + $(values).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+	  
+		function isJobs() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(jobs).offset().top,
+			 elemBottom = elemTop + $(jobs).height();
+		   //Is more than half of the element visible
+		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+	  
+		function isContact() {
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height(),
+				elemTop = $(contact).offset().top,
+			 elemBottom = elemTop + $(contact).height();
+		   //Is more than half of the element visible
+			return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+		}
+	}
 });
 
 /* jQuery.ScrollTo - Easy element scrolling using jQuery. */

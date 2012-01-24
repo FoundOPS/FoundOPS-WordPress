@@ -66,8 +66,8 @@ p{
 #navBox{
     position:fixed;
     top:155px;
-    width: 890px;
-	z-index:0;
+    width: 930px;
+	z-index:100;
 	left:0px;
 	right:0px;
 	margin:0 auto;
@@ -128,7 +128,8 @@ p{
 #authorlist{
 	position:relative;
 	top:15px;
-	left:102px;
+	left:85px;
+	z-index:1000;
 }
 #authorlist li{
 	float: left;
@@ -176,8 +177,8 @@ p{
 #advisors{
 	position:relative;
 	top:50px;
-	left:62px;
-	width:700px;
+	left:157px;
+	width:930px;
 	color:#fff;
 }
 #advisors h1{
@@ -221,8 +222,8 @@ p{
 #values{
 	position:relative;
 	top:50px;
-	left:62px;
-	width:700px;
+	left:157px;
+	width:930px;
 	color:#333335;
 }
 #values ul{
@@ -246,19 +247,19 @@ p{
 	background-image:url('images/Environment.png');
 }
 #AccessabilityImg{
-	margin-left:620px;
+	margin-left:610px;
 	background-image:url('images/Accessability.png');
 }
 #CommunityImg{
 	background-image:url('images/Community.png');
 }
 #IntegrityImg{
-	margin-left:620px;
+	margin-left:610px;
 	background-image:url('images/Integrity.png');
 }
 #EnvironmentDesc1, #AccessabilityDesc1, #CommunityDesc, #IntegrityDesc{
 	position:relative;
-	width: 600px;
+	width: 590px;
 	text-align:justify;
 }
 #EnvironmentDesc1{
@@ -281,7 +282,7 @@ p{
 #AccessabilityDesc2{
 	margin-left:0px;
 	margin-bottom:50px;
-	width: 820px;
+	width: 810px;
 	text-align:justify;
 }
 #AccessabilityDesc1 .bigText{
@@ -308,8 +309,8 @@ p{
 #jobs{
 	position:relative;
 	top:50px;
-	left:62px;
-	width:700px;
+	left:157px;
+	width:930px;
 	height:600px;
 	color:#fff;
 }
@@ -330,7 +331,7 @@ p{
 	text-decoration:none;
 	color:#ccc;
 }
-/*Contact Page*/
+/* ---------- Contact Page ---------- */
 #contactUs{
 	position:relative;
 	top:0px;
@@ -356,7 +357,7 @@ p{
 #map{
     position: relative;
     top: -200px;
-    left: 530px;
+    left: 525px;
 	width:320px;
 	height:320px;
     border:1px solid #000;
@@ -389,4 +390,3 @@ p{
 	height:36px;
 	background-image:url('images/viewprofile.png');
 }
-/*End Contact Page*/

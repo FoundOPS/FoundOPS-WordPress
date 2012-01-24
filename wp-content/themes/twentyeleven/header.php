@@ -27,7 +27,6 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
     and intuitive customer management in one easy-to-use system." />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
 <meta name="google-site-verification" content="gMZQUTO8tOdyGEtehqnkS-fgjy5eMu5UHLKPL_cjn48" />
-<script type="text/javascript" src="../../../wp-includes/jquery-1.6.1.min.js"></script>
 <?php if(is_home() || is_single() || is_author() || is_archive()){ ?>
 <meta name="keywords" content="FoundOPS, dis-patch, SaaS, service management, field service management, service dispatching, technician dispatch" />
 <link rel="stylesheet" type="text/css" media="handheld" href="<?php bloginfo( 'blogstylesheet_url' ); ?>" />
@@ -35,6 +34,35 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
 <?php }else{ ?>
 <meta name="keywords" content="Field Service GPS Tracking Dispatch Operations Software Mobile Application Route Vehicles FoundOPS
 	Cloud Solution Efficiency SaaS Lean Customer Management Technology Integration" />
+<?php if(is_page(624)){ ?>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.wt-rotator.js"></script>
+    <link rel="stylesheet" type="text/css" href="wt-rotator.css" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'homestylesheet_url' ); ?>" />
+    <script type="text/javascript" src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".container").wtRotator({
+                width: 1000,
+                height: 450,
+                cpanel_align: "BC",
+                mouseover_pause: true,
+                transition: "h.slide"
+            });
+        });
+        $(function () {
+            $("#SubmitBtn").click(function () {
+                var checkedA = $("#group_1").attr("checked");
+                var checkedB = $("#group_2").attr("checked");
+                if (checkedA) {
+                    window.trackEvent("Form Signup", "Signed Up", "Subscribe to FoundOPS", 1);
+                } else if (checkedB) {
+                    window.trackEvent("Form Signup", "Signed Up", "Beta Program", 1);
+                } else { }
+            });
+        });
+    </script>
+<?php } ?>
 <link rel="stylesheet" type="text/css" media="handheld" href="<?php bloginfo( 'blogstylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'blogstylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="handheld" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -93,6 +121,7 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
 	wp_head();
 ?>
 </head>
+<?php flush(); ?>
 <body <?php body_class(); ?>>
 <div id="container">
     <div id="page" class="hfeed">
@@ -101,9 +130,9 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
             <iframe id="myFrame" src="<?php echo $GLOBALS["foundopsLink"];?>/Account/BlogLogin" width="500px" height="70" frameborder="2" scrolling="no"></iframe>
             <div id="nav">
                 <ul>
-                    <li class="hoverGreen" id="home"><a href="<?php echo $GLOBALS["foundopsLink"]; ?>">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                    <li class="hoverRed" id="featuresNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/product" >&nbsp;Features&nbsp;</a></li>
-                    <li class="hoverBlue" id="customersNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/beta">Customers</a></li>
+                    <li class="hoverGreen" id="home"><a href="<?php echo $GLOBALS["blogLink"]; ?>/home">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class="hoverRed" id="featuresNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/features" >&nbsp;Features&nbsp;</a></li>
+                    <li class="hoverBlue" id="customersNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/customers">Customers</a></li>
                     <li class="hoverGreen" id="pricingNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/pricing">&nbsp;&nbsp;&nbsp;Pricing&nbsp;&nbsp;&nbsp;</a></li>
                     <li class="hoverRed" id="aboutUsNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/aboutUs">&nbsp;About Us&nbsp;</a></li>
                     <li class="hoverBlue" id="blogNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>

@@ -442,6 +442,9 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 		case 'blogstylesheet_url':
 			$output = get_blogstylesheet_uri();
 			break;
+		case 'homestylesheet_url':
+			$output = get_homestylesheet_uri();
+			break;
 		case 'stylesheet_directory':
 			$output = get_stylesheet_directory_uri();
 			break;
