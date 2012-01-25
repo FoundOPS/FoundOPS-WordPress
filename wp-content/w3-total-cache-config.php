@@ -511,7 +511,7 @@ return array(
 	'notes.plugins_updated' => false,
 	'notes.cdn_upload' => false,
 	'notes.cdn_reupload' => false,
-	'notes.need_empty_pgcache' => true,
+	'notes.need_empty_pgcache' => false,
 	'notes.need_empty_minify' => false,
 	'notes.need_empty_objectcache' => false,
 	'notes.pgcache_rules_core' => true,

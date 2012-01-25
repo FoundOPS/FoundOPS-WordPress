@@ -79,13 +79,13 @@ a#nav_employee:link, a#nav_employee:visited{
 }
 #navBox a.notactiveonlight:link, #navBox a.notactiveonlight:visited{
 	font-weight:normal;
-	color:#666;
+	color:#aaa;
 }
 #navBox li a.activeonlight:hover, #navBox li a.activeonlight:active, #navBox li a.activeonlight:focus{
 	text-decoration:none;
 }
 #navBox li a.notactiveonlight:hover, #navBox li a.notactiveonlight:active, #navBox li a.notactiveonlight:focus{
-    color:#999;
+    color:#666;
 	text-decoration:none;
 }
 .subHeader{
@@ -95,15 +95,20 @@ a#nav_employee:link, a#nav_employee:visited{
 	margin-bottom:40px;
 	background-color:#dedede;
 }
+#crm .subHeader, #dispatcher .subHeader{
+	padding-left:110px;
+}
 #vehicle .subHeader{
-	padding-left:140px;
+	padding-left:150px;
+}
+#templates .subHeader, #employee .subHeader, #integrations .subHeader{
+	padding-left:130px;
 }
 .subHeader h2{
-	font-size:20px;
+	font-size:26px;
 	margin-bottom:0px;
-	vertical-align:middle;
 }
-/*#crm .subHeader h2, #vehicle .subHeader h2{
+#crm .subHeader h2, #vehicle .subHeader h2{
 	color:#488FCD;
 }
 #dispatcher .subHeader h2, #mobile .subHeader h2{
@@ -114,11 +119,11 @@ a#nav_employee:link, a#nav_employee:visited{
 }
 #employee .subHeader h2{
 	color:#D9591E;
-}*/
+}
 #crm div.image, div.image{
 	position:relative;
-	top:-35px;
-	left:-110px;
+	top:-50px;
+	left:-90px;
 	height:85px;
 	background-image:url("images/clients.png");
 	background-position:left;
@@ -129,9 +134,11 @@ a#nav_employee:link, a#nav_employee:visited{
 	background-image:url("images/dispatcher.png");
 }
 #templates div.image{
+	left:-110px;
 	background-image:url("images/services.png");
 }
 #employee div.image{
+	left:-110px;
 	background-image:url("images/employees.png");
 }
 #vehicle div.image{
@@ -139,9 +146,11 @@ a#nav_employee:link, a#nav_employee:visited{
 	background-image:url("images/vehicles.png");
 }
 #mobile div.image{
+	left:-100px;
 	background-image:url("images/phone.png");
 }
 #integrations div.image{
+	left:-110px;
 	background-image:url("images/Settings.png");
 }
 div.descRight, div.descLeft{
@@ -149,6 +158,7 @@ div.descRight, div.descLeft{
 	height:288px;
 	margin-bottom:-298px;
 	border:1px solid #333335;
+	background-image:url('images/crm1.png');
 }
 h2.descRight,h2.descLeft{
 	width:460px;
@@ -161,10 +171,13 @@ h2.descRight, p.descRight{
 }
 p.descLeft, p.descRight{
 	width:460px;
-	margin-bottom:190px;
+	margin-bottom:200px;
 }
 div.descLeft{
 	margin-left:480px;
+}
+p.descRight{
+	margin-bottom:230px;
 }
 #integrations p.descLeft{
 	margin-bottom:230px;
@@ -232,10 +245,32 @@ div.descLeft{
 	margin-bottom:10px;
 }
 #plans a{
-	border:2px outset #ccc;
-	padding:1px 5px 1px 5px;
-	color:#333335;
-	background-color:#efefef;
+	border:1px outset #666;
+	border-radius:0px;
+	padding:2px 7px 2px 7px;
+	color:#fff;
+	font-weight:bold;
+	background-color:#659A41; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#7DC244), to(#659A41)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #7DC244,  #659A41); /* for firefox 3.6+ */ 
+}
+#plan2 a{
+	font-size:17px;
+	background-color:#488FCD; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */ 
+}
+#plan3 a{
+	background-color:#D9591E; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ED941A', endColorstr='#D9591E'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ED941A), to(#D9591E)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #ED941A,  #D9591E); /* for firefox 3.6+ */ 
+}
+#plans a:hover{
+	text-decoration:none;
+	border:1px inset #999;
 }
 #plan1 .planTitle{
 	color:#659A41;
@@ -253,10 +288,6 @@ div.descLeft{
 	font-size:60px;
 	font-weight:600;
 }
-#plan2 a{
-	font-size:17px;
-	background-color:#fff;
-}
 #plan3 .planTitle{
 	color:#D9591E;
 }
@@ -265,10 +296,6 @@ div.descLeft{
 }
 #plan3 .planRate{
 	margin-bottom:17px;
-}
-#plans a:hover{
-	text-decoration:none;
-	border:2px inset #ccc;
 }
 /* --------------------- feature list -------------------- */
 .AccordionContainer{

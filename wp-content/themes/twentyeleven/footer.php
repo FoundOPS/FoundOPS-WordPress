@@ -22,38 +22,36 @@
         </tr>
     </table>
     <br />
-    <div><table id="bottomTable" class="tabs">
+    <div>
+    	<table id="bottomTable" class="tabs">
             <tr>
-                <td></td>
-                <td class="bigFooterText"> <a href="<?php echo $GLOBALS["blogLink"];?>/features" style="font-size:13px;">Features</a></td>
-                <td class="bigFooterText"> <a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs" style="font-size:13px;">About Us</a> </td>
+            	<td style="vertical-align:middle;"><div id="navLogo"><a style="line-height:50px;font-size:50px;" href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div></td>
+                <td style="vertical-align:top;">
+                	<table id="col1">
+                    	<tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/features" style="font-size:13px;">Features</a></td></tr>
+                        <tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/customers" style="font-size:13px;">Customers</a></td></tr>
+                        <tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/pricing" style="font-size:13px;">Pricing</a></td></tr>
+                        <tr><td class="bigFooterText"><a style="font-size:13px;" href="<?php echo $GLOBALS["blogLink"];?>">Blog</a></td></tr>
+                    </table>
+                </td>
+                <td style="vertical-align:top;">
+                	<table id="col2">
+                    	<tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs" style="font-size:13px;">About Us</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs">The Team</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#advisorsWrapper">Advisors</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#valuesWrapper">Our Values</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#jobsWrapper">Jobs</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#contactUsWrapper">Contact Us</a></td></tr>
+                    </table>
+                </td>
             </tr>
-            <tr>
-            	<td></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/customers">Customers</a> </td>
-                <td> <a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs">The Team</a></td>
-            </tr>
-            <tr>
-            	<td></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/pricing">Pricing</a></td>
-                <td> <a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#values">Our Values</a> </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#jobs">Jobs</a></td>
-            </tr>
-            <tr>
-            	<td rowspan="3"> <div id="navLogo"><a style="line-height:50px;font-size:50px;" href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div></td>
-                <td class="bigFooterText"><a style="position:relative; top:-10px; left:0px;font-size:13px;" href="<?php echo $GLOBALS["blogLink"];?>" style="font-size:13px;">Blog</a></td>
-                <td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#contactUs">Contact Us</a></td>
-            </tr>
-        </table></div>
-    <div style="font-size:12px">&copy;2012&nbsp;FOUNDOPS&nbsp;LLC</div><br/>
+        </table>
+    </div>
+    <div style="font-size:12px;">&copy;2012&nbsp;FOUNDOPS&nbsp;LLC</div><br/>
     <div id="site-generator">
-				<?php do_action( 'twentyeleven_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' ); ?></a>
-			</div>
+		<?php do_action( 'twentyeleven_credits' ); ?>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' ); ?></a>
+	</div>
 </div>
 </body>
 </html>

@@ -91,18 +91,10 @@ table td{
     clear: both;
 }
 #facebook,#linkedin, #twitter{
-	background-image:url('images/facebook.png');
-	background-repeat:no-repeat;
 	vertical-align:middle;
 }
-#linkedin{
-	background-image:url('images/linkedin.png');
-}
-#twitter{
-	background-image:url('images/twitter.png');
-}
 #footer{
-	height:225px;
+	height:235px;
     margin:0 auto;
 	min-width:1000px;
     color:#666;
@@ -116,14 +108,19 @@ table td{
     text-align:center;
     color:#333335;
     height:30px;
-	background-image:none;
+	background-image:url('images/footerlistBg.png');
+	background-repeat:no-repeat;
+	background-position:bottom;
 }
 #footerList tr{
 	width:auto;
 }
+#footer table{
+	border:none;
+}
 #footerList td{
 	position:relative;
-	top:7px;
+	top:2px;
 	height:20px;
 	width:34px;
 	padding:0px;
@@ -137,15 +134,11 @@ table td{
     left:-5px;
     margin:0 auto;
     text-align:center;
-    width:500px;
-    margin-bottom:20px;
+    width:400px;
 	line-height:7px;
 }
-#bottomTable, #bottomTable tr, #bottomTable td, #bottomTable li{
-    border:none;
-}
-#bottomTable td{
-	width:160px;
+#bottomTable table td{
+	width:100px;
 	text-align:center;
 }
 #bottomTable td a{
@@ -158,17 +151,19 @@ table td{
 #bottomTable a:link, #bottomTable a:visited{
     color:#333335;
 }
-.bigFooterText a
-{
-    font-size:15px;
+#bottomTable td{
+	border:none;
+}
+#col1 tr{
+	height:28px;
+}
+.bigFooterText a{
     font-weight:bold;
 }
 #navLogo{
     background-image:url('images/navLogo.png');
 	background-repeat:no-repeat;
 	font-size:34px;
-	margin-top:-50px;
-	margin-right:-52px;
 	margin-left:30px;
 	width:100px;
 }
@@ -582,17 +577,6 @@ article{
 .singular .image-attachment .entry-description {
 	margin: 0 auto;
 	width: 68.9%;
-}
-/* error404 */
-.error404 #primary {
-	float: none;
-	margin: 0;
-}
-.error404 #primary #content {
-	position:relative;
-	top:0px;
-	left:0px;
-	width: 700px;
 }
 /* Alignment */
 .alignleft {
@@ -1313,44 +1297,80 @@ blockquote.pull {
 	margin: 0 0 1.625em;
 	text-align: center;
 }
-/* error404----------------------------------------------- */
+/* --------------------- error404 -------------------------- */
+.error404 #primary{
+	min-height:500px;
+}
 .error404 #main #searchform {
-	background: #f9f9f9;
-	border: 1px solid #ddd;
 	border-width: 1px 0;
-	margin: 0 -8.9% 1.625em;
+	margin: 10px;
 	overflow: hidden;
-	padding: 1.625em 8.9%;
+	padding: 0px;
 	margin-left:0px;
 	width:700px;
+}
+.error404 #main #searchform .field{
+	border: 1px solid #aaa;
+	background-color:#fff;
 }
 .error404 #main #s {
 	position:relative;
 	top:0px;
 	left:00px;
 }
-.error404 .entry-header {
-	margin-left:0px;
-}
 .error404 #main .widget {
 	clear: none;
 	float: left;
-	margin-right: 3.7%;
-	width: 30.85%;
-}
-.error404 #main .widget_archive {
-	margin-right: 0;
-}
-.error404 #main .widget_tag_cloud {
-	float: none;
-	margin-right: 0;
-	width: 100%;
+	margin:10px;
+	margin-left:0px;
+	margin-right:20px;
+	min-width:300px;
+	min-height:140px;
 }
 .error404 .widgettitle {
-	font-size: 10px;
+	font-size: 12px;
 	letter-spacing: 0.1em;
-	line-height: 2.6em;
 	text-transform: uppercase;
+}
+.error404 article{
+	width:930px;
+	margin-left:120px;
+	border:none;
+	background:none;
+	margin-bottom:50px;
+}
+.error404 h1{
+	margin-top:10px;
+}
+.error404 header{
+	height:224px;
+	width:413px;
+	margin-left:130px;
+	margin-bottom:20px;
+	background-image:url('images/404.png');
+	background-repeat:no-repeat;
+}
+/* --------------------- Search -------------------------- */
+.search article{
+	width:650px;
+	padding:15px;
+}
+.search #primary{
+	margin-bottom:60px;
+}
+.search-results #primary{
+	position:relative;
+	top:0px;
+}
+.search-no-results #primary{
+	position:relative;
+	top:35px;
+}
+.search #searchform{
+	margin-top:10px;
+}
+.search #searchform input{
+	padding-left:3px;
 }
 /* Intro */
 article.intro {

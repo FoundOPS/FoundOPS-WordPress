@@ -1,16 +1,13 @@
 <?php ?>
 <!DOCTYPE html>
-<html>
+<html style="background:none;">
 <head runat="server">
     <title> </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="http://www.foundops.com/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="wp-includes/jquery-1.6.1.min.js" type="text/javascript"></script>
-    <style type="text/css">
-        html, body {background:none;}
-    </style>
 </head>
-<body>
+<body style="background:none;">
     <div id="blog">
         <h3>FoundOPS News</h3>
         <!-- Load RSS Through Google as JSON using jQuery -->

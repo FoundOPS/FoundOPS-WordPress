@@ -117,8 +117,6 @@ function wp_default_scripts( &$scripts ) {
 	// not used in core, replaced by Jcrop.js
 	$scripts->add( 'cropper', '/wp-includes/js/crop/cropper.js', array('scriptaculous-dragdrop'), '20070118');
 
-	$scripts->add( 'jquery', '/wp-includes/js/jquery/jquery.js', false, '1.7.1' );
-
 	// full jQuery UI
 	$scripts->add( 'jquery-ui-core', '/wp-includes/js/jquery/ui/jquery.ui.core.min.js', array('jquery'), '1.8.16', 1 );
 	$scripts->add( 'jquery-effects-core', '/wp-includes/js/jquery/ui/jquery.effects.core.min.js', array('jquery'), '1.8.16', 1 );
@@ -153,9 +151,6 @@ function wp_default_scripts( &$scripts ) {
 	$scripts->add( 'jquery-ui-sortable', '/wp-includes/js/jquery/ui/jquery.ui.sortable.min.js', array('jquery-ui-core', 'jquery-ui-mouse'), '1.8.16', 1 );
 	$scripts->add( 'jquery-ui-tabs', '/wp-includes/js/jquery/ui/jquery.ui.tabs.min.js', array('jquery-ui-core', 'jquery-ui-widget'), '1.8.16', 1 );
 	$scripts->add( 'jquery-ui-widget', '/wp-includes/js/jquery/ui/jquery.ui.widget.min.js', array('jquery'), '1.8.16', 1 );
-
-	// deprecated, not used in core, most functionality is included in jQuery 1.3
-	$scripts->add( 'jquery-form', "/wp-includes/js/jquery/jquery.form$suffix.js", array('jquery'), '2.73', 1 );
 
 	$scripts->add( 'jquery-color', "/wp-includes/js/jquery/jquery.color$suffix.js", array('jquery'), '2.0-4561m', 1 );
 	$scripts->add( 'suggest', "/wp-includes/js/jquery/suggest$suffix.js", array('jquery'), '1.1-20110113', 1 );
@@ -240,8 +235,6 @@ function wp_default_scripts( &$scripts ) {
 
 	$scripts->add( 'swfupload-handlers', "/wp-includes/js/swfupload/handlers$suffix.js", array('swfupload-all', 'jquery'), '2201-20110524');
 	$scripts->localize( 'swfupload-handlers', 'swfuploadL10n', $uploader_l10n );
-
-	$scripts->add( 'comment-reply', "/wp-includes/js/comment-reply$suffix.js", false, '20090102');
 
 	$scripts->add( 'json2', "/wp-includes/js/json2$suffix.js", false, '2011-02-23');
 
@@ -621,7 +614,7 @@ function _print_scripts() {
 	if ( !empty($wp_scripts->concat) ) {
 
 		if ( !empty($wp_scripts->print_code) ) {
-			echo "\n<script type='text/javascript'>\n";
+			echo "\n<script type='text/javascript' defer>\n";
 			echo "/* <![CDATA[ */\n"; // not needed in HTML 5
 			echo $wp_scripts->print_code;
 			echo "/* ]]> */\n";
