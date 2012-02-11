@@ -7,6 +7,19 @@ if ( 'content' != $current_layout ) :
 		<div id="secondary" class="widget-area" role="complementary">
         <?php if(is_author()){ ?>
         	<script type="text/javascript">
+				function whichBrs() {
+					var agt=navigator.userAgent.toLowerCase();
+					if (agt.indexOf("opera") != -1) return 'Opera';
+					if (agt.indexOf("chrome") != -1) return 'Chrome';
+					if (agt.indexOf("safari") != -1) return 'Safari';
+					if (agt.indexOf("msie") != -1) return 'Internet Explorer';
+					if (agt.indexOf('\/') != -1) {
+					if (agt.substr(0,agt.indexOf('\/')) != 'mozilla') {
+					return navigator.userAgent.substr(0,agt.indexOf('\/'));}
+					else return 'Netscape';} else if (agt.indexOf(' ') != -1)
+					return navigator.userAgent.substr(0,agt.indexOf(' '));
+					else return navigator.userAgent;
+				}
 				function $style(ElementId, CssProperty)
 				{
 					function $(stringId)
@@ -24,11 +37,17 @@ if ( 'content' != $current_layout ) :
 						return elementStyle.getPropertyValue(CssProperty);
 					}
 				}
-			
             	var sec = document.getElementById('secondary');
-				var abc = $style('author-info', "height");
-				sec.style.top = abc;
+				var info = document.getElementById('author-info');
+				var space = $style('author-info', "height");
+				sec.style.top = space;
 				sec.style.marginTop = "67px";
+				var browserName = whichBrs();
+				if (browserName == "Internet Explorer"){
+					sec.style.top = window.getComputedStyle(info,"").getPropertyValue("height");
+				}else if (browserName == "Opera" || browserName == "Chrome" || browserName == "Safari"){
+					sec.style.top = getComputedStyle(info, null).height;
+				}
             </script>
         <?php } ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>

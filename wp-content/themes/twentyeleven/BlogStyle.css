@@ -237,7 +237,10 @@ table td{
 	color:#fff;
 }
 .hoverBlue:hover, .hoverRed:hover, .hoverGreen:hover{
-	background:#488FCD;
+	background-color:#488FCD; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */ 
 	color:#fff;
 	-moz-transition:background-color 0.1s ease;
 	-o-transition:background-color 0.1s ease;
@@ -245,10 +248,16 @@ table td{
 	-ms-transition:background-color 0.1s ease;
 }
 .hoverRed:hover{
-	background:#991A36;
+	background-color:#991A36; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#D91A26), to(#991A36)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #D91A26,  #991A36); /* for firefox 3.6+ */
 }
 .hoverGreen:hover{
-	background:#659A41;
+	background-color:#659A41; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#7DC244), to(#659A41)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #7DC244,  #659A41); /* for firefox 3.6+ */
 }
 .hoverBlue, .hoverRed, .hoverGreen{
 	-moz-transition:background-color 0.4s ease;
@@ -266,7 +275,10 @@ table td{
 }
 .hoverOrange{
 	font-weight:600;
-	background:#D9591E;
+	background-color:#D9591E; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ED941A', endColorstr='#D9591E'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ED941A), to(#D9591E)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #ED941A,  #D9591E); /* for firefox 3.6+ */ 
 }
 #nav .hoverOrange a{
 	color:#fff;
@@ -275,22 +287,40 @@ table td{
 	color:#333335;
 }
 .home #blogNav, .archive #blogNav, .single-post #blogNav{
-	background:#488FCD;
+	background-color:#488FCD; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */ 
 }
 .page-id-624 #home{
-	background:#659A41;
+	background-color:#659A41; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#7DC244), to(#659A41)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #7DC244,  #659A41); /* for firefox 3.6+ */
 }
 .page-id-21 #aboutUsNav{
-	background:#991A36;
+	background-color:#991A36; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#D91A26), to(#991A36)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #D91A26,  #991A36); /* for firefox 3.6+ */ 
 }
 .page-id-303 #pricingNav{
-	background:#659A41;
+	background-color:#659A41; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#7DC244), to(#659A41)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #7DC244,  #659A41); /* for firefox 3.6+ */
 }
 .page-id-153 #featuresNav{
-	background:#991a36;
+	background-color:#991A36; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#D91A26), to(#991A36)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #D91A26,  #991A36); /* for firefox 3.6+ */ 
 }
 .page-id-69 #customersNav{
-	background:#488fcd;
+	background-color:#488FCD; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */ 
 }
 .home #blogNav a, .archive #blogNav a, .single-post #blogNav a, .page-id-21 #aboutUsNav a, 
 .page-id-303 #pricingNav a, .page-id-153 #featuresNav a, .page-id-69 #customersNav a, .page-id-624 #home a{
@@ -1393,7 +1423,7 @@ article.intro .edit-link a {
 	font-size: 12px;
 	padding: 0 8px;
 	position: absolute;
-	top: 0px;
+	top: 10px;
 	right: 0px;
 	text-decoration: none;
 }

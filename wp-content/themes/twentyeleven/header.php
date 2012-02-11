@@ -22,69 +22,33 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
 <link rel="shortcut icon" href="wp-includes/images/favicon.ico" />
 <title></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<title>FoundOPS - Field Service Management</title>
-<meta name="description" content="Manage your field service company with GPS technician tracking, drag & drop dispatching, 
-    and intuitive customer management in one easy-to-use system." />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
 <meta name="google-site-verification" content="gMZQUTO8tOdyGEtehqnkS-fgjy5eMu5UHLKPL_cjn48" />
+<meta name="keywords" content="Field Service GPS Tracking Dispatch Operations Software Mobile Application 
+Route Vehicles FoundOPS	Cloud Solution Efficiency SaaS Lean Customer Management Technology Integration" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/BlogStyle.css" />
 <?php if(is_home() || is_single() || is_author() || is_archive()){ ?>
-<meta name="keywords" content="FoundOPS, dis-patch, SaaS, service management, field service management, service dispatching, technician dispatch" />
+<meta name="description" content="Follow the FoundOPS Blog to learn more about Lean Customer Management, Operations Software, and Cloud-Based Software Solutions" />
 <?php }else{ ?>
-<meta name="keywords" content="Field Service GPS Tracking Dispatch Operations Software Mobile Application Route Vehicles FoundOPS
-	Cloud Solution Efficiency SaaS Lean Customer Management Technology Integration" />
-<?php if(is_page(624)){ ?>
-	<script type="text/javascript" src="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/js/jquery.easing.1.3.min.js" defer></script>
-    <script type="text/javascript" src="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/js/jquery.wt-rotator.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/home.css" />
-    <script type="text/javascript" src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" defer></script>
-    <script type="text/javascript" defer>
-        $(document).ready(function () {
-            $(".container").wtRotator({
-                width: 1000,
-                height: 450,
-                cpanel_align: "BC",
-                mouseover_pause: true,
-                transition: "h.slide"
-            });
-        });
-        $(function () {
-            $("#SubmitBtn").click(function () {
-                var checkedA = $("#group_1").attr("checked");
-                var checkedB = $("#group_2").attr("checked");
-                if (checkedA) {
-                    window.trackEvent("Form Signup", "Signed Up", "Subscribe to FoundOPS", 1);
-                } else if (checkedB) {
-                    window.trackEvent("Form Signup", "Signed Up", "Beta Program", 1);
-                } else { }
-            });
-        });
-    </script>
-<?php } ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.css" />
-<?php if(is_page(21)){ ?>
+<?php } if(is_page(21)){ ?><!-- About Us -->
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/aboutstyle.css" />
-<?php }} ?>
+<meta name="description" content="Discover the FoundOPS Team, Advisors, and Core Values" />
+<?php }else if(is_page(624)) { ?><!-- Home -->
+<style type="text/css">
+html{background-image: url('wp-content/themes/twentyeleven/images/homeBg.png');}
+</style>
+<meta name="description" content="Manage your Field Service Company with GPS Technician Tracking, Drag & Drop Dispatching, and Intuitive Customer Management in one easy-to-use system." />
+<?php }else if(is_page(153)) { ?><!-- Features -->
+<meta name="description" content="We offer features such as GPS Tracking, QuickBooks Integration, and Automatic Service Generation, just to name a few" />
+<?php }else if(is_page(303)) { ?><!-- Pricing -->
+<meta name="description" content="FoundOPS is setting the new standard for Affordable Small Business Operations Software" />
+<?php }else if(is_page(69)) { ?><!-- Customers -->
+<meta name="description" content="We customize Operations Software for many different Field Service Industries" />
+<?php } ?>
 <link rel="apple-touch-icon" href="<?php echo $GLOBALS["foundopsLink"]; ?>/Content/TouchIcon.png" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!-- <script type="text/javascript">
-	$(document).ready(function(){
-		var frame = document.getElementById("myFrame");
-		if(frame.src == "")
-		{
-			hide();
-		}
-		if(!(frame.onload)){
-			document.getElementById("myFrame").style.visibility = "hidden";
-		}
-		frame.error= function () {
-			document.getElementById("myFrame").style.visibility = "hidden";
-		}
-	});
-	function hide(){
-		document.getElementById("myFrame").style.visibility = "hidden";
-	}
-</script> -->
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-25857232-1']);
@@ -120,7 +84,7 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
 <div id="container">
     <div id="page" class="hfeed">
     	<div id="top">
-            <div id="SiteLogo"><a href="<?php echo $GLOBALS["foundopsLink"];?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+            <div id="SiteLogo"><a href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
             <iframe id="myFrame" src="<?php echo $GLOBALS["foundopsLink"];?>/Account/BlogLogin" width="500px" height="70" frameborder="2" scrolling="no"></iframe>
             <div id="nav">
                 <ul>
