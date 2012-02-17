@@ -130,25 +130,31 @@ p{
 #authorlist{
 	position:relative;
 	top:15px;
-	left:85px;
+	left:121px;
 	z-index:1000;
 }
 #authorlist li{
 	float: left;
-	margin: 0 0 10px 72px;
+	margin:0px;
+	margin-bottom:-1px;
+	margin-right:-1px;
+	padding: 36px 36px 0px 36px;
 	list-style:none;
 	max-width:204px;
+	border:1px solid #aaa;
+	background-color:#fff;
 }	
 .entry_author_image{
 	width: 200px;
 	height: 200px;
-	border:1px solid #999;
 }
 .info{
-	height:40px;
+	height:20px;
 	padding:10px;
+	padding-bottom:0px;
 	text-align:center;
 	visibility:collapse;
+	margin-bottom:10px;
 }
 .info a{
 	font-size:16px;

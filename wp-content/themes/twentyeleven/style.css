@@ -88,15 +88,16 @@ a#nav_employee:link, a#nav_employee:visited{
     color:#666;
 	text-decoration:none;
 }
-.subHeader{
+#features .subHeader{
 	position:relative;
 	top:40px;
 	font-size:20px;
 	padding:10px;
 	padding-left:120px;
+	padding-bottom:0px;
 	margin-top:-40px;
 	margin-bottom:80px;
-	background-color:#dedede;
+	border-bottom:1px solid #333335;
 }
 #crm .subHeader, #dispatcher .subHeader{
 	padding-left:110px;
@@ -108,7 +109,7 @@ a#nav_employee:link, a#nav_employee:visited{
 	padding-left:130px;
 }
 .subHeader h2{
-	font-size:26px;
+	font-size:28px;
 	margin-bottom:0px;
 }
 #crm .subHeader h2, #vehicle .subHeader h2{
@@ -123,6 +124,10 @@ a#nav_employee:link, a#nav_employee:visited{
 #employee .subHeader h2{
 	color:#D9591E;
 }
+/*#crm .subHeader h2, #dispatcher .subHeader h2, #templates .subHeader h2, #vehicle .subHeader h2, 
+#employee .subHeader h2, #integrations .subHeader h2, #mobile .subHeader h2{
+	color:#444;
+}*/
 #crm div.image, div.image{
 	position:relative;
 	top:-50px;
@@ -168,18 +173,19 @@ div.descRight, div.descLeft{
 }
 h2.descRight,h2.descLeft{
 	width:460px;
-	font-size:20px;
-	font-weight:bold;
-	color:#333335;
+	font-size:17px;
+	font-weight:600;
 	margin-bottom:10px;
-}
-h2.descRight, p.descRight{
-	margin-left:370px;
+	line-height:28px;
 }
 p.descLeft, p.descRight{
 	width:460px;
 	height:310px;
 	font-size:15px;
+}
+h2.descRight, p.descRight{
+	margin-left:375px;
+	width:455px;
 }
 div.descLeft{
 	margin-left:480px;
@@ -206,6 +212,9 @@ div.descLeft{
 	border:none;
 	margin-bottom:80px;
 }
+#plans a:focus, #plans a:active, #plans a:hover { 
+text-decoration: none;
+ }
 #plans ul{
 	margin:0px;
 }
@@ -403,9 +412,18 @@ span.tip {
     width: 900px;
     margin-bottom:210px;
 }
-#banner {
+#banner{
     position: relative;
 	top:12px;
+}
+#bannerText{
+	position:absolute;
+	top:270px;
+	left:20px;
+}
+#bannerText p{
+	font-size:25px;
+	font-weight:bold;
 }
 ul.tabs.homeTab{
     position: relative;
@@ -485,7 +503,7 @@ div#title{
 #buttonBar li a.linkOne{
 	margin-left:0px;
 }
-#buttonBar li a:hover{
+#buttonBar li a:hover, #buttonBar li a:focus{
 	text-decoration:none;
 }
 #ribbonSlider{
@@ -537,7 +555,7 @@ div#title{
 	font-size:22px;
 	font-weight:bold;
 }
-#two p{
+#two p.subHeader{
 	text-align:center;
 }
 #one img, #two img, #three img{
@@ -570,7 +588,8 @@ div#title{
 	left:300px;
 }
 #two div{
-	width:450px;
+	left:200px;
+	width:600px;
 }
 #linkOne.unselected{
 	background-image:url('images/OneDark.png');
@@ -678,48 +697,101 @@ div#title{
     outline: none;
 }
 /* ---------- CUSTOMERS PAGE------------ */
+#customer h1{
+	font-weight:600;
+	color:#659A41;
+	text-align:center;
+	margin-bottom:30px;
+}
 #customer #banner{
 	position:relative;
 	top:0px;
 	left:0px;
-	width:610px;
+	width:620px;
 	height:300px;
 	padding:15px;
-	margin-bottom:30px;
-	border:1px solid #333335;
+	margin-bottom:40px;
+	border:1px solid #aaa;
+	background-color:#fff;
 }
 #customer #banner img{
 	width:300px;
 	height:300px;
 	margin-bottom:-270px;
-	border:1px solid #333335;
 }
-#customer #banner div{
+#customer #bannerContent{
 	position:relative;
 	top:-38px;
 	left:320px;
+	width:300px;
+}
+#customer #bannerContent p{
+	font-size:18px;
+}
+#customer #bannerContent #links{
+	position:absolute;
+	top:280px;
+	left:5px;
 	width:280px;
+	font-weight:bold;
+}
+a#freeTrialLink, a#featureTourLink{
+	border:1px outset #666;
+	border-radius:0px;
+	padding:2px 7px 3px 7px;
+	margin-right:20px;
+	color:#fff;
+	font-weight:bold;
+	background-color:#D9591E; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ED941A', endColorstr='#D9591E'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ED941A), to(#D9591E)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #ED941A,  #D9591E); /* for firefox 3.6+ */
+}
+a#featureTourLink{
+	margin-right:0px;
+	margin-left:35px;
+	background-color:#991A36; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#D91A26), to(#991A36)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #D91A26,  #991A36); /* for firefox 3.6+ */
+}
+a#freeTrialLink:hover, a#featureTourLink:hover{
+	border:1px inset #666;
+}
+#customer #bannerContent #links a:hover{
+	text-decoration:none;
+}
+#featureTourLink{
+	position:relative;
+	top:-22px;
+	left:100px;
 }
 #customer #form{
 	position:absolute;
-	top:98px;
+	top:104px;
 	left:730px;
 	width:230px;
-	height:400px;
+	height:300px;
 	padding:15px;
-	border:1px solid #333335;
+	border:1px solid #aaa;
+	background-color:#fff;
 }
 #whitePaper{
 	position:relative;
-	top:100px;
-	left:674px;
+	top:0px;
+	left:764px;
 	width:260px;
 	height:150px;
 	margin-bottom:-150px;
-	border:1px solid #333335;
 }
 #whitePaper img{
-	border:1px solid #333335;
+}
+a#whitePaperLink{
+	color:#333335;
+	font-weight:bold;
+}
+a#whitePaperLink:hover{
+	text-decoration:none;
 }
 #customer #bottomContent{
 	position:relative;
@@ -727,29 +799,66 @@ div#title{
 	left:0px;
 	width:640px;
 }
+#customer #bottomContent ul{
+	list-style:disc;
+}
+#customer #bottomContent li{
+	font-size:15px;
+}
+#customer #bottomContent p{
+	font-size:18px;
+	font-weight:600;
+}
+#customer #bottomContent p.quote{
+	font-size:15px;
+	font-weight:normal;
+}
+#bottomContent hr{
+	height:1px;
+	width:500px;
+	margin-top:-10px;
+	margin-bottom:30px;
+	border:none;
+	border-width:0px;
+	background-color:#991A36;
+}
 #content1, #content2, #content3{
 	width:100%;
 	height:200px;
-	margin-bottom:30px;
+}
+#content2{
+	margin-bottom:0px;
 }
 #content1 img, #content2 img, #content3 img{
 	width:170px;
 	height:170px;
-	margin-bottom:-140px;
-	border:1px solid #333335;
+	margin-bottom:-147px;
 }
 #content1 div, #content3 div{
 	position:relative;
 	top:-38px;
-	left:185px;
+	left:195px;
 	width:455px;
 }
+#content1 div{
+	left:155px;
+	width:495px;
+}
+#content1 img{
+	width:120px;
+	height:152px;
+	margin-bottom:-120px;
+}
 #content2 img{
-	position:relative;
-	top:0px;
+	position:absolute;
+	top:230px;
 	left:470px;
+	width:140px;
+	height:140px;
 	margin:0px;
-	border:1px solid #333335;
+}
+#content3 img{
+	border:1px solid #aaa;
 }
 #content2 div{
 	position:relative;
@@ -758,3 +867,144 @@ div#title{
 	width:455px;
 	margin-bottom:-45px;
 }
+/********************* Begin Customer MainlChimp ***********************/
+#subscribeFormWelcome span{
+	font-size:15px;
+	line-height:20px;
+}
+#subscribeFormWelcome{
+	text-align:center;
+	margin-bottom:20px;
+}
+#form label{
+	float:none;
+	clear:both;
+	display:block;
+	width:auto;
+	margin-top:8px;
+	text-align:left;
+	position:relative;
+}
+#form .field-group{
+	float:none;
+	margin:0px 0 5px 0;
+}
+#form .field-group input{
+	display:block;
+	margin:0;
+	padding:2px;
+	border:1px solid #aaa;
+	background-color:#efefef;
+	width:98%;
+}
+#form .error,.errorText{
+	margin:5px 0 0 0;
+	padding:5px 10px;
+}
+#form .formstatus{
+	margin-bottom:10px;
+}
+#form .alert{
+	background:#e4f3d4;
+	border:2px solid #5ca000;
+	font-size:14px;
+	color:#5ca000;
+	margin:10px 0;
+	padding:10px;
+}
+#form .alert a{
+	color:#5ca000;
+	text-decoration:underline;
+}
+#form .phonefield-us{
+	padding:0px;
+	height:32px !important;
+}
+#form .phonefield-us input{
+	display:inline;
+	width:40px;
+	letter-spacing:1px;
+	text-align:center;
+}
+.phonefield-us .phonearea input,#form .phonefield-us .phonedetail1 input{
+	width:40px;
+}
+.phonearea, .phonedetail1, .phonedetail2{
+	position:relative;
+	top:-22px;
+	left:0px;
+}
+.phonedetail1{
+	top:-50px;
+	left:51px;
+}
+.phonedetail2{
+	top:-78px;
+	left:102px;
+}
+#form .phonefield-us label{
+	display:none;
+}
+#form .button{
+	border:1px outset #666;
+	padding:1px 7px 1px 5px;
+	margin-left:1px;
+	margin-top:7px;
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+	cursor:pointer;
+	background-color:#488FCD; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */
+}
+#form .button:hover{
+	border:1px inset #666;
+}
+#form span.or{
+	display:inline-block;
+	height:32px;
+	line-height:32px;
+	padding:0 5px;
+	margin:5px 5px 0 0;
+}
+#form .clear{
+	clear:both;
+}
+#form .bodyContent{
+	line-height:150%;
+	font-family:Helvetica;
+	font-size:12px;
+	color:#333333;
+	padding:20px;
+}
+#form a:link,#form a:active,#form a:visited,#form a{
+	color:#336699;
+}
+#form .button:link,#form .button:active,#form .button:visited,#form .button,#form .button span{
+	background-color:#336699;
+	color:#ffffff;
+}
+#form .button:hover{
+	background-color:#1e5781;
+	color:#ffffff;
+}
+#form label{
+	font-size:14px;
+	color:#333333;
+}
+#form .field-group input{
+	font-size:14px;
+	color:#333333;
+}
+#form .field-help{
+	background-color:#dcdcdc;
+	color:#000;
+}
+#form .error,#form .errorText{
+	font-size:12px;
+	color:#6b0505;
+	background-color:#f4bfbf;
+}
+/************* End Customer MainlChimp***************/
