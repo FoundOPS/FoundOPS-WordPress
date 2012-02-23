@@ -138,11 +138,9 @@ p{
 	margin:0px;
 	margin-bottom:-1px;
 	margin-right:-1px;
-	padding: 36px 36px 0px 36px;
+	padding: 0px 0px 20px 56px;
 	list-style:none;
 	max-width:204px;
-	border:1px solid #aaa;
-	background-color:#fff;
 }	
 .entry_author_image{
 	width: 200px;
@@ -211,7 +209,7 @@ p{
 	margin-top:-40px;
 }
 #advisor3Pic{
-	background-image:url('images/Eric.png');
+	background-image:url('images/Chris.png');
 }
 .advisorDesc, .advisorDesc2{
 	width:580px;
@@ -225,6 +223,9 @@ p{
 .wrapLeft{
 	margin-left:-220px;
 	width:800px;
+}
+.stretch{
+	letter-spacing:1px;
 }
 /* ----------- Values ---------- */
 #values{
@@ -333,45 +334,57 @@ p{
 	text-align:justify;
 }
 #jobsText a:link{
-	color:#fff;
+	color:#488FCD;
 }
 #jobsText a:hover{
 	text-decoration:none;
-	color:#ccc;
 }
 /* ---------- Contact Page ---------- */
 #contactUs{
 	position:relative;
 	top:0px;
 	left:120px;
+	margin-bottom:-80px;
 }
 #info{
     position: relative;
     top: 40px;
-    left: -4px;
+    left: 36px;
     font-size: 14px;
     font-family: Verdana;
     color: #333335;
+	z-index:200;
     width: 300px;
+}
+#info strong{
+	text-decoration:underline;
+	font-size:15px;
 }
 #info a:link, #info a:visited{
     color: #333335;
     text-decoration: none;
+	font-size:15px;
 }
 #info a:focus, #info a:hover, #info a:active{
     color: #666;
     outline: none;
 }
+#info a.blueLink:link, #info a.blueLink:visited{
+	color:#488FCD;
+}
+#info a.blueLink:hover{
+	color:#36C3E3;
+}
 #map{
     position: relative;
-    top: -200px;
+    top: -370px;
     left: 525px;
 	width:320px;
 	height:320px;
     border:1px solid #000;
 	padding:0px;
     margin-bottom: -95px;
-	background-image:url('images/Map.png');
+	z-index:1000;
 }
 #findUs, #followUs, #viewProfile{
     position: relative;

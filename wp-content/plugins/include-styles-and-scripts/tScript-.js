@@ -832,6 +832,7 @@ function moveLink(){
 	//linkOne.animate({top:5}, 0);
 	contentOne.show();
 }
+/* Not Used */
 
 /*function animateColor(elm, begin, end, duration, fps) {
 
