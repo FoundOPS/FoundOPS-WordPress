@@ -1,0 +1,90 @@
+<div><h1 id="pricingTitle">&nbsp;</h1></div>
+<div id="plans">
+<div id="plan2">
+<ul class="planSublist">
+<li class="planTitle">Squad</li>
+<li class="planDesc">Professional Duty</li>
+<li class="planPrice">$50</li>
+<li class="planRate">Per Truck/Month</li>
+<li><a href="http://eepurl.com/g912g">Free Trial</a></li>
+</ul>
+</div>
+<div id="plan3">
+<ul class="planSublist">
+<li class="planTitle">Platoon</li>
+<li class="planDesc">For the Enterprise</li>
+<li class="planPrice" style="font-size:18px;margin-top:7px;margin-left:5px;width:120px;">*Contact Us For Pricing</li>
+<li class="planRate">&nbsp;</li>
+<li><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#contactUsWrapper">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div id="AccordionContainer" class="AccordionContainer">
+<div style="background-color:#fff;">
+	<div class="AccordionTitle">
+    	<ul><li class="column1">Office Accounts</li><li class="column3">Unlimited</li><li class="column4">Unlimited</li></ul></div></div>
+<div>
+	<div class="AccordionTitle">
+    	<ul><li class="column1">Max File Storage</li><li class="column3">10 Gb, optional $2/Gb</li><li class="column4">Unlimited</li></ul></div></div>
+<div>
+	<div id="header" class="AccordionTitle" onselectstart="return false;">
+    	<ul><li class="column1">Features</li><li></li><li></li></ul></div></div>
+<div class="even">
+    <div class="AccordionTitle">
+        <ul><li class="column1"><span class="tip" onMouseOver="tooltip('Leave the filing cabinets and inefficient paperwork behind - now access all customer data (contact, location, and service history information) from anywhere at any time.');" onMouseOut="exit();">Client Management</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>     
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Your employees will be able to view and input service data into your system while they are out in the field and on the job ensuring the most accurate and timely management of your company records.');" onMouseOut="exit();">Client Service History</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Be able to view any and all past, present, or future service occurrences for repeat customers with whom you have a contract.');" onMouseOut="exit();">Recurring Services</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Know exactly where you have been and where you are going - import all serviced locations into a database for the ability to analyze each customer and route.');" onMouseOut="exit();">Location Management</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('The power to evaluate which regions are most profitable for your business is now yours.');" onMouseOut="exit();">Custom Regions</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Add vehicles and employees to routes and track their progress on the map or the schedule.  Also assign administrative tasks to drivers including maintenance and breaks.');" onMouseOut="exit();">Drag & Drop Dispatching</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Save gas, mileage,  and time by calculating the most efficient routes for your dispatchers and your vehicles.');" onMouseOut="exit();">Routing Algorithm</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Keep track of each client, route, and vehicle your employees interact with and ensure you know what goes on in the field.');" onMouseOut="exit();">Employee Route Log</span></li><li class="column3"><div class="check2"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Employee Records have never been so easy. Paperwork, tax documents, incident reports, etc. are easy to access, review, and update.');" onMouseOut="exit();">Employee Records</span></li><li class="column3"><div class="check2"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Watch over your trucks by recording their daily routing information.');" onMouseOut="exit();">Vehicle Route Log</span></li><li class="column3"><div class="check2"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Your vehicles are too big of an investment to ignore. Stay current with permits, certifications, and licences, and detailed maintenance history all in one place to increase the lifetime and resale value of your trucks.');" onMouseOut="exit();">Vehicle Maintenance Log</span></li><li class="column3"><div class="check2"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Connect your Quickbooks account to the FoundOPS software to effortlessly maintain current accounting and invoicing.');" onMouseOut="exit();">QuickBooks Automation</span></li><li class="column3"><div class="asterisk2"></div></li><li class="column4"><div class="asterisk"></div></li></ul></div></div>
+<div>
+	<div id="header" class="AccordionTitle">
+    	<ul><li class="column1">Mobile Application</li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Know where your trucks go. Keep your vehicles on the road and your business running smoothly by following the live progression of your drivers.');" onMouseOut="exit();">GPS Tracking</span></li><li class="column3"><div class="asterisk"></div></li><li class="column4"><div class="asterisk"></div></li></ul></div></div>
+<div>
+	<div id="header" class="AccordionTitle">
+    	<ul><li class="column1">Support</li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Whenever you have a question about a feature or need help with a problem with the system- get help from other users for a quick solution which allows you to keep working.');" onMouseOut="exit();">Help Forums</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Have the ability to recommend a new product feature which would work for your business and businesses like yours. Our end goal is to makes your operations software seem custom fit.');" onMouseOut="exit();">Feature Suggest</span></li><li class="column3"><div class="check"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="even">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Face a bigger problem?  One of the benefits of working with a small company is the ability to receive direct support from the product development team, themselves.');" onMouseOut="exit();">Incident Support</span></li><li class="column3">Unlimited</li><li class="column4">Unlimited</li></ul></div></div>
+<div class="odd">
+	<div class="AccordionTitle">
+    	<ul><li class="column1"><span class="tip" onMouseOver="tooltip('Your business just cannot stop on a dime and neither can the software you use. We understand you need the ability to directly call the FoundOPS team to get quick results.');" onMouseOut="exit();">Phone Support</span></li><li class="column3"><div class="check2"></div></li><li class="column4"><div class="check"></div></li></ul></div></div>
+<div class="asterisk" id="key"></div><p id="keyText"> - &nbsp; Coming Q2 2012</p>
+</div>

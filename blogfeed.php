@@ -23,7 +23,7 @@
 				var s = str.substr(0, 180);
 				var words = s.split(' ');
 				words[words.length-1] = '';
-				str = words.join(' ') + '... <i><a style="color:#488FCD;font-size:14px;font-style:normal;" href="' + Link + '" target="_parent">Read More</a></i>';
+				str = words.join(' ') + '<i>... <a style="color:#488FCD;font-size:14px;font-style:normal;" href="' + Link + '" target="_parent">Read More</a></i>';
 				}
 				str = str.replace("<strong>", "");
 				str = str.replace("</strong>", "");
@@ -53,15 +53,15 @@
 				var description3 = constrain(article3.content, link3);
 			
 				//Build formatted feed
-				var html  =  '<div id="post1"><a href="'+ link1 +'" target="_parent"><b style="font-size:16px;">' + title1 + '</b></a><br/>';
+				var html  =  '<div id="post1"><a style="font-size:17px;" href="'+ link1 +'" target="_parent">' + title1 + '</a><br/>';
 				html += date1 + '<br/>';
 				html += description1 + '</p></div>';
 				
-				html += '<br/><div id="post2"><a href="'+ link2 +'" target="_parent"><b style="font-size:16px;">' + title2 + '</b></a><br/>';
+				html += '<br/><div id="post2"><a style="font-size:17px;" href="'+ link2 +'" target="_parent">' + title2 + '</a><br/>';
 				html += date2 + '<br/>';
 				html += description2 + '</p></div>';
 				
-				html += '<br/><div id="post3"><a href="'+ link3 +'" target="_parent"><b style="font-size:16px;">' + title3 + '</b></a><br/>';
+				html += '<br/><div id="post3"><a style="font-size:17px;" href="'+ link3 +'" target="_parent">' + title3 + '</a><br/>';
 				html += date3 + '<br/>';
 				html += description3 + '</p></div>';
 			

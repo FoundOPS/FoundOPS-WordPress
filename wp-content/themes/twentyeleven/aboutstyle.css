@@ -130,7 +130,7 @@ p{
 #authorlist{
 	position:relative;
 	top:15px;
-	left:121px;
+	left:103px;
 	z-index:1000;
 }
 #authorlist li{
@@ -294,12 +294,6 @@ p{
 	width: 810px;
 	text-align:justify;
 }
-#AccessabilityDesc1 .bigText{
-	margin-left:455px;
-}
-#IntegrityDesc .bigText{
-	margin-left:505px;
-}
 #AccessabilityDesc1 ul li, #AccessabilityDesc2 ul li{
 	margin-left:0px;
 }
@@ -361,7 +355,6 @@ p{
 	font-size:15px;
 }
 #info a:link, #info a:visited{
-    color: #333335;
     text-decoration: none;
 	font-size:15px;
 }
@@ -373,7 +366,7 @@ p{
 	color:#488FCD;
 }
 #info a.blueLink:hover{
-	color:#36C3E3;
+	color:#666;
 }
 #map{
     position: relative;

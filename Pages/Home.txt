@@ -1,0 +1,56 @@
+<div id="ourHome" onload="moveLink()">
+        <div id="banner">
+              <img src="wp-content/themes/twentyeleven/images/Banner.png" alt="Consumer Grade Design" />
+<div id="bannerText"><p>THE EASIEST AND</p><p> MOST EFFICIENT</p><p> WAY TO RUN A</p><p> FIELD SERVICE COMPANY</p></div>
+        </div>
+<img id="navRibbons" src="wp-content/themes/twentyeleven/images/navRibbons.png" alt="" />
+        <div id="navBoxHome">
+            <ul class="tabs">
+                <li class="home"><a id="tab1" href="http://eepurl.com/g912g">Start Your Free Trial</a></li>
+                <li class="home"><a href="<?php echo $GLOBALS["blogLink"]; ?>/features">Take a Tour</a></li>
+            </ul>
+        </div>
+<ul id="buttonBar">
+<li><a id="linkOne" class="selected" href="#one" onclick="ribbonClick(1)" style="position:relative;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+<li><a id="linkTwo" class="unselected" href="#two" onclick="ribbonClick(2)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+<li><a id="linkThree" class="unselected" href="#three" onclick="ribbonClick(3)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li></ul>
+<div id="ribbonSlider"><img src="wp-content/themes/twentyeleven/images/ribbon.png" alt="" /></div>
+<div id="content-slider">  
+    <ul id="content-slider-inside">  
+        <li id="one"><img src="wp-content/themes/twentyeleven/images/clock.png" alt="Clock" /><div><p class="subHeader">If It Takes You More Than:</p>
+<p>1 &nbsp;&nbsp;&nbsp;Minute to Track Down a Field Technician</p>
+<p>5 &nbsp;&nbsp;&nbsp;Minutes to Set Up Your Routes for the Day</p>
+<p>15 &nbsp;Minutes to Send Out Your Invoices for the Week</p>
+<p><a href="<?php echo $GLOBALS["blogLink"]; ?>/features">Then FoundOPS Can Save You Time</a></p></div></li>  
+        <li id="two"><img src="wp-content/themes/twentyeleven/images/bulb.png" alt="Light Bulb" /><div><p class="subHeader">The Logistical Tools of the Big Guys, <br /> Now Available for your Business</p>
+<p>&#8226;<a href="<?php echo $GLOBALS["blogLink"]; ?>/features#integrations">Advanced Routing Algorithm</a></p>
+<p>&#8226;<a href="<?php echo $GLOBALS["blogLink"]; ?>/features#dispatcher">Dispatcher Cconsole</a></p>
+<p>&#8226;<a href="<?php echo $GLOBALS["blogLink"]; ?>/features">CRM</a></p></div></li>  
+        <li id="three"><img src="wp-content/themes/twentyeleven/images/cookieCutters.png" alt="Cookie Cutter" /><div><p class="subHeader">You're Not A Cookie Cutter Business, Why Use<br /> Cookie Cutter Operations Software?</p>
+<p>Customize FoundOPS around the way your business runs, not the other</p> <p>way around, using
+<a href="<?php echo $GLOBALS["blogLink"]; ?>/features#templates" >Custom Built Service Templates</a></p></div></li> 
+    </ul>  
+</div>
+        <div id="bottom">
+            <div id="verticalLine"></div>
+            <div id="tweetNotify">
+<script type="text/javascript" src="/wp-content/plugins/include-styles-and-scripts/tScript-.js"></script>
+<script type="text/javascript">
+getTwitters('tweet', {
+                        id: 'FoundOPS',
+                        count: 3,
+                        enableLinks: true,
+                        ignoreReplies: true,
+                        clearContents: true,
+                        template: '"%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
+                    });
+</script>
+                <div id="twitterFeed">
+                    <h3><a href="http://twitter.com/#!/FoundOPS"><img src="wp-content/themes/twentyeleven/images/twitter2.png" border="0" alt="FoundOPS Twitter" /></a>Recent Tweets</h3>
+                    <div id="tweet"></div>
+                </div>
+            </div>
+<a id="compass" href="<?php echo $GLOBALS["blogLink"]; ?>"><img width="300px" height="65px" src="wp-content/themes/twentyeleven/images/BlogFeedHeader.png" alt="The Compass"/><span></span></a>
+            <iframe id="myFrame2" src="<?php echo $GLOBALS["blogLink"];?>/blogfeed.php" width="570px" height="440" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>

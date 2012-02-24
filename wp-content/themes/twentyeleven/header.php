@@ -15,8 +15,7 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
     <![endif]-->
 <!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
-<head>
+<!--<![endif]--><head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <link rel="shortcut icon" href="wp-includes/images/favicon.ico" />
@@ -85,7 +84,27 @@ html{background-image: url('wp-content/themes/twentyeleven/images/homeBg.png');}
     <div id="page" class="hfeed">
     	<div id="top">
             <div id="SiteLogo"><a href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-            <iframe id="myFrame" src="<?php echo $GLOBALS["foundopsLink"];?>/Account/BlogLogin" width="500px" height="70" frameborder="2" scrolling="no"></iframe>
+            <!--<iframe id="myFrame" src="<?php //echo $GLOBALS["foundopsLink"];?>/Account/BlogLogin" width="500px" height="70" frameborder="2" scrolling="no"></iframe>-->
+            <div id="mainLoginContent">
+				<form action="<?php echo $GLOBALS["foundopsLink"];?>/Account/Login" method="post">
+                	<div id="email">
+                        <label for="EmailAddress">Email Address</label><br />
+                        <input id="EmailAddress" name="EmailAddress" type="text" value="" />
+                    </div>
+                    <div id="password">
+                        <label for="Password">Password</label><br />
+                        <input id="Password" name="Password" type="password" />
+                    </div>
+                    <div id="rememberMe">
+                        <input id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+                        <label for="RememberMe">Remember Me?</label>
+                    </div>
+                    <div id="forgotPass">
+                        <a href="/Account/ForgotPassword">Forgot Password?</a>
+                    </div>
+                    <input id="loginBtn" type="submit" value="Login" />
+				</form>
+            </div>
             <div id="nav">
                 <ul>
                     <li class="hoverGreen" id="home"><a href="<?php echo $GLOBALS["blogLink"]; ?>/home">&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</a></li>

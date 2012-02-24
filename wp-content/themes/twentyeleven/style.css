@@ -479,9 +479,8 @@ span.tip {
 }
 #key{
 	position:relative;
-	top:5px;
+	top:20px;
 	left:-60px;
-	margin-bottom:-15px;
 }
 #keyText{
 	margin-left:27px;
@@ -553,11 +552,12 @@ div#title{
     position: relative;
     top: 6px;
     left: 30px;
-	font-size:17px;
-    font-weight: bold;
+	font-size:18px;
+    font-weight: normal;
 }
 #navBoxHome li #tab1{
 	color:#D9591E;
+	font-weight:900;
 }
 #navBoxHome li a:hover{
 	text-decoration:none;
@@ -595,7 +595,7 @@ div#title{
 }
 #ribbonSlider{
 	position:relative;
-	top:-24px;
+	top:-25px;
 	left:0px;
 	width:310px;
 	height:98px;
@@ -630,33 +630,50 @@ div#title{
 #content-slider-inside li#one{
 	display:block;
 }
-#buttonBar li a.selected{
-}
 #one .subHeader, #two .subHeader, #three .subHeader{
-	position:relative;
-	top:0px;
-	left:0px;
-	margin:0px;
-	padding:0px;
-	background:none;
 	font-size:22px;
 	font-weight:bold;
+	text-align:left;
+}
+#one .subHeader{
+	color:#659A41;
+}
+#two .subHeader{
+	margin-left:0px;
+	color:#488FCD;
+}
+#three .subHeader{
+	color:#D9591E;
 }
 #one img, #two img, #three img{
 	margin-bottom:-180px;
 }
+#one img{
+	position:relative;
+	top:-6px;
+}
 #two img{
 	position:relative;
+	top:-6px;
 	left:40px;
 }
 #three img{
 	position:relative;
-	left:-20px;
+	top:-28px;
+	left:-30px;
 }
 #one a, #two a, #three a{
 	color:#488FCD;
 	font-size:16px;
 	font-weight:bold;
+	text-decoration:underline;
+}
+#two a{
+	margin-left:5px;
+	color:#333335;
+}
+#two p{
+	margin-left:10px;
 }
 #three a{
 	position:relative;
@@ -665,14 +682,15 @@ div#title{
 }
 #one div, #two div, #three div{
 	position:relative;
+	top:10px;
 	left:250px;
 }
 #one div{
 	position:relative;
-	left:300px;
+	left:250px;
 }
 #two div{
-	left:200px;
+	left:250px;
 	width:600px;
 }
 #linkOne.unselected{
@@ -714,6 +732,7 @@ div#title{
 }
 #twitterFeed h3{
 	margin-bottom:30px;
+	letter-spacing:0em;
 }
 #twitterFeed img{
 	position:relative;
@@ -767,13 +786,14 @@ div#title{
 }
 #blog{
     font-size: 14px;
+	font-family:"Century Gothic";
     color: #333335;
 }
 #blog p, #post1, #post2, #post3, #blog font{
-    font-size: 15px;
+    font-size: 14px;
 }
 #blog a:link, #blog a:visited{
-    font-size: 13px;
+    font-size: 14px;
     color: #333335;
     text-decoration: none;
 }
@@ -804,10 +824,10 @@ div#title{
 }
 #customer #banner img{
 	position:relative;
-	top:0px;
+	top:15px;
 	width:300px;
 	height:187px;
-	margin-bottom:-160px;
+	margin-bottom:-145px;
 }
 #customer #bannerContent{
 	position:relative;
@@ -817,11 +837,12 @@ div#title{
 }
 #customer #bannerContent p{
 	font-size:14px;
+	text-align:justify;
 }
 #customer #bannerContent #links{
 	position:absolute;
-	top:225px;
-	left:-115px;
+	top:210px;
+	left:-96px;
 	width:280px;
 	font-weight:bold;
 }
@@ -829,7 +850,6 @@ a#freeTrialLink{
 	border:1px outset #666;
 	border-radius:0px;
 	padding:2px 7px 3px 7px;
-	margin-right:20px;
 	color:#fff;
 	font-weight:bold;
 	background-color:#D9591E; /* for non-css3 browsers */
@@ -837,20 +857,18 @@ a#freeTrialLink{
 	background: -webkit-gradient(linear, left top, left bottom, from(#ED941A), to(#D9591E)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #ED941A,  #D9591E); /* for firefox 3.6+ */
 }
-a#featureTourLink{
-	margin-right:0px;
-	margin-left:35px;
-}
 a#freeTrialLink:hover{
 	border:1px inset #666;
-}
-#customer #bannerContent #links a:hover{
 	text-decoration:none;
 }
 #featureTourLink{
 	position:relative;
 	top:-22px;
-	left:100px;
+	left:95px;
+	text-decoration:underline;
+}
+a#featureTourLink:hover, #bottomCustomerlinks a#featureTourLink:hover{
+	text-decoration:underline;
 }
 #customer #form{
 	position:absolute;
@@ -881,7 +899,7 @@ a#whitePaperLink:hover{
 }
 #whitePaperDesc{
 	position:absolute;
-	top:775px;
+	top:760px;
 	left:790px;
 	width:150px;
 	text-align:center;
@@ -908,6 +926,10 @@ a#whitePaperLink:hover{
 	line-height:25px;
 	font-weight:600;
 	color:#488FCD;
+}
+.contentTitle a{
+	font-size:17px;
+	text-decoration:underline;
 }
 #content2 .contentTitle{
 	height:40px;
@@ -989,10 +1011,22 @@ a#whitePaperLink:hover{
 #content2 ul, #content3 ul{
 	margin-top:10px;
 }
+#bottomCustomerlinks{
+	position:relative;
+	top:0px;
+	left:280px;
+}
+#bottomCustomerlinks a:hover{
+	text-decoration:none;
+}
+#bottomCustomerlinks #featureTourLink{
+	font-weight:bold;
+}
 /********************* Begin Customer MainlChimp ***********************/
 #subscribeFormWelcome span{
 	font-size:16px;
 	line-height:18px;
+	font-family:"Century Gothic";
 }
 #subscribeFormWelcome{
 	text-align:center;
@@ -1137,6 +1171,20 @@ a#whitePaperLink:hover{
 	top:-25px;
 	left:6px;
 }
+#conventionBannerText{
+	position:absolute;
+	top:9px;
+	left:140px;
+	text-align:center;
+	color:#fff;
+	font-size:20px;
+	font-weight:bold;
+}
+#conventionBannerText a{
+	color:#fff;
+	font-size:20px;
+	text-decoration:underline;
+}
 #customer{
 	position:relative;
 	top:-20px;
@@ -1148,6 +1196,6 @@ a#whitePaperLink:hover{
 #whitePaperDesc{
 	left:735px;
 }
-/*#SiteConventionBanner{
+/*#SiteConventionBanner, #conventionBannerText{
 	display:none;
 }*/

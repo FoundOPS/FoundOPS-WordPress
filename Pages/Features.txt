@@ -1,0 +1,103 @@
+<div id="navBox">
+     <ul id="navList">
+          <li><a id="nav_crm" href="#crm">CRM</a></li>
+          <li><a id="nav_dispatcher" href="#dispatcher">Dispatcher</a></li>
+          <li><a id="nav_templates" href="#templates">Service Templates</a></li>
+          <li><a id="nav_employee" href="#employee">Employee Records</a></li>
+          <li><a id="nav_vehicle" href="#vehicle">Vehicle Log</a></li>
+          <li><a id="nav_mobile" href="#mobile">Mobile</a></li>
+          <li><a id="nav_integrations" href="#integrations">Integrations</a></li>
+     </ul>
+</div>
+<div id="features">
+<div id="crm">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Customer Relationship Management</h2>
+</div>
+<div class="descRight" id="crm1"></div>
+<h2 class="descRight">Easily Input Client Data</h2>
+<p class="descRight">Tracking and updating your service information in one place will make your company lean and easier to control. Integrate all of your customer data to the Cloud and permanently connect customer relationship management to your other business operations. By looking at your customers from different perspectives, you will get a better look at your own business. </p>
+<div class="descLeft" id="crm2"></div>
+<h2 class="descLeft">Analyze Your Business From Different Views</h2>
+<p class="descLeft">Set up processes and solutions which will give your business a more personal touch. The unique FoundOPS Infinite Accordion feature gives you a 360 degree view of your accounts (including contact information and service history) and can be accessed from anywhere at any time.</p>
+<div class="descRight" id="crm3"></div>
+<h2 class="descRight">Contact Management</h2>
+<p class="descRight">Don't lose sight of your customer's contracts - instead, grow stronger relationships with the customers you see the most.  CRM with FoundOPS gives you the power to manage customers with repeating services, update customer profiles with current information, report on different areas of your performance, and give your customers the service they expect and deserve.</p>
+</div>
+<div id="dispatcher">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Dispatcher</h2>
+</div>
+<div class="descRight" id="dispatcher1"></div>
+<h2 class="descRight">Drag & Drop Simplicity</h2>
+<p class="descRight">Dispatching shouldn’t take up your time and attention; instead, the job should. With FoundOPS, conveniently manage your employees by dragging and dropping jobs or administrative tasks onto their schedules. This function will take up fewer company resources and provide the quick solution to your problems. Now you can easily adapt to a service location which takes too long or a truck which has broken down in the middle of the work day.</p>
+<div class="descLeft" id="dispatcher2"></div>
+<h2 class="descLeft">Auto-Dispatch Routing Algorithm</h2>
+<p class="descLeft">Save gas, mileage, and time with a system that constructs your routes for you. The Auto-Dispatch Routing Algorithm will make sure your dispatchers make efficiency part of their routes, keeping the customer (and your business) happy.</p>
+<div class="descRight" id="dispatcher3"></div>
+<h2 class="descRight">Be a Super Dispatcher</h2>
+<p class="descRight">Those who say a small business cannot be high tech are wrong. Truly become a Dynamic Dispatcher with our custom screen layouts and multi-monitor support. We'll give you management and control of your operations wherever you are.</p>
+</div>
+<div id="templates">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Service Templates</h2>
+</div>
+<div class="descRight" id="templates1"></div>
+<h2 class="descRight">Customize the System to Work Around Your Business, Not the Other Way Around</h2>
+<p class="descRight">If your business works in more than one vertical or has a diverse group of clients, there is no doubt you have found that different services require different approaches. You shouldn't have to adapt to software. With the FoundOPS SaaS, create custom service templates which fit the needs of your workers and customers.</p>
+<div class="descLeft" id="templates2"></div>
+<h2 class="descLeft">Custom Fields to Collect Data on the Mobile App</h2>
+<p class="descLeft">The FoundOPS mobile application allows you to collect data in forms created by and for you. Give your employees a more timely reporting system and make your invoicing more accurate and organized for both your business and your customers.</p>
+</div>
+<div id="employee">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Employee Records</h2>
+</div>
+<div class="descRight" id="employee1"></div>
+<h2 class="descRight">See GPS and Route History</h2>
+<p class="descRight">Integration with your operations data also shows which clients and vehicles your employees have interacted with by tracking their routing history. Guarantee your employee paperwork is up to date and accurate.</p>
+<div class="descLeft" id="employee2"></div>
+<h2 class="descLeft">Keep an Employee Record of Incidents </h2>
+<p class="descLeft">HR tasks can be complicated and time consuming. Moving tax documents, incident reports, and other employee records to the Cloud with FoundOPS, will save yourself time, money, and stress.</p>
+</div>
+<div id="vehicle">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Vehicle Log</h2>
+</div>
+<div class="descRight" id="vehicle1"></div>
+<h2 class="descRight">Maintenance History</h2>
+<p class="descRight">Even if just one truck is out of commission, your productivity takes a critical hit. Instead, stay on top of vehicle maintenance. Stay current with permits, certifications, and licenses to ensure your trucks are legal on the road and have detailed maintenance history for each vehicle all in one, easily accessible place. </p>
+<div class="descLeft" id="vehicle2"></div>
+<h2 class="descLeft">Tied into Route History</h2>
+<p class="descLeft">Route history will automatically be added to your vehicle logs so you will know exactly where each vehicle has been. Taking care of your trucks helps you increase their lifetime and resale value. If they keep running, so does your business.</p>
+</div>
+<div id="mobile">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Mobile</h2>
+</div>
+<div class="descRight" id="mobile1"></div>
+<h2 class="descRight">Cloud Dispatched</h2>
+<p class="descRight">With the FoundOPS mobile application, you can update dispatch jobs and communicate with your employees while they are in the field. Mobile also keeps your employees connected to your clients by allowing them to access contact and service location information, take and upload photos on the job, and retrieve electronic signatures for invoicing. Whichever platform you use – Android, iPhone, iPad,  or Windows Phone 7 – it will work with our mobile application.</p>
+</div>
+<div id="integrations">
+<div class="subHeader">
+<div class="image">&nbsp;</div>
+<h2>Integrations</h2>
+</div>
+<div class="descRight" id="integrations1"></div>
+<h2 class="descRight">Data Import</h2>
+<p class="descRight">Import your current client and service data with efficiency through either .csv files or Excel spreadsheets.</p>
+<div class="descLeft" id="integrations2"></div>
+<h2 class="descLeft">Quickbooks Automation</h2>
+<p class="descLeft">Quickbooks Automation will push invoices from your already completed jobs to Quickbooks online.</p>
+<div class="descRight" id="integrations3"></div>
+<h2 class="descRight">CSV Export</h2>
+<p class="descRight">We'll also export your data to other systems using the common CSV format (Quickbooks, Gmail, Xero, etc.) It's your data - our solution will help you use it where and when you need it.</p>
+</div>
+</div>

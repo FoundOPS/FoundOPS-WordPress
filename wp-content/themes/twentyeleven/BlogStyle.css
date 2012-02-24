@@ -363,12 +363,86 @@ table td{
 	color:#aaa;
 }
 /* login form */
-#myFrame{
+#mainLoginContent{
 	position:relative;
-	top:-30px;
+	top:-37px;
 	left:531px;
-	margin-bottom:-50px;
+	width:500px;
+	height:70px;
+	margin-bottom:-76px;
 	color:#fff;
+	border:2px solid #333335;
+}
+#email{
+    position: relative;
+    left: 39px;
+    top: 2px;
+    font-size: 12px;
+    color: #ccc;
+}
+#password, #rememberMe, #forgotPass{
+    position: relative;
+    left: 219px;
+    top: -38px;
+    width: 200px;
+    font-size: 12px;
+    color: #ccc;
+}
+#password{
+	top: -47px;
+    left: 218px;   
+}
+#rememberMe{
+    top: -46px;
+    left: 36px;
+}
+#rememberMe label{
+    position: relative;
+    top: -2px;
+}
+#forgotPass a{
+	color:#ccc;
+}
+#forgotPass{
+    top: -70px;
+}
+.ValSummary{
+    margin-left: 100px;
+}
+#loginBtn{
+    position: relative;
+    top: -115px;
+    left: 391px;
+    height: 22px;
+    width: 65px;
+    color: #eee;
+    font-weight: bold;
+    background-color: #333335;
+    border-width: 1px;
+    border-color: #fff;
+    font-size: 12px;
+}
+.LogonValSummary{
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    width: 449px;
+    height: 30px;
+    font-size: 11px;
+    z-index: 1000;
+}
+.LogonValSummary li{
+    color: #ccc;
+    margin-left: -40px;
+    list-style: none;
+    background-color: #333335;
+    border: 2px solid #ccc;
+}
+input[type="text"], input[type="password"]{
+    width: 160px;
+    height: 17px;
+    border: 1px solid #CCC;
+    margin-top: 2px;
 }
 ol, ul {
 	list-style: none;
