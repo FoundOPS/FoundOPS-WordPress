@@ -3,11 +3,11 @@
 Plugin Name: MailChimp
 Plugin URI: http://www.mailchimp.com/plugins/mailchimp-wordpress-plugin/
 Description: The MailChimp plugin allows you to quickly and easily add a signup form for your MailChimp list.
-Version: 1.2.6
+Version: 1.2.7
 Author: MailChimp and Crowd Favorite
 Author URI: http://mailchimp.com/api/
 */
-/*  Copyright 2008  MailChimp.com  (email : api@mailchimp.com)
+/*  Copyright 2008-2012  MailChimp.com  (email : api@mailchimp.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ Author URI: http://mailchimp.com/api/
 */
 
 // Version constant for easy CSS refreshes
-define('MCSF_VER', '1.2.6');
+define('MCSF_VER', '1.2.7');
 
 // What's our permission (capability) threshold
 define('MCSF_CAP_THRESHOLD', 'manage_options');
@@ -105,13 +105,10 @@ function mailchimpSF_load_resources() {
 		wp_enqueue_script('datepicker', MCSF_URL.'/js/datepicker.js', array('jquery','jquery-ui-core'));
 	}
 	
-	// CSS
-	else {
-		wp_enqueue_style('mailchimpSF_main_css', home_url('?mcsf_action=main_css&ver='.MCSF_VER));
-		wp_enqueue_style('mailchimpSF_ie_css', MCSF_URL.'css/ie.css');
-		global $wp_styles;
-		$wp_styles->add_data( 'mailchimpSF_ie_css', 'conditional', 'IE' );
-	}
+	wp_enqueue_style('mailchimpSF_main_css', home_url('?mcsf_action=main_css&ver='.MCSF_VER));
+	wp_enqueue_style('mailchimpSF_ie_css', MCSF_URL.'css/ie.css');
+	global $wp_styles;
+	$wp_styles->add_data( 'mailchimpSF_ie_css', 'conditional', 'IE' );
 }
 
 
@@ -201,7 +198,7 @@ function mailchimpSF_main_css() {
 if (get_option('mc_custom_style')=='on'){
 	?>
 	#mc_signup_form { 
-		padding:0px;
+		padding:5px;
 		border-width: <?php echo get_option('mc_form_border_width'); ?>px;
 		border-style: <?php echo (get_option('mc_form_border_width')==0) ? 'none' : 'solid'; ?>;
 		border-color: #<?php echo get_option('mc_form_border_color'); ?>;
@@ -216,13 +213,9 @@ if (get_option('mc_custom_style')=='on'){
 		border-color: #<?php echo get_option('mc_header_border_color'); ?>;
 		color: #<?php echo get_option('mc_header_text_color'); ?>;
 		background-color: #<?php echo get_option('mc_header_background'); ?>;
-		font-size: 12px;
-		padding:5px 0px;
+		font-size: 1.2em;
+		padding:5px 10px;
 		width: 100%;
-        color: #666;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        text-align:center;
 	}
 	<?php
 }
@@ -247,37 +240,21 @@ if (get_option('mc_custom_style')=='on'){
 		display:inline;
 	}
 	.mc_signup_submit { 
-		text-align:center;
+		text-align:center; 
 	}
-    .mc_signup_submit input{
-    	height:23px;
-        width:60px;
-        color:#333335;
-        border:1px outset #aaa;
-        border-color: #aaa #000 #000 #aaa;
-        padding:0px;
-        margin-top:5px;
-        font-size:12px;
-	}
-    .mc_signup_submit input:hover{
-    	border-color: #000 #ccc #ccc #000;
-    }
 	ul.mc_list {
 		list-style-type: none;
 	}
 	ul.mc_list li {
 		font-size: 12px;
 	}
-    .mc_var_label{
-    	font-size:12px;
-    }
-    .mc_input{
-        line-height:1;
-        width:185px;
-    }
-    .mc_custom_border_hdr{
-    	margin-top:5px;
-    }
+	.ui-datepicker-year {
+		display: none;
+	}
+	#ui-datepicker-div.show .ui-datepicker-year {
+		display: inline;
+		padding-left: 3px
+	}
 	<?php
 }
 
@@ -1201,7 +1178,7 @@ function mailchimpSF_signup_submit() {
 	
 		if ($var['req'] == 'Y' && trim($opt_val) == '') {
 			$success = false;
-			$errs[] = sprintf(__("%s is required", 'mailchimp_i18n'), esc_html($var['name']));
+			$errs[] = sprintf(__("You must fill in %s.", 'mailchimp_i18n'), esc_html($var['name']));
 		}
 		else {
 			if ($var['tag'] != 'EMAIL') {

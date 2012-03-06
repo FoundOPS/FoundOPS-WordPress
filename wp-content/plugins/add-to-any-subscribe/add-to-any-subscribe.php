@@ -86,7 +86,7 @@ class Add_to_Any_Subscribe_Widget extends WP_Widget {
 			$button_height	= ' height="16"';
 			$button_src		= $A2A_SUBSCRIBE_plugin_url_path.'/'.$button_fname;
 		} else if( get_option('A2A_SUBSCRIBE_button') == 'CUSTOM' ) {
-			$button_src		= $GLOBALS["blogLink"] . "/wp-content/themes/twentyeleven/images/rss36.png";
+			$button_src		= get_option('A2A_SUBSCRIBE_button_custom');
 			$button_width	= '';
 			$button_height	= '';
 		} else if( get_option('A2A_SUBSCRIBE_button') == 'TEXT' ) {

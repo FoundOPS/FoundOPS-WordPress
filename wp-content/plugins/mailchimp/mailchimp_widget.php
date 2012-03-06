@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Displays a MailChimp Signup Form
  **/
@@ -7,172 +7,175 @@ function mailchimpSF_signup_form($args = array()) {
 
 	$mv = get_option('mc_merge_vars');
 	$igs = get_option('mc_interest_groups');
-	
-	// See if we have valid Merge Vars
-	if (!is_array($mv)){
-		echo $before_widget;
-		?>
-		<div class="mc_error_msg">
-			<?php esc_html_e('There was a problem loading your MailChimp details. Please re-run the setup process under Settings->MailChimp Setup', 'mailchimp_i18n'); ?>
-		</div>
-		<?php
-		echo $after_widget;
-		return;
-	}
-	
-	// Get some options
-	$uid = get_option('mc_user_id');
-	$list_name = get_option('mc_list_name');
-	
-	if (!empty($before_widget)) {
-		echo $before_widget;
-	}
-
-	$header =  get_option('mc_header_content');
-	// See if we have custom header content
-	if (!empty($header)) {
-		// See if we need to wrap the header content in our own div
-		if (strlen($header) == strlen(strip_tags($header))){
-			echo !empty($before_title) ? $before_title : '<div class="mc_custom_border_hdr">';
-			echo $header; // don't escape $header b/c it may have HTML allowed
-			echo !empty($after_title) ? $after_title : '</div><!-- /mc_custom_border_hdr -->';
-		}
-		else {
-			echo $header; // don't escape $header b/c it may have HTML allowed
-		}
-	}
-	
-	$sub_heading = trim(get_option('mc_subheader_content'));
-	?>
-	
-<div id="mc_signup">
-	<form method="post" action="#mc_signup" id="mc_signup_form">
-		<input type="hidden" id="mc_submit_type" name="mc_submit_type" value="html" />
-		<input type="hidden" name="mcsf_action" value="mc_submit_signup_form" />
-		<?php wp_nonce_field('mc_submit_signup_form', '_mc_submit_signup_form_nonce', false); ?>
-		
-	<?php 
-	if ($sub_heading) { 
-		?>
-		<div id="mc_subheader">
-			<?php echo $sub_heading; ?>
-		</div><!-- /mc_subheader -->
-		<?php
-	} 
-	?>
-	
-	<div class="mc_form_inside">
-		
-		<div class="updated" id="mc_message">
-			<?php echo mailchimpSF_global_msg(); ?>
-		</div><!-- /mc_message -->
-
-		<?php
-		//don't show the "required" stuff if there's only 1 field to display.
-		$num_fields = 0;
-		foreach((array)$mv as $var) {
-			$opt = 'mc_mv_'.$var['tag'];
-			if ($var['req'] || get_option($opt) == 'on') {
-				$num_fields++;
-			}
-		}
-
-		if (is_array($mv)) {
-			// head on back to the beginning of the array
-			reset($mv);
+	/********** Check if page is a blog page(if it's not one of the 5 non-blog pages) **********/
+	if(!(is_page(69)) && !(is_page(63)) && !(is_page(66)) && !(is_page(473)) && !(is_page(462))){
+		// See if we have valid Merge Vars
+		if (!is_array($mv)){
+			echo $before_widget;
+			?>
+			<div class="mc_error_msg">
+				<?php esc_html_e('There was a problem loading your MailChimp details. Please re-run the setup process under Settings->MailChimp Setup', 'mailchimp_i18n'); ?>
+			</div>
+			<?php
+			echo $after_widget;
+			return;
 		}
 		
-		// Loop over our vars, and output the ones that are set to display
-		foreach($mv as $var) {
-			if (!$var['public']) {
-				echo '<div style="display:none;">'.mailchimp_form_field($var, $num_fields).'</div>';
+		// Get some options
+		$uid = get_option('mc_user_id');
+		$list_name = get_option('mc_list_name');
+		
+		if (!empty($before_widget)) {
+			echo $before_widget;
+		}
+	
+		$header =  get_option('mc_header_content');
+		// See if we have custom header content
+		if (!empty($header)) {
+			// See if we need to wrap the header content in our own div
+			if (strlen($header) == strlen(strip_tags($header))){
+				echo !empty($before_title) ? $before_title : '<div class="mc_custom_border_hdr">';
+				echo $header; // don't escape $header b/c it may have HTML allowed
+				echo !empty($after_title) ? $after_title : '</div><!-- /mc_custom_border_hdr -->';
 			}
 			else {
-				echo mailchimp_form_field($var, $num_fields);
+				echo $header; // don't escape $header b/c it may have HTML allowed
 			}
 		}
 		
-		// Show our Interest groups fields if we have them, and they're set to on
-		if (is_array($igs) && !empty($igs)) {
-			foreach ($igs as $ig) {
-				if (is_array($ig) && isset($ig['id'])) {
-					if ($igs && get_option('mc_show_interest_groups_'.$ig['id']) == 'on') {
-						if ($ig['form_field'] != 'hidden') {
+		$sub_heading = trim(get_option('mc_subheader_content'));
+		
+		
+		?>
+		
+		<div id="mc_signup">
+		<form method="post" action="#mc_signup" id="mc_signup_form">
+			<input type="hidden" id="mc_submit_type" name="mc_submit_type" value="html" />
+			<input type="hidden" name="mcsf_action" value="mc_submit_signup_form" />
+			<?php wp_nonce_field('mc_submit_signup_form', '_mc_submit_signup_form_nonce', false); ?>
+			
+		<?php 
+		if ($sub_heading) { 
+			?>
+			<div id="mc_subheader">
+				<?php echo $sub_heading; ?>
+			</div><!-- /mc_subheader -->
+			<?php
+		} 
+		?>
+		
+		<div class="mc_form_inside">
+			
+			<div class="updated" id="mc_message">
+				<?php echo mailchimpSF_global_msg(); ?>
+			</div><!-- /mc_message -->
+	
+			<?php
+			//don't show the "required" stuff if there's only 1 field to display.
+			$num_fields = 0;
+			foreach((array)$mv as $var) {
+				$opt = 'mc_mv_'.$var['tag'];
+				if ($var['req'] || get_option($opt) == 'on') {
+					$num_fields++;
+				}
+			}
+	
+			if (is_array($mv)) {
+				// head on back to the beginning of the array
+				reset($mv);
+			}
+			
+			// Loop over our vars, and output the ones that are set to display
+			foreach($mv as $var) {
+				if (!$var['public']) {
+					echo '<div style="display:none;">'.mailchimp_form_field($var, $num_fields).'</div>';
+				}
+				else {
+					echo mailchimp_form_field($var, $num_fields);
+				}
+			}
+			
+			// Show our Interest groups fields if we have them, and they're set to on
+			if (is_array($igs) && !empty($igs)) {
+				foreach ($igs as $ig) {
+					if (is_array($ig) && isset($ig['id'])) {
+						if ($igs && get_option('mc_show_interest_groups_'.$ig['id']) == 'on') {
+							if ($ig['form_field'] != 'hidden') {
+							?>				
+								<div class="mc_interests_header">
+									<?php echo esc_html($ig['name']); ?>
+								</div><!-- /mc_interests_header -->
+								<div class="mc_interest">
+							<?php
+							}
+							else {
+							?>
+								<div class="mc_interest" style="display: none;">
+							<?php					
+							}
+						?>			
+	
+						<?php
+							mailchimp_interest_group_field($ig);
 						?>				
-							<div class="mc_interests_header">
-								<?php echo esc_html($ig['name']); ?>
-							</div><!-- /mc_interests_header -->
-							<div class="mc_interest">
+						</div><!-- /mc_interest -->
+				
 						<?php
 						}
-						else {
-						?>
-							<div class="mc_interest" style="display: none;">
-						<?php					
-						}
-					?>			
-
-					<?php
-						mailchimp_interest_group_field($ig);
-					?>				
-					</div><!-- /mc_interest -->
-			
-					<?php
 					}
 				}
 			}
-		}
-
-		if (get_option('mc_email_type_option')) {
-		?>
-		<div class="mergeRow">
-			<label><?php _e('Preferred Format', 'mailchimp_i18n'); ?></label>
-		    <div class="field-group groups">
-		        <ul class="mc_list">
-			        <li><input type="radio" name="email_type" id="email_type_html" value="html" checked="checked"><label for="email_type_html"><?php _e('HTML', 'mailchimp_i18n'); ?></label></li>
-			        <li><input type="radio" name="email_type" id="email_type_text" value="text"><label for="email_type_text"><?php _e('Text', 'mailchimp_i18n'); ?></label></li>
-			        <li><input type="radio" name="email_type" id="email_type_mobile" value="mobile"><label for="email_type_mobile"><?php _e('Mobile', 'mailchimp_i18n'); ?></label></li>
-		        </ul>
-			</div>
-		</div>	
-
-		<?php
-		}
-		?>
-
-		<div class="mc_signup_submit">
-			<input type="submit" name="mc_signup_submit" id="mc_signup_submit" value="<?php echo esc_attr(get_option('mc_submit_text')); ?>" class="button" />
-		</div><!-- /mc_signup_submit -->
 	
+			if (get_option('mc_email_type_option')) {
+			?>
+			<div class="mergeRow">
+				<label><?php _e('Preferred Format', 'mailchimp_i18n'); ?></label>
+				<div class="field-group groups">
+					<ul class="mc_list">
+						<li><input type="radio" name="email_type" id="email_type_html" value="html" checked="checked"><label for="email_type_html"><?php _e('HTML', 'mailchimp_i18n'); ?></label></li>
+						<li><input type="radio" name="email_type" id="email_type_text" value="text"><label for="email_type_text"><?php _e('Text', 'mailchimp_i18n'); ?></label></li>
+						<li><input type="radio" name="email_type" id="email_type_mobile" value="mobile"><label for="email_type_mobile"><?php _e('Mobile', 'mailchimp_i18n'); ?></label></li>
+					</ul>
+				</div>
+			</div>	
 	
+			<?php
+			}
+			?>
+	
+			<div class="mc_signup_submit">
+				<input type="submit" name="mc_signup_submit" id="mc_signup_submit" value="<?php echo esc_attr(get_option('mc_submit_text')); ?>" class="button" />
+			</div><!-- /mc_signup_submit -->
+	
+			<?php
+			if ( get_option('mc_use_unsub_link') == 'on') {
+				list($key, $dc) = explode("-",get_option('mc_apikey'),2);
+				if (!$dc) $dc = "us1";
+				$host = 'http://'.$dc.'.list-manage.com';
+				?>
+				<div id="mc_unsub_link" align="center">
+					<a href="<?php echo esc_url($host.'/unsubscribe/?u='.get_option('mc_user_id').'&amp;id='.get_option('mc_list_id')); ?>" target="_blank"><?php esc_html_e('unsubscribe from list', 'mailchimp_i18n'); ?></a>
+				</div><!-- /mc_unsub_link -->
+				<?php
+			}
+			if ( get_option('mc_rewards') == 'on') {
+				?>
+				<br/>
+				<div id="mc_display_rewards" align="center">
+					<?php esc_html_e('powered by', 'mailchimp_i18n'); ?> <a href="<?php echo esc_url('http://www.mailchimp.com/affiliates/?aid='.get_option('mc_user_id').'&amp;afl=1'); ?>">MailChimp</a>!
+				</div><!-- /mc_display_rewards -->
+				<?php
+			}
+			?>
+			
+		</div><!-- /mc_form_inside -->
+		</form><!-- /mc_signup_form -->
+		</div><!-- /mc_signup_container -->
 		<?php
-		if ( get_option('mc_use_unsub_link') == 'on') {
-        	list($key, $dc) = explode("-",get_option('mc_apikey'),2);
-        	if (!$dc) $dc = "us1";
-        	$host = 'http://'.$dc.'.list-manage.com';
-			?>
-			<div id="mc_unsub_link" align="center">
-				<a href="<?php echo esc_url($host.'/unsubscribe/?u='.get_option('mc_user_id').'&amp;id='.get_option('mc_list_id')); ?>" target="_blank"><?php esc_html_e('unsubscribe from list', 'mailchimp_i18n'); ?></a>
-			</div><!-- /mc_unsub_link -->
-			<?php
+		if (!empty($before_widget)) {
+			echo $after_widget;
 		}
-		if ( get_option('mc_rewards') == 'on') {
-			?>
-			<br/>
-			<div id="mc_display_rewards" align="center">
-				<?php esc_html_e('powered by', 'mailchimp_i18n'); ?> <a href="<?php echo esc_url('http://www.mailchimp.com/affiliates/?aid='.get_option('mc_user_id').'&amp;afl=1'); ?>">MailChimp</a>!
-			</div><!-- /mc_display_rewards -->
-			<?php
-		}
-		?>
-		
-	</div><!-- /mc_form_inside -->
-	</form><!-- /mc_signup_form -->
-</div><!-- /mc_signup_container -->
-	<?php
-	if (!empty($before_widget)) {
-		echo $after_widget;
-	}
+	}/********** End check for if on a blog page **********/
 }
 
 /**
@@ -432,6 +435,7 @@ function mailchimp_country_list() {
 		'35' => __('Chile', 'mailchimp_i18n'),
 		'36' => __('China', 'mailchimp_i18n'),
 		'37' => __('Colombia', 'mailchimp_i18n'),
+
 		'38' => __('Congo', 'mailchimp_i18n'),
 		'183' => __('Cook Islands', 'mailchimp_i18n'),
 		'268' => __('Costa Rica', 'mailchimp_i18n'),

@@ -6,7 +6,6 @@
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
-
 get_header(); ?>
 
 	<div id="primary">
@@ -36,9 +35,6 @@ get_header(); ?>
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'twentyeleven' ), convert_smilies( '' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', array('count' => 0 , 'dropdown' => 1 ), array( 'after_title' => '</h2>'.$archive_content ) );
 					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 

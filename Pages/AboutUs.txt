@@ -39,6 +39,12 @@ echo "</li>";
 </div>
 <div id="advisorsWrapper">
 <div id="advisors">
+<div id="advisor3Pic"></div>
+<div class="advisorDesc2">
+<h1>Christopher Beltran</h1>
+<p>Christopher Beltran is the Co-founder and Vice President of Product Development and Research at Passageways. He is the product architect of Passageways and was involved in the conception and technical design of the Passageways Portal Framework. He was named one of the top 10 Young Professionals Under 40 by Tippy Connect, Indiana. Mr. Beltran serves as an entrepreneurship mentor at Purdue University's Entrepreneurship Academy and teaches a Capstone course in Entrepreneurship to graduating students at Purdue University. Mr. Beltran has been <span class="stretch"> invited to be a guest speaker at Purdue Univer</span>sity, National Financial Services</p><p class="wrapLeft">Conferences, and Technical Conferences. He has previously consulted for credit unions and portal-based projects including Purdue University's IBM WebSphere-based portal implementation, and has considerable experience in Microsoft's .NET platform.</p>
+<p class="wrapLeft">Mr. Beltran earned his Bachelor's from Purdue University and has been widely published by various technical and trade journals including Inc Magazine, Credit Union Times, and Bank Technology News.</p>
+</div>
 <div id="advisor1Pic"></div>
 <div class="advisorDesc">
 <h1>Steven Bright</h1>
@@ -46,17 +52,11 @@ echo "</li>";
 <p class="wrapLeft">Steve represents some of the most prominent lenders and leasing companies in connection with both transactional and workout situations. He also represents sophisticated businesses and real estate entities. Steve is keenly aware of his clients’ need for practical and timely advice. He takes a straightforward approach when handling complex transactions by quickly identifying critical issues and providing his clients with positive steps they need to take.</p>
 </div>
 <div id="advisor2Pic"></div>
-<div class="advisorDesc2">
+<div class="advisorDesc">
 <h1>Ken Tucker </h1>
 <p style="margin-bottom:20px;">Ken Tucker joined TAG Consulting as a Senior Partner in 2010.  As thought leader, Ken brings the many years of being a Principal Consultant and highly sought after speaker with The Gallup Organization and his experience as Strategic Consultant and CEO of Ken Tucker and Associates, LLC.  He has traveled the world and subsequently TAG's partnerships span the globe.</p>
 <p>His expertise is in helping clients transform disjointed organizations and workgroups <span class="stretch"> into high performing te</span>ams. He uses the organization’s metrics and initiatives as a </p> 
 <p class="wrapLeft">basis for increasing per employee productivity. For the executive team, Tucker uses customized tools and strategies that increase execution and productivity. Additionally, he advises leaders and instructs managers on how to unleash employee discretionary effort to drive long-term business outcomes.</p>
-</div>
-<div id="advisor3Pic"></div>
-<div class="advisorDesc">
-<h1>Christopher Beltran</h1>
-<p>Christopher Beltran is the Co-founder and Vice President of Product Development and Research at Passageways. He is the product architect of Passageways and was involved in the conception and technical design of the Passageways Portal Framework. He was named one of the top 10 Young Professionals Under 40 by Tippy Connect, Indiana. Mr. Beltran serves as an entrepreneurship mentor at Purdue University's Entrepreneurship Academy and teaches a Capstone course in Entrepreneurship to graduating students at Purdue University. Mr. Beltran has been <span class="stretch"> invited to be a guest speaker at Purdue Univer</span>sity, National Financial Services</p><p class="wrapLeft">Conferences, and Technical Conferences. He has previously consulted for credit unions and portal-based projects including Purdue University's IBM WebSphere-based portal implementation, and has considerable experience in Microsoft's .NET platform.</p>
-<p class="wrapLeft">Mr. Beltran earned his Bachelor's from Purdue University and has been widely published by various technical and trade journals including Inc Magazine, Credit Union Times, and Bank Technology News.</p>
 </div>
 </div>
 </div>
@@ -91,7 +91,7 @@ echo "</li>";
 <div id="AccessabilityDesc1">
 <div class="bigText">Accessibility</div>
 <ul class="ShiftLeft">
-	<li>Since we started developing FoundOPS, our goal for our platform has been to make the same quality and customization of a traditional enterprise solutions available to any business. We have identified the barriers that previously prevented small businesses from employing an enterprise system.
+	<li>Since we started developing FoundOPS, our goal for our platform has been to make the same quality and customization of traditional enterprise solutions available to any business. We have identified the barriers that previously prevented small businesses from employing an enterprise system.
 <ul class="ShiftLeft"><li class="big">Hardware</li>
 	<li>On site servers require large initial investments, continual maintenance, professional IT support, and are difficult to scale. Our solution is served on Microsoft’s Azure Cloud platform which boasts an unprecedented 99.9% reliability coupled with industry </li></ul></li></ul>
 </div>
@@ -138,7 +138,7 @@ echo "</li>";
 <a href="mailto:sales@foundops.com">sales@foundops.com</a>
 
 <strong>Support</strong>
-<a class="blueLink" href="http://feedback.foundops.com/">Support Forum</a>
+<a class="blueLink" href="http://feedback.foundops.com" target="_blank">Support Forum</a>
 <a href="mailto:support@foundops.com">support@foundops.com</a>
 
 <strong>Jobs</strong>
@@ -152,7 +152,7 @@ echo "</li>";
 Suite 205
 West Lafayette, IN 47906
 </pre>
-<div id="map"><iframe width="320" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=1305+Cumberland+Avenue+%23205,+West+Lafayette,+IN+47906+(Foundops)&amp;daddr=&amp;hl=en&amp;geocode=&amp;aq=&amp;sll=40.450866,-86.92297&amp;sspn=0.109597,0.154324&amp;mra=ls&amp;ie=UTF8&amp;t=m&amp;z=12&amp;output=embed"></iframe></div>
+<div id="map"><iframe width="320" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=1305+Cumberland+Avenue+%23205,+West+Lafayette,+IN+47906+(Foundops)&amp;daddr=&amp;hl=en&amp;geocode=&amp;aq=&amp;sll=40.457658,-86.928892&amp;sspn=0.109597,0.154324&amp;mra=ls&amp;ie=UTF8&amp;t=m&amp;z=13&amp;output=embed"></iframe></div>
 <a id="findUs" href="https://www.facebook.com/FoundOPS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 <a id="followUs" href="http://twitter.com/FoundOPS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 <a id="viewProfile" href="http://www.linkedin.com/company/foundops"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>

@@ -286,44 +286,44 @@ table td{
 #nav .hoverOrange a:hover{
 	color:#333335;
 }
-.home #blogNav, .archive #blogNav, .single-post #blogNav{
+.blog #blogNav, .archive #blogNav, .single-post #blogNav{
 	background-color:#488FCD; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */ 
 }
-.page-id-624 #home{
+.home #home{
 	background-color:#659A41; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#7DC244), to(#659A41)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #7DC244,  #659A41); /* for firefox 3.6+ */
 }
-.page-id-21 #aboutUsNav{
+.page-id-69 #aboutUsNav{
 	background-color:#991A36; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#D91A26), to(#991A36)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #D91A26,  #991A36); /* for firefox 3.6+ */ 
 }
-.page-id-303 #pricingNav{
+.page-id-473 #pricingNav{
 	background-color:#659A41; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#7DC244), to(#659A41)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #7DC244,  #659A41); /* for firefox 3.6+ */
 }
-.page-id-153 #featuresNav{
+.page-id-66 #featuresNav{
 	background-color:#991A36; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#D91A26), to(#991A36)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #D91A26,  #991A36); /* for firefox 3.6+ */ 
 }
-.page-id-69 #customersNav{
+.page-id-462 #customersNav{
 	background-color:#488FCD; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#36C3E3), to(#488FCD)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #36C3E3,  #488FCD); /* for firefox 3.6+ */ 
 }
-.home #blogNav a, .archive #blogNav a, .single-post #blogNav a, .page-id-21 #aboutUsNav a, 
-.page-id-303 #pricingNav a, .page-id-153 #featuresNav a, .page-id-69 #customersNav a, .page-id-624 #home a{
+.blog #blogNav a, .archive #blogNav a, .single-post #blogNav a, .page-id-69 #aboutUsNav a, 
+.page-id-473 #pricingNav a, .page-id-66 #featuresNav a, .page-id-462 #customersNav a, .home #home a{
 	color:#fff;
 }
 #nav-single{
@@ -362,14 +362,14 @@ table td{
 	font-size:14px;
 	color:#aaa;
 }
-/* login form */
+/*********** login form ***********/
 #mainLoginContent{
 	position:relative;
-	top:-37px;
+	top:-28px;
 	left:531px;
 	width:500px;
-	height:70px;
-	margin-bottom:-76px;
+	height:65px;
+	margin-bottom:-71px;
 	color:#fff;
 	border:2px solid #333335;
 }
@@ -377,42 +377,34 @@ table td{
     position: relative;
     left: 39px;
     top: 2px;
-    font-size: 12px;
+    font-size: 10px;
     color: #ccc;
 }
-#password, #rememberMe, #forgotPass{
+#pass, #forgotPass{
     position: relative;
     left: 219px;
-    top: -38px;
+    top: -41px;
     width: 200px;
-    font-size: 12px;
+    font-size: 10px;
     color: #ccc;
 }
-#password{
-	top: -47px;
+#pass{
+	top: -43px;
     left: 218px;   
-}
-#rememberMe{
-    top: -46px;
-    left: 36px;
-}
-#rememberMe label{
-    position: relative;
-    top: -2px;
 }
 #forgotPass a{
 	color:#ccc;
 }
 #forgotPass{
-    top: -70px;
+    top: -44px;
 }
 .ValSummary{
     margin-left: 100px;
 }
 #loginBtn{
     position: relative;
-    top: -115px;
-    left: 391px;
+    top: -65px;
+    left: 403px;
     height: 22px;
     width: 65px;
     color: #eee;
@@ -422,27 +414,18 @@ table td{
     border-color: #fff;
     font-size: 12px;
 }
-.LogonValSummary{
-    position: absolute;
-    top: 65px;
-    left: 40px;
-    width: 449px;
-    height: 30px;
-    font-size: 11px;
-    z-index: 1000;
-}
-.LogonValSummary li{
-    color: #ccc;
-    margin-left: -40px;
-    list-style: none;
-    background-color: #333335;
-    border: 2px solid #ccc;
-}
-input[type="text"], input[type="password"]{
+#mainLoginContent input[type="text"], #mainLoginContent input[type="password"]{
     width: 160px;
     height: 17px;
     border: 1px solid #CCC;
-    margin-top: 2px;
+    margin-top: 0px;
+	padding:1px 0px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+#mainLoginContent input#Password{
+	margin-top:0px;
 }
 ol, ul {
 	list-style: none;
@@ -1967,7 +1950,7 @@ p.comment-form-comment {
 	margin: 0 7px;
 	width: 16px;
 }
-/* IE7----------------------------------------------- */
+/*------------------------ IE7 ----------------------- */
 #ie7 article.intro {
 	margin-left: -7.6%;
 	margin-right: -7.6%;

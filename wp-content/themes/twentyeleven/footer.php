@@ -31,7 +31,7 @@
                     	<tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/features" style="font-size:13px;">Features</a></td></tr>
                         <tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/customers" style="font-size:13px;">Customers</a></td></tr>
                         <tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/pricing" style="font-size:13px;">Pricing</a></td></tr>
-                        <tr><td class="bigFooterText"><a style="font-size:13px;" href="<?php echo $GLOBALS["blogLink"];?>">Blog</a></td></tr>
+                        <tr><td class="bigFooterText"><a style="font-size:13px;" href="<?php echo $GLOBALS["blogLink"];?>/blog">Blog</a></td></tr>
                     </table>
                 </td>
                 <td style="vertical-align:top;">

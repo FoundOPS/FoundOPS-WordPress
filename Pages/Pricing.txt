@@ -15,7 +15,7 @@
 <li class="planDesc">For the Enterprise</li>
 <li class="planPrice" style="font-size:18px;margin-top:7px;margin-left:5px;width:120px;">*Contact Us For Pricing</li>
 <li class="planRate">&nbsp;</li>
-<li><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#contactUsWrapper">Contact Us</a></li>
+<li><a href="mailto:sales@foundops.com">Contact Us</a></li>
 </ul>
 </div>
 </div>

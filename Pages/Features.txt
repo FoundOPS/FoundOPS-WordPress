@@ -17,7 +17,7 @@
 </div>
 <div class="descRight" id="crm1"></div>
 <h2 class="descRight">Easily Input Client Data</h2>
-<p class="descRight">Tracking and updating your service information in one place will make your company lean and easier to control. Integrate all of your customer data to the Cloud and permanently connect customer relationship management to your other business operations. By looking at your customers from different perspectives, you will get a better look at your own business. </p>
+<p class="descRight">Tracking and updating your service information in one place will make your company lean and easier to control. Integrate all of your customer data to the cloud and permanently connect customer relationship management to your other business operations. By looking at your customers from different perspectives, you will get a better look at your own business. </p>
 <div class="descLeft" id="crm2"></div>
 <h2 class="descLeft">Analyze Your Business From Different Views</h2>
 <p class="descLeft">Set up processes and solutions which will give your business a more personal touch. The unique FoundOPS Infinite Accordion feature gives you a 360 degree view of your accounts (including contact information and service history) and can be accessed from anywhere at any time.</p>

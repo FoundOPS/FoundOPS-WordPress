@@ -1,9 +1,9 @@
 <div id="ourHome" onload="moveLink()">
         <div id="banner">
-              <img src="wp-content/themes/twentyeleven/images/Banner.png" alt="Consumer Grade Design" />
+              <img src="wp-content/themes/twentyeleven/images/Banner.png" alt="Consumer Grade Design" width="935" height="401"/>
 <div id="bannerText"><p>THE EASIEST AND</p><p> MOST EFFICIENT</p><p> WAY TO RUN A</p><p> FIELD SERVICE COMPANY</p></div>
         </div>
-<img id="navRibbons" src="wp-content/themes/twentyeleven/images/navRibbons.png" alt="" />
+<img id="navRibbons" src="wp-content/themes/twentyeleven/images/navRibbons.png" alt="Free Trial" width="239" height="115" />
         <div id="navBoxHome">
             <ul class="tabs">
                 <li class="home"><a id="tab1" href="http://eepurl.com/g912g">Start Your Free Trial</a></li>
@@ -14,20 +14,19 @@
 <li><a id="linkOne" class="selected" href="#one" onclick="ribbonClick(1)" style="position:relative;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 <li><a id="linkTwo" class="unselected" href="#two" onclick="ribbonClick(2)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 <li><a id="linkThree" class="unselected" href="#three" onclick="ribbonClick(3)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li></ul>
-<div id="ribbonSlider"><img src="wp-content/themes/twentyeleven/images/ribbon.png" alt="" /></div>
+<div id="ribbonSlider"><img src="wp-content/themes/twentyeleven/images/ribbon.png" alt="Ribbon" width="312" height="115" /></div>
 <div id="content-slider">  
     <ul id="content-slider-inside">  
-        <li id="one"><img src="wp-content/themes/twentyeleven/images/clock.png" alt="Clock" /><div><p class="subHeader">If It Takes You More Than:</p>
+        <li id="one"><img src="wp-content/themes/twentyeleven/images/clock.png" alt="Clock" width="174" height="173"/><div><p class="subHeader">FoundOPS Can Save You Time If It <br /> Currently Takes You More Than:</p>
 <p>1 &nbsp;&nbsp;&nbsp;Minute to Track Down a Field Technician</p>
 <p>5 &nbsp;&nbsp;&nbsp;Minutes to Set Up Your Routes for the Day</p>
-<p>15 &nbsp;Minutes to Send Out Your Invoices for the Week</p>
-<p><a href="<?php echo $GLOBALS["blogLink"]; ?>/features">Then FoundOPS Can Save You Time</a></p></div></li>  
-        <li id="two"><img src="wp-content/themes/twentyeleven/images/bulb.png" alt="Light Bulb" /><div><p class="subHeader">The Logistical Tools of the Big Guys, <br /> Now Available for your Business</p>
-<p>&#8226;<a href="<?php echo $GLOBALS["blogLink"]; ?>/features#integrations">Advanced Routing Algorithm</a></p>
-<p>&#8226;<a href="<?php echo $GLOBALS["blogLink"]; ?>/features#dispatcher">Dispatcher Cconsole</a></p>
-<p>&#8226;<a href="<?php echo $GLOBALS["blogLink"]; ?>/features">CRM</a></p></div></li>  
-        <li id="three"><img src="wp-content/themes/twentyeleven/images/cookieCutters.png" alt="Cookie Cutter" /><div><p class="subHeader">You're Not A Cookie Cutter Business, Why Use<br /> Cookie Cutter Operations Software?</p>
-<p>Customize FoundOPS around the way your business runs, not the other</p> <p>way around, using
+<p>15 &nbsp;Minutes to Send Out Your Invoices for the Week</p></div></li>  
+        <li id="two"><img src="wp-content/themes/twentyeleven/images/bulb.png" alt="Light Bulb" width="83" height="177"/><div><p class="subHeader">The Logistical Tools of the Big Guys <br /> Now Available for Your Business</p>
+<p><img class="arrow" src="wp-content/themes/twentyeleven/images/Arrow.png" border="0" alt="List Bullet" width="8" height="8"/><a href="<?php echo $GLOBALS["blogLink"]; ?>/features#dispatcher">Advanced Routing Algorithm</a></p>
+<p><img class="arrow" src="wp-content/themes/twentyeleven/images/Arrow.png" border="0" alt="List Bullet" width="8" height="8"/><a href="<?php echo $GLOBALS["blogLink"]; ?>/features#dispatcher">Dispatcher Console</a></p>
+<p><img class="arrow" src="wp-content/themes/twentyeleven/images/Arrow.png" border="0" alt="List Bullet" width="8" height="8"/><a href="<?php echo $GLOBALS["blogLink"]; ?>/features">CRM</a></p></div></li>  
+        <li id="three"><img src="wp-content/themes/twentyeleven/images/cookieCutters.png" alt="Cookie Cutter" width="226" height="137"/><div><p class="subHeader">You are Not A Cookie Cutter Business, Why Use<br /> Cookie Cutter Operations Software?</p>
+<p>Customize FoundOPS around the way your business runs, not </p><p id="aroundText"> the other way around, using
 <a href="<?php echo $GLOBALS["blogLink"]; ?>/features#templates" >Custom Built Service Templates</a></p></div></li> 
     </ul>  
 </div>
@@ -46,7 +45,7 @@ getTwitters('tweet', {
                     });
 </script>
                 <div id="twitterFeed">
-                    <h3><a href="http://twitter.com/#!/FoundOPS"><img src="wp-content/themes/twentyeleven/images/twitter2.png" border="0" alt="FoundOPS Twitter" /></a>Recent Tweets</h3>
+                    <h3><a href="http://twitter.com/#!/FoundOPS"><img src="wp-content/themes/twentyeleven/images/twitter2.png" border="0" alt="FoundOPS Twitter" width="40" height="39" /></a>Recent Tweets</h3>
                     <div id="tweet"></div>
                 </div>
             </div>

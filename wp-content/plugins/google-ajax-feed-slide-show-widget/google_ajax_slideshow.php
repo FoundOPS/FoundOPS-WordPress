@@ -88,20 +88,20 @@ function google_ajax_feed_slide_show_output($options) {
 function google_ajax_feed_slide_show_defaults() {
 	return array(
 		'title' 					=> __('Photos'),
-		'display_time' 				=> '3000',
+		'display_time' 				=> '2000',
 		'transition_time'			=> '600',
 		'scale_images'				=> true,
 		'maintain_aspect'			=> true,
-		'pause_hover'				=> false,
+		'pause_hover'				=> true,
 		'full_control_panel'		=> false,
 		'full_control_panel_small'	=> false,
 		'link_target'				=> 'false',
-		'thumbnail_size'			=> '',
+		'thumbnail_size'			=> 'GFslideShow.THUMBNAILS_LARGE',
 		'num_results'				=> false,
 		'feed_url'					=> '',
 		'classname'					=> '',
-		'width'						=> '400',
-		'height'					=> '400',
+		'width'						=> false,
+		'height'					=> false,
 	);	
 }
 

@@ -240,6 +240,7 @@ h2.descRight,h2.descLeft{
 	font-weight:600;
 	margin-bottom:10px;
 	line-height:28px;
+	text-align:left;
 }
 p.descLeft, p.descRight{
 	width:460px;
@@ -550,13 +551,15 @@ div#title{
 }
 #navBoxHome li a{
     position: relative;
-    top: 6px;
+    top: 16px;
     left: 30px;
 	font-size:18px;
-    font-weight: normal;
+    font-weight: bold;
+	color:#fff;
 }
 #navBoxHome li #tab1{
-	color:#D9591E;
+	top: 29px;
+	color:#fff;
 	font-weight:900;
 }
 #navBoxHome li a:hover{
@@ -564,7 +567,7 @@ div#title{
 }
 #navRibbons{
     position: absolute;
-    top: 275px;
+    top: 285px;
     left: 714px;
     z-index:100;
 }
@@ -634,13 +637,13 @@ div#title{
 	font-size:22px;
 	font-weight:bold;
 	text-align:left;
+	line-height:30px;
+	margin-bottom:5px;
 }
 #one .subHeader{
-	color:#659A41;
-}
-#two .subHeader{
-	margin-left:0px;
+	margin-left:-320px;
 	color:#488FCD;
+	text-align:center;
 }
 #three .subHeader{
 	color:#D9591E;
@@ -665,20 +668,40 @@ div#title{
 #one a, #two a, #three a{
 	color:#488FCD;
 	font-size:16px;
-	font-weight:bold;
 	text-decoration:underline;
 }
 #two a{
 	margin-left:5px;
-	color:#333335;
+	color:#488FCD;
+}
+#one p{
+	margin-left:125px;
 }
 #two p{
-	margin-left:10px;
+	margin-left:130px;
+}
+#two p.subHeader{
+	margin-left:0px;
+	color:#659A41;
+	text-align:center;
+}
+#three p.subHeader, #three p{
+	text-align:center;
+	margin-left:-330px;
+}
+#three p#aroundText{
+	margin-left:68px;
+	text-align:left;
+}
+#two .arrow{
+	position:relative;
+	top:-182px;
+	left:0px;
 }
 #three a{
 	position:relative;
 	top:-26px;
-	left:146px;
+	left:226px;
 }
 #one div, #two div, #three div{
 	position:relative;
@@ -729,14 +752,12 @@ div#title{
     line-height: 27px;
     text-align: center;
 	color:#333335;
-}
-#twitterFeed h3{
 	margin-bottom:30px;
 	letter-spacing:0em;
 }
 #twitterFeed img{
 	position:relative;
-	top:0px;
+	top:-10px;
 	left:0px;
 	margin-right:20px;
 	margin-bottom:-20px;
@@ -746,7 +767,7 @@ div#title{
 }
 #twitterFeed{
     position: relative;
-    top: -23px;
+    top: -26px;
     left: 597px;
     width: 340px;
     margin-bottom: 150px;
@@ -764,17 +785,17 @@ div#title{
 }
 #verticalLine{
     position: absolute;
-    top: 0px;
+    top: -20px;
     left: 600px;
     width: 2px;
-    height: 400px;
+    height: 380px;
     background-color: #333335;
 }
 /* ---- Blog Feed ----*/
 #compass{
 	position:absolute;
 	top:-27px;
-	left:140px;
+	left:125px;
 	display: block;
 	line-height:30px;
 	z-index:1000;
@@ -791,6 +812,9 @@ div#title{
 }
 #blog p, #post1, #post2, #post3, #blog font{
     font-size: 14px;
+}
+#post1 p, #post2 p, #post3 p{
+	margin-top:5px;
 }
 #blog a:link, #blog a:visited{
     font-size: 14px;
@@ -816,7 +840,7 @@ div#title{
 	top:0px;
 	left:0px;
 	width:620px;
-	height:245px;
+	height:275px;
 	padding:15px;
 	margin-bottom:40px;
 	border:1px solid #aaa;
@@ -841,8 +865,8 @@ div#title{
 }
 #customer #bannerContent #links{
 	position:absolute;
-	top:210px;
-	left:-96px;
+	top:225px;
+	left:-156px;
 	width:280px;
 	font-weight:bold;
 }
@@ -875,15 +899,15 @@ a#featureTourLink:hover, #bottomCustomerlinks a#featureTourLink:hover{
 	top:166px;
 	left:735px;
 	width:230px;
-	height:370px;
+	height:385px;
 	padding:15px;
 	border:1px solid #aaa;
 	background-color:#fff;
 }
 #whitePaper{
 	position:relative;
-	top:120px;
-	left:734px;
+	top:100px;
+	left:727px;
 	width:260px;
 	height:150px;
 	margin-bottom:-150px;
@@ -899,10 +923,11 @@ a#whitePaperLink:hover{
 }
 #whitePaperDesc{
 	position:absolute;
-	top:760px;
-	left:790px;
-	width:150px;
+	top:800px;
+	left:786px;
+	width:165px;
 	text-align:center;
+	font-size:13px;
 }
 #customer #bottomContent{
 	position:relative;
@@ -1014,7 +1039,7 @@ a#whitePaperLink:hover{
 #bottomCustomerlinks{
 	position:relative;
 	top:0px;
-	left:280px;
+	left:180px;
 }
 #bottomCustomerlinks a:hover{
 	text-decoration:none;
@@ -1030,6 +1055,7 @@ a#whitePaperLink:hover{
 }
 #subscribeFormWelcome{
 	text-align:center;
+	margin-top:10px;
 	margin-bottom:15px;
 }
 #form label{
@@ -1166,7 +1192,7 @@ a#whitePaperLink:hover{
 /************* End Customer MainlChimp***************/
 
 /****** Convention Banner ******/
-#SiteConventionBanner{
+/*#SiteConventionBanner{
 	position:relative;
 	top:-25px;
 	left:6px;
@@ -1194,8 +1220,9 @@ a#whitePaperLink:hover{
 	left:680px;
 }
 #whitePaperDesc{
+	top:770px;
 	left:735px;
 }
-/*#SiteConventionBanner, #conventionBannerText{
+#SiteConventionBanner, #conventionBannerText{
 	display:none;
 }*/
