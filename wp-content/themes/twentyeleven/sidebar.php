@@ -60,12 +60,13 @@ if ( 'content' != $current_layout ) :
 						<?php wp_list_categories() ?>
 					</ul>
 				</aside>
-                
                 <aside id="getConnected" class="widget">
-                <?php if(is_author()){ ?>
-					<h3 class="widget-title"><?php echo 'Connect with ' . get_the_author_meta( 'first_name' ); ?></h3>
+                <?php if(is_author()){ 
+					  	$userid = $_GET["author"];
+					  	$user_info = get_userdata($userid);?>
+						<h3 class="widget-title"><?php echo 'Connect with ' . $user_info->user_firstname; ?></h3>
 				<?php }else{ ?>
-					<h3 class="widget-title"><?php _e( 'Get Connected', 'twentyeleven' ); ?></h3>
+						<h3 class="widget-title"><?php _e( 'Get Connected', 'twentyeleven' ); ?></h3>
                     <?php } ?>
 					<table>
 						<tr>

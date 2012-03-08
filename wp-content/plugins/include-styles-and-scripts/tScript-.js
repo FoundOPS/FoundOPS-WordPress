@@ -6,23 +6,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 $(document).ready(function(){
 	var url = window.location.host;
 	var path = window.location.pathname;
+	var id = getUrlVars()["id"];
 	if(url.substr(0,3) != "loc"){
-		if (path == '/apohl') {
-			window.location = "http://www.foundops.com/?author=2";
-		} else if (path == '/jperl') {
-			window.location = "http://www.foundops.com/?author=3";
-		} else if (path == '/zbright') {
-			window.location = "http://www.foundops.com/?author=5";
-		} else if (path == '/oshatken') {
-			window.location = "http://www.foundops.com/?author=4";
-		}else if (path == '/jmahoney') {
-			window.location = "http://www.foundops.com/?author=8";
-		}else if (path == '/cmcpherson') {
-			window.location = "http://www.foundops.com/?author=6";
-		}else if (path == '/pbrown') {
-			window.location = "http://www.foundops.com/?author=7";
-		}
-		
 		if (path == '/415919') {
 			trackEvent('Convention Cards', 'QR Code Scanned', 'Card 1', 1);
 			window.location = "http://www.foundops.com/customers";
@@ -33,23 +18,17 @@ $(document).ready(function(){
 			trackEvent('Convention Cards', 'QR Code Scanned', 'Card 3', 1);
 			window.location = "http://www.foundops.com/customers";
 		}
-	} else {
-		if (path == '/apohl') {
-			window.location = "http://localhost:55206/?author=2";
-		} else if (path == '/jperl') {
-			window.location = "http://localhost:55206/?author=3";
-		} else if (path == '/zbright') {
-			window.location = "http://localhost:55206/?author=5";
-		} else if (path == '/oshatken') {
-			window.location = "http://localhost:55206/?author=4";
-		}else if (path == '/jmahoney') {
-			window.location = "http://localhost:55206/?author=8";
-		}else if (path == '/cmcpherson') {
-			window.location = "http://localhost:55206/?author=6";
-		}else if (path == '/pbrown') {
-			window.location = "http://localhost:55206/?author=7";
+		//Logic for footer About Us links
+		if (id == 'advisors') {
+			setTimeout($.scrollTo( '#advisors', 1000, { easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }}),500);
+		}else if (id == 'values') {
+			setTimeout($.scrollTo( '#values', 1000, { easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }}),500);
+		}else if (id == 'jobs') {
+			setTimeout($.scrollTo( '#jobs', 1000, { easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }}),500);
+		}else if (id == 'contactUs') {
+			setTimeout($.scrollTo( '#contactUs', 1000, { easing: 'easeInOutQuart', offset:{ top:0, left:-157 }}),500);
 		}
-		
+	} else {
 		if (path == '/415919') {
 			window.location = "http://localhost:55206/customers";
 		}else if (path == '/112091') {
@@ -57,6 +36,19 @@ $(document).ready(function(){
 		}else if (path == '/317067') {
 			window.location = "http://localhost:55206/customers";
 		}
+	}
+	
+	function getUrlVars()
+	{
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
 	}
 });
 
@@ -194,7 +186,7 @@ $(document).ready(function(){
 		  tick++;
 		  clearTimeout(scrollStop);
 		  scrollStop = setTimeout(updateFeaturesScrollInfo, 100);
-		  if (tick > 10)
+		  if (tick > 5)
 		  {
 			updateFeaturesScrollInfo();
 		  }
@@ -354,7 +346,7 @@ $(document).ready(function(){
 		  tick++;
 		  clearTimeout(scrollStop);
 		  scrollStop = setTimeout(updateScrollInfo, 100);
-		  if (tick > 10)
+		  if (tick > 5)
 		  {
 			updateScrollInfo();
 		  }
@@ -362,86 +354,86 @@ $(document).ready(function(){
 	}
 	
 	//change active link color
-		function updateScrollInfo()
-		{
-		  tick = 0;
-		  if(isTeam()){
-			document.getElementById('nav_team').className = 'activeonlight';
-			document.getElementById('nav_values').className = 'notactiveonlight';
-			document.getElementById('nav_jobs').className = 'notactiveonlight';
-			document.getElementById('nav_contact').className = 'notactiveonlight';
-			document.getElementById('nav_advisors').className = 'notactiveonlight';
-		  } else if (isAdvisors()){
-			  document.getElementById('nav_advisors').className = 'activeondark';
-			document.getElementById('nav_values').className = 'notactiveondark';
-			document.getElementById('nav_team').className = 'notactiveondark';
-			document.getElementById('nav_jobs').className = 'notactiveondark';
-			document.getElementById('nav_contact').className = 'notactiveondark';
-		  } else if (isValues()){
-			document.getElementById('nav_values').className = 'activeonlight';
-			document.getElementById('nav_team').className = 'notactiveonlight';
-			document.getElementById('nav_jobs').className = 'notactiveonlight';
-			document.getElementById('nav_contact').className = 'notactiveonlight';
-			document.getElementById('nav_advisors').className = 'notactiveonlight';
-		  }  else if (isJobs()){
-			document.getElementById('nav_jobs').className = 'activeondark';
-			document.getElementById('nav_values').className = 'notactiveondark';
-			document.getElementById('nav_team').className = 'notactiveondark';
-			document.getElementById('nav_contact').className = 'notactiveondark';
-			document.getElementById('nav_advisors').className = 'notactiveondark';
-		  } else if (isContact()){
-			document.getElementById('nav_contact').className = 'activeonlight';
-			document.getElementById('nav_values').className = 'notactiveonlight';
-			document.getElementById('nav_jobs').className = 'notactiveonlight';
-			document.getElementById('nav_team').className = 'notactiveonlight';
-			document.getElementById('nav_advisors').className = 'notactiveonlight';
-		  }
-		}
-	  
-		function isTeam() {
-			var docViewTop = $(window).scrollTop(),
-				docViewBottom = docViewTop + $(window).height(),
-				elemTop = $(team).offset().top,
-			 elemBottom = elemTop + $(team).height();
-		   //Is more than half of the element visible
-		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-		}
-		
-		function isAdvisors() {
-			var docViewTop = $(window).scrollTop(),
-				docViewBottom = docViewTop + $(window).height(),
-				elemTop = $(advisors).offset().top,
-			 elemBottom = elemTop + $(advisors).height();
-		   //Is more than half of the element visible
-		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-		}
-	  
-		function isValues() {
-			var docViewTop = $(window).scrollTop(),
-				docViewBottom = docViewTop + $(window).height(),
-				elemTop = $(values).offset().top,
-			 elemBottom = elemTop + $(values).height();
-		   //Is more than half of the element visible
-		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-		}
-	  
-		function isJobs() {
-			var docViewTop = $(window).scrollTop(),
-				docViewBottom = docViewTop + $(window).height(),
-				elemTop = $(jobs).offset().top,
-			 elemBottom = elemTop + $(jobs).height();
-		   //Is more than half of the element visible
-		   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-		}
-	  
-		function isContact() {
-			var docViewTop = $(window).scrollTop(),
-				docViewBottom = docViewTop + $(window).height(),
-				elemTop = $(contact).offset().top,
-			 elemBottom = elemTop + $(contact).height();
-		   //Is more than half of the element visible
-			return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
-		}
+	function updateScrollInfo()
+	{
+	  tick = 0;
+	  if(isTeam()){
+		document.getElementById('nav_team').className = 'activeonlight';
+		document.getElementById('nav_values').className = 'notactiveonlight';
+		document.getElementById('nav_jobs').className = 'notactiveonlight';
+		document.getElementById('nav_contact').className = 'notactiveonlight';
+		document.getElementById('nav_advisors').className = 'notactiveonlight';
+	  } else if (isAdvisors()){
+		  document.getElementById('nav_advisors').className = 'activeondark';
+		document.getElementById('nav_values').className = 'notactiveondark';
+		document.getElementById('nav_team').className = 'notactiveondark';
+		document.getElementById('nav_jobs').className = 'notactiveondark';
+		document.getElementById('nav_contact').className = 'notactiveondark';
+	  } else if (isValues()){
+		document.getElementById('nav_values').className = 'activeonlight';
+		document.getElementById('nav_team').className = 'notactiveonlight';
+		document.getElementById('nav_jobs').className = 'notactiveonlight';
+		document.getElementById('nav_contact').className = 'notactiveonlight';
+		document.getElementById('nav_advisors').className = 'notactiveonlight';
+	  }  else if (isJobs()){
+		document.getElementById('nav_jobs').className = 'activeondark';
+		document.getElementById('nav_values').className = 'notactiveondark';
+		document.getElementById('nav_team').className = 'notactiveondark';
+		document.getElementById('nav_contact').className = 'notactiveondark';
+		document.getElementById('nav_advisors').className = 'notactiveondark';
+	  } else if (isContact()){
+		document.getElementById('nav_contact').className = 'activeonlight';
+		document.getElementById('nav_values').className = 'notactiveonlight';
+		document.getElementById('nav_jobs').className = 'notactiveonlight';
+		document.getElementById('nav_team').className = 'notactiveonlight';
+		document.getElementById('nav_advisors').className = 'notactiveonlight';
+	  }
+	}
+  
+	function isTeam() {
+		var docViewTop = $(window).scrollTop(),
+			docViewBottom = docViewTop + $(window).height(),
+			elemTop = $(team).offset().top,
+		 elemBottom = elemTop + $(team).height();
+	   //Is more than half of the element visible
+	   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+	}
+	
+	function isAdvisors() {
+		var docViewTop = $(window).scrollTop(),
+			docViewBottom = docViewTop + $(window).height(),
+			elemTop = $(advisors).offset().top,
+		 elemBottom = elemTop + $(advisors).height();
+	   //Is more than half of the element visible
+	   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+	}
+  
+	function isValues() {
+		var docViewTop = $(window).scrollTop(),
+			docViewBottom = docViewTop + $(window).height(),
+			elemTop = $(values).offset().top,
+		 elemBottom = elemTop + $(values).height();
+	   //Is more than half of the element visible
+	   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+	}
+  
+	function isJobs() {
+		var docViewTop = $(window).scrollTop(),
+			docViewBottom = docViewTop + $(window).height(),
+			elemTop = $(jobs).offset().top,
+		 elemBottom = elemTop + $(jobs).height();
+	   //Is more than half of the element visible
+	   return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+	}
+  
+	function isContact() {
+		var docViewTop = $(window).scrollTop(),
+			docViewBottom = docViewTop + $(window).height(),
+			elemTop = $(contact).offset().top,
+		 elemBottom = elemTop + $(contact).height();
+	   //Is more than half of the element visible
+		return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+	}
 });
 
 /* jQuery.ScrollTo - Easy element scrolling using jQuery. */
@@ -801,103 +793,18 @@ function ribbonClick(num){
 	var linkOne   = $('#linkOne');
 	var linkTwo   = $('#linkTwo');
 	var linkThree = $('#linkThree');
-/*	var colorOne  = "#ffffff";
-	var colorTwo  = "#333335";
-	var oneRGB   = document.getElementById("linkOne").style.color;
-	var twoRGB   = document.getElementById("linkTwo").style.color;
-	var threeRGB = document.getElementById("linkThree").style.color;
-	var oneHex = "#" + rgb2h(oneRGB.substring(4,7), oneRGB.substring(8,11), oneRGB.substring(12,15));
-	var twoHex = "#" + rgb2h(twoRGB.substring(4,7), twoRGB.substring(8,11), twoRGB.substring(12,15));
-	var threeHex = "#" + rgb2h((threeRGB.substring(4,7)), (threeRGB.substring(8,11)), (threeRGB.substring(12,15)));
-	var textWait = 100;
-	var textSpeed = 0;*/
 	var speed = 400;
 	if(num == 1){
 		ribbon.animate({left:0}, speed);
-		/*linkOne.delay(textWait).animate({top:5}, textSpeed);
-		linkTwo.animate({top:15}, textSpeed);
-		linkThree.animate({top:15}, textSpeed);
-		animateColor(document.getElementById("linkOne"),colorTwo,colorOne,speed,20);
-		animateColor(document.getElementById("linkTwo"),twoHex,colorTwo,speed,20);
-		animateColor(document.getElementById("linkThree"),threeHex,colorTwo,speed,20);*/
 	}else if(num == 2){
 		ribbon.animate({left:300}, speed);
-		/*linkOne.animate({top:15}, textSpeed);
-		linkTwo.delay(textWait).animate({top:5}, textSpeed);
-		linkThree.animate({top:15}, textSpeed);
-		animateColor(document.getElementById("linkOne"),oneHex,colorTwo,speed,20);
-		animateColor(document.getElementById("linkTwo"),colorTwo,colorOne,speed,20);
-		animateColor(document.getElementById("linkThree"),threeHex,colorTwo,speed,20);*/
 	}else{
 		ribbon.animate({left:610}, speed);
-		/*linkOne.animate({top:15}, textSpeed);
-		linkTwo.animate({top:15}, textSpeed);
-		linkThree.delay(textWait).animate({top:5}, textSpeed);
-		animateColor(document.getElementById("linkOne"),oneHex,colorTwo,speed,20);
-		animateColor(document.getElementById("linkTwo"),twoHex,colorTwo,speed,20);
-		animateColor(document.getElementById("linkThree"),colorTwo,colorOne,speed,20);*/
 	}
 }
 
 function moveLink(){
 	var linkOne    = $('#linkOne');
 	var contentOne = document.getElementById("one");
-	//linkOne.animate({top:5}, 0);
 	contentOne.show();
 }
-/* Not Used */
-
-/*function animateColor(elm, begin, end, duration, fps) {
-
-	if(!duration) 
-	  duration = 1000;
-	if(!fps) 
-	  fps = 20;
-	duration=parseFloat(duration);
-	fps = parseFloat(fps);
-	var interval    = Math.ceil(1000/fps);
-	var totalframes = Math.ceil(duration/interval);
-  
-	for(i=1;i <= totalframes;i++) {
-	   (function() {
-		   var frame = i;
-		   var b = cssColor2rgb(begin);
-		   var e = cssColor2rgb(end);
-		   var change0=e[0]-b[0];
-		   var change1=e[1]-b[1];
-		   var change2=e[2]-b[2];
-  
-		  function color() {
-			  var increase0=ease(frame, b[0], change0, totalframes);
-			  var increase1=ease(frame, b[1], change1, totalframes);
-			  var increase2=ease(frame, b[2], change2, totalframes);
-	
-			  elm.style.color = 'rgb('+parseInt(increase0)+','+parseInt(increase1)+','+parseInt(increase2)+')';        
-		  }
-		  timer = setTimeout(color,interval*frame);
-	  })(); 
-   }
-}
-
-function cssColor2rgb(color) {
-   if(color.indexOf('rgb')<=-1) {
-   	  return h2rgb(color.substring(1,3),color.substring(3,5),color.substring(5,7));
-   }
-      return color.substring(4,color.length-1).split(',');
-}
-
-function rgb2h(r,g,b) { 
-   return [d2h(r),d2h(g),d2h(b)];
-}
-function d2h(dec) { 
-   return dec.toString(16);
-}
-function h2d(hex) { 
-   return parseInt(hex,16);
-}
-function h2rgb(h,e,x) {
-   return [h2d(h),h2d(e),h2d(x)];
-}
-function ease(frame,begin,change,totalframes) {
-   return begin+change*(frame/totalframes);
-}*/

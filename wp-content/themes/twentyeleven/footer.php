@@ -25,7 +25,7 @@
     <div>
     	<table id="bottomTable" class="tabs">
             <tr>
-            	<td style="vertical-align:middle;"><div id="navLogo"><a style="line-height:50px;font-size:50px;" href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div></td>
+            	<td style="vertical-align:middle;"><div id="navLogo"><a style="line-height:50px;font-size:50px;" href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div></td>
                 <td style="vertical-align:top;">
                 	<table id="col1">
                     	<tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/features" style="font-size:13px;">Features</a></td></tr>
@@ -38,10 +38,10 @@
                 	<table id="col2">
                     	<tr><td class="bigFooterText"><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs" style="font-size:13px;">About Us</a></td></tr>
                         <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs">The Team</a></td></tr>
-                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#advisorsWrapper">Advisors</a></td></tr>
-                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#valuesWrapper">Our Values</a></td></tr>
-                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#jobsWrapper">Jobs</a></td></tr>
-                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs#contactUsWrapper">Contact Us</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs?id=advisors">Advisors</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs?id=values">Our Values</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs?id=jobs">Jobs</a></td></tr>
+                        <tr><td><a href="<?php echo $GLOBALS["blogLink"];?>/aboutUs?id=contactUs">Contact Us</a></td></tr>
                     </table>
                 </td>
             </tr>
