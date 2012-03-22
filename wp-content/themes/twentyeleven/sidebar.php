@@ -53,13 +53,6 @@ if ( 'content' != $current_layout ) :
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 				
                 <?php  ?>
-                
-                 <aside id="topics" class="widget">
-					<h3 class="widget-title"><?php _e( 'Topics', 'twentyeleven' ); ?></h3>
-					<ul>
-						<?php wp_list_categories() ?>
-					</ul>
-				</aside>
                 <aside id="getConnected" class="widget">
                 <?php if(is_author()){ 
 					  	$userid = $_GET["author"];
@@ -97,6 +90,12 @@ if ( 'content' != $current_layout ) :
                     <div id="or">or</div>
                     <span style="color:#aaa;">&nbsp;&nbsp;__________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__________</span>
                     <?php mailchimpSF_signup_form(); ?>
+				</aside>
+                <aside id="topics" class="widget">
+					<h3 class="widget-title"><?php _e( 'Topics', 'twentyeleven' ); ?></h3>
+					<ul>
+						<?php wp_list_categories() ?>
+					</ul>
 				</aside>
 				<aside id="archives" class="widget">
 					<h3 class="widget-title"><?php _e( 'Archives', 'twentyeleven' ); ?></h3>

@@ -4,8 +4,9 @@
 <head runat="server">
     <title> </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="wp-content/themes/twentyeleven/style.css" rel="stylesheet" type="text/css" />
+    <link href="wp-content/themes/twentyeleven/style.less" rel="stylesheet/less" type="text/css" />
     <script src="wp-includes/jquery-1.6.1.min.js" type="text/javascript"></script>
+    <script src="wp-content/themes/twentyeleven/js/less-1.3.0.min.js" type="text/javascript"></script>
 </head>
 <body style="background:none;">
     <div id="blog">

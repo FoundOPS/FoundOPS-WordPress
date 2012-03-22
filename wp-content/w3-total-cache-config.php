@@ -107,7 +107,7 @@ return array(
 	'pgcache.prime.enabled' => false,
 	'pgcache.prime.interval' => 900,
 	'pgcache.prime.limit' => 10,
-	'pgcache.prime.sitemap' => '',
+	'pgcache.prime.sitemap' => 'http://testops:8080/sitemap.xml',
 	'minify.enabled' => true,
 	'minify.auto' => false,
 	'minify.debug' => false,
@@ -293,7 +293,7 @@ return array(
 	'varnish.debug' => false,
 	'varnish.servers' => array(
 	),
-	'browsercache.enabled' => true,
+	'browsercache.enabled' => false,
 	'browsercache.no404wp' => false,
 	'browsercache.no404wp.exceptions' => array(
 		0 => 'robots\\.txt',
@@ -514,8 +514,8 @@ return array(
 	'notes.need_empty_pgcache' => false,
 	'notes.need_empty_minify' => false,
 	'notes.need_empty_objectcache' => false,
-	'notes.pgcache_rules_core' => true,
-	'notes.pgcache_rules_cache' => true,
+	'notes.pgcache_rules_core' => false,
+	'notes.pgcache_rules_cache' => false,
 	'notes.pgcache_rules_legacy' => true,
 	'notes.pgcache_rules_wpsc' => true,
 	'notes.minify_rules_core' => false,

@@ -16,33 +16,41 @@
 // ** MySQL settings - You can get this info from your web host ** //
 global $debug, $foundopsLink, $blogLink;
 
-/** The site URL */
-define('WP_SITEURL', $blogLink);
-
-$debug = false;
+$debug = true;
 
 if ($debug)
 {
 	$foundopsLink = "http://localhost:31820";
-	$blogLink = "http://localhost:8888";
+	$blogLink = "http://testops:8080";
+	
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'wordpress');
+	/** MySQL database username */
+	define('DB_USER', 'root');
+	/** MySQL database password */
+	define('DB_PASSWORD', '@t3ztSRVRz');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost:3306');
 }
 else
 {
 	$foundopsLink = "http://app.foundops.com";
 	$blogLink = "http://www.foundops.com";
+	
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'bitnami_wordpress');
+	/** MySQL database username */
+	define('DB_USER', 'bn_wordpress');
+	/** MySQL database password */
+	define('DB_PASSWORD', '20b26d4a71');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost:3306');
 }
 
 /** The site URL */
 define('WP_SITEURL', $blogLink);
+define('WP_HOME',$blogLink);
 
-/** The name of the database for WordPress */
-define('DB_NAME', 'bitnami_wordpress');
-/** MySQL database username */
-define('DB_USER', 'bn_wordpress');
-/** MySQL database password */
-define('DB_PASSWORD', '20b26d4a71');
-/** MySQL hostname */
-define('DB_HOST', 'localhost:3306');
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */

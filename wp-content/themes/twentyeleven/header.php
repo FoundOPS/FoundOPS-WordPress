@@ -1,7 +1,7 @@
 <?php ?><!DOCTYPE html>
 <!--Copyright FoundOPS 2012. All rights reserved.
 FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="en-US" <?php if(is_page(63)){ ?> style="background-image: url('wp-content/themes/twentyeleven/images/homeBg.png');"<?php } ?>>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
@@ -11,28 +11,25 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
 <meta name="google-site-verification" content="gMZQUTO8tOdyGEtehqnkS-fgjy5eMu5UHLKPL_cjn48" />
 <meta name="keywords" content="Field Service GPS Tracking Dispatch Operations Software Mobile Application 
 Route Vehicles FoundOPS	Cloud Solution Efficiency SaaS Lean Customer Management Technology Integration" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/BlogStyle.css" />
+<link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/BlogStyle.less" />
 <?php if(is_page(69)){ ?><!-- About Us -->
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/aboutstyle.css" />
+<link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/aboutstyle.less" />
 <title>Field Service Management @ FoundOPS - About Us</title>
 <meta name="description" content="Discover the FoundOPS Team, Advisors, and Core Values" />
 <?php }else if(is_page(63)) { ?><!-- Home -->
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.css" />
+<link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
 <title>Field Service Management @ FoundOPS</title>
-<style type="text/css">
-html{background-image: url('wp-content/themes/twentyeleven/images/homeBg.png');}
-</style>
 <meta name="description" content="Manage your Field Service Company with GPS Technician Tracking, Drag & Drop Dispatching, and Intuitive Customer Management in one easy-to-use system." />
 <?php }else if(is_page(66)) { ?><!-- Features -->
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.css" />
+<link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
 <title>Field Service Management @ FoundOPS - Features</title>
 <meta name="description" content="We offer features such as GPS Tracking, QuickBooks Integration, and Automatic Service Generation, just to name a few" />
 <?php }else if(is_page(473)) { ?><!-- Pricing -->
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.css" />
+<link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
 <title>Field Service Management @ FoundOPS - Pricing</title>
 <meta name="description" content="FoundOPS is setting the new standard for Affordable Small Business Operations Software" />
 <?php }else if(is_page(462)) { ?><!-- Customers -->
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.css" />
+<link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
 <title>Field Service Management @ FoundOPS - Customers</title>
 <meta name="description" content="We customize Operations Software for many different Field Service Industries" />
 <?php } else { ?>
@@ -41,6 +38,7 @@ html{background-image: url('wp-content/themes/twentyeleven/images/homeBg.png');}
 <?php } ?>
 <link rel="apple-touch-icon" href="<?php echo $GLOBALS["foundopsLink"]; ?>/Content/TouchIcon.png" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<script src="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/js/less-1.3.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-25857232-1']);
@@ -99,7 +97,7 @@ html{background-image: url('wp-content/themes/twentyeleven/images/homeBg.png');}
                     <li class="hoverRed" id="aboutUsNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/aboutUs">&nbsp;About Us&nbsp;</a></li>
                     <li class="hoverBlue" id="blogNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/blog">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     <li></li><li></li><li style="width:121px;"></li>
-                    <li class="hoverOrange" id="freeTrialNav"><a href="http://eepurl.com/g912g">Free Trial</a></li>
+                    <li class="hoverOrange" id="freeTrialNav"><a href="http://www.formstack.com/forms/foundops-free_trial">Free Trial</a></li>
                 </ul>
             </div>
         </div>
