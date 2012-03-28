@@ -49,7 +49,9 @@
 		<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
         <center><table><tr><td width="130px" style="padding-left:0px;"><a href="http://twitter.com/share" class="twitter-share-button"
              data-url="<?php the_permalink(); ?>"
-             data-text="<?php echo "Check out this @FoundOPS blog post, "; the_title(); echo ", by "; the_author(); echo " at "; ?>"
+             data-text="<?php echo "Check out this @FoundOPS blog post, "; the_title(); echo ", by "; 
+			 echo substr_replace(get_the_author_meta('twitter'), '@',0,22);
+			 echo " at "; ?>"
              data-count="horizontal">Tweet</a></td>
         
         <!-- +1 button -->

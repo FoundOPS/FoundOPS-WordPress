@@ -40,7 +40,7 @@ html{
 	height:100%;
 	overflow-y: scroll;
 	background-color: #ededed;
-    background-image: url('images/HeaderBg.png');
+    /*background-image: url('images/HeaderBg.png');*/
     background-repeat: repeat-x;
 }
 #top{
@@ -101,6 +101,15 @@ ol{
 #container{
 	position:relative;
     margin-bottom: -200px;
+}
+#backgroundTop{
+	.positionSize(absolute, 0px, 0px, 100%, 79px);
+	background-color:@charcoal;
+}
+#backgroundBottom{
+	.positionSize(absolute, 79px, 0px, 100%, 31px);
+	background-color:@white;
+	border-bottom:1px solid #838383;
 }
 table td{
     padding: 5px;
@@ -214,9 +223,10 @@ table td{
 	text-align:right;
 }
 #nav{
-	.positionSize(relative, 44px, 30px, 1000px);
+	.positionSize(absolute, 107px, 30px, 1000px);
 	margin-top:-28px;
-	margin-bottom:-7px;
+	margin-bottom:20px;
+	z-index:9000;
 	li{
 		display:table-cell;
 		width:90px;
@@ -302,7 +312,7 @@ table td{
 	margin-left:40px;	
 }
 #blogTitleBlock{
-	.positionSize(relative, 40px, 79px, 375px, 164px);
+	.positionSize(relative, 95px, 79px, 375px, 164px);
 	padding-left:15px;
 	margin-bottom:-30px;
 	background-image:url('images/BlogHeader.png');
@@ -325,9 +335,8 @@ table td{
 /*********** login form ***********/
 #mainLoginContent{
 	.positionSize(relative, -28px, 531px, 500px, 65px);
-	margin-bottom:-71px;
+	margin-bottom:-67px;
 	color:@white;
-	border:2px solid @charcoal;
 }
 #email{
 	.positionSize(absolute, 2px, 39px);
@@ -583,7 +592,7 @@ article{
 }
 .blog #main, .single-post #main{
 	position:relative;
-	top:50px;
+	top:105px;
 	min-height:650px;
 }
 #primary{
@@ -927,8 +936,8 @@ a:hover{
 #main{
 	clear: both;
 	position:relative;
-	top:50px;
-	margin-bottom:120px;
+	top:74px;
+	margin-bottom:180px;
 }
 .page-title{
 	color: #aaa;
@@ -1391,7 +1400,7 @@ article.intro{
 	}
 	.edit-link{
 		a{
-			.positionSize(absolute, 10px);
+			.positionSize(absolute, 10px, auto);
 			border:1px solid #ccc;
 			color: @charcoal;
 			font-size: 12px;

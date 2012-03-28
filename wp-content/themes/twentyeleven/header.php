@@ -72,6 +72,8 @@ Route Vehicles FoundOPS	Cloud Solution Efficiency SaaS Lean Customer Management 
 <?php flush(); ?>
 <body <?php body_class(); ?>>
 <div id="container">
+	<div id="backgroundTop"></div>
+    <div id="backgroundBottom"></div>
     <div id="page" class="hfeed">
     	<div id="top">
             <div id="SiteLogo"><a href="<?php echo $GLOBALS["blogLink"];?>/home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
