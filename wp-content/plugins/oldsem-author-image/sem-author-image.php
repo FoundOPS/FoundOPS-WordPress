@@ -273,7 +273,7 @@ class author_image extends WP_Widget {
 				. '</a>';
 		}
 		
-		return '<div class="entry_author_image">'
+		return '<div id="entry_author_image">'
 			. $author_image
 			. '</div>' . "\n";
 	} # get()

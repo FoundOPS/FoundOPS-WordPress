@@ -5,7 +5,9 @@ $current_layout = $options['theme_layout'];
 if ( 'content' != $current_layout ) :
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
+        
         <?php if(is_author()){ ?>
+        <script src="js/jquery.js" type="text/javascript"></script>
         	<script type="text/javascript">
 				function whichBrs() {
 					var agt=navigator.userAgent.toLowerCase();
@@ -39,14 +41,19 @@ if ( 'content' != $current_layout ) :
 				}
             	var sec = document.getElementById('secondary');
 				var info = document.getElementById('author-info');
+				var image = document.getElementById('entry_author_image');
 				var space = $style('author-info', "height");
 				sec.style.top = space;
 				sec.style.marginTop = "67px";
 				var browserName = whichBrs();
 				if (browserName == "Internet Explorer"){
 					sec.style.top = window.getComputedStyle(info,"").getPropertyValue("height");
-				}else if (browserName == "Opera" || browserName == "Chrome" || browserName == "Safari"){
+				}else if (browserName == "Opera"){
 					sec.style.top = getComputedStyle(info, null).height;
+				}else if (browserName == "Chrome"){
+					sec.style.top = $('#author-info').height();
+				}else if (browserName == "Safari"){
+					sec.style.top = $('#author-info').height();
 				}
             </script>
         <?php } ?>
