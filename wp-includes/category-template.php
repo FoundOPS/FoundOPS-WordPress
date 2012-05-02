@@ -436,7 +436,7 @@ function wp_list_categories( $args = '' ) {
 		'title_li' => null,
 		'echo' => 1,
 		'depth' => 0,
-		'number' => 6,
+		'number' => 5,
 		'taxonomy' => 'category'
 	);
 

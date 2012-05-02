@@ -1,4 +1,7 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
 /**
  * The base configurations of the WordPress.
  *
@@ -105,7 +108,6 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 /** Sets up WordPress vars and included files. */
-define('WP_CACHE', true);
 require_once(ABSPATH . 'wp-settings.php');
 define('FS_METHOD', 'ftpext');
 define('FTP_BASE', '/opt/bitnami/apps/wordpress/htdocs/');

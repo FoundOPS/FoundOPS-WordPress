@@ -14,31 +14,44 @@ Route Vehicles FoundOPS	Cloud Solution Efficiency SaaS Lean Customer Management 
 <link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/BlogStyle.less" />
 <?php if(is_page(69)){ ?><!-- About Us -->
 <link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/aboutstyle.less" />
-<title>Field Service Management @ FoundOPS - About Us</title>
+<title>Field Service Management Software From The Cloud - About Us</title>
 <meta name="description" content="Discover the FoundOPS Team, Advisors, and Core Values" />
 <?php }else if(is_page(63)) { ?><!-- Home -->
 <link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
-<title>Field Service Management @ FoundOPS</title>
+<title>Field Service Management Software From The Cloud</title>
 <meta name="description" content="Manage your Field Service Company with GPS Technician Tracking, Drag & Drop Dispatching, and Intuitive Customer Management in one easy-to-use system." />
 <?php }else if(is_page(66)) { ?><!-- Features -->
 <link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
-<title>Field Service Management @ FoundOPS - Features</title>
+<title>Field Service Management Software From The Cloud - Features</title>
 <meta name="description" content="We offer features such as GPS Tracking, QuickBooks Integration, and Automatic Service Generation, just to name a few" />
 <?php }else if(is_page(473)) { ?><!-- Pricing -->
 <link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
-<title>Field Service Management @ FoundOPS - Pricing</title>
+<title>Field Service Management Software From The Cloud - Pricing</title>
 <meta name="description" content="FoundOPS is setting the new standard for Affordable Small Business Operations Software" />
 <?php }else if(is_page(462)) { ?><!-- Customers -->
 <link rel="stylesheet/less" type="text/css" media="all" href="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/style.less" />
-<title>Field Service Management @ FoundOPS - Customers</title>
+<title>Field Service Management Software From The Cloud - Customers</title>
 <meta name="description" content="We customize Operations Software for many different Field Service Industries" />
 <?php } else { ?>
-<title>Field Service Management @ FoundOPS - Blog</title>
+<title>Field Service Management Software From The Cloud - Blog</title>
 <meta name="description" content="Follow the FoundOPS Blog to learn more about Lean Customer Management, Operations Software, and Cloud-Based Software Solutions" />
 <?php } ?>
 <link rel="apple-touch-icon" href="<?php echo $GLOBALS["foundopsLink"]; ?>/Content/TouchIcon.png" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <script src="<?php echo $GLOBALS["blogLink"]; ?>/wp-content/themes/twentyeleven/js/less-1.3.0.min.js" type="text/javascript"></script>
+<script src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+// Get twitter feed
+function twitter(){
+	getTwitters('tweet',{
+                        id: 'FoundOPS',
+                        count: 3,
+                        enableLinks: true,
+                        ignoreReplies: true,
+                        clearContents: true,
+                        template: '"%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
+                    });
+}</script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-25857232-1']);

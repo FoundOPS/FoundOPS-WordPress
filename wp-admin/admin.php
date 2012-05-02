@@ -72,7 +72,16 @@ if ( !wp_next_scheduled('wp_scheduled_delete') && !defined('WP_INSTALLING') )
 	wp_schedule_event(time(), 'daily', 'wp_scheduled_delete');
 
 set_screen_options();
+add_action( 'admin_init', 'jquery_admin' );
 
+function jquery_admin() {
+
+    global $concatenate_scripts;
+
+    $concatenate_scripts = false;
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', ( 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' ), false, '1.x', true );
+}
 $date_format = get_option('date_format');
 $time_format = get_option('time_format');
 

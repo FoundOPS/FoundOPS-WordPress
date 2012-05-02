@@ -13,7 +13,6 @@ require_once('./admin.php');
 require_once(ABSPATH . 'wp-admin/includes/dashboard.php');
 
 wp_dashboard_setup();
-
 wp_enqueue_script( 'dashboard' );
 wp_enqueue_script( 'plugin-install' );
 wp_enqueue_script( 'media-upload' );
