@@ -452,20 +452,15 @@ article{
 		float:left;
 		margin: 2px 2px 2px 0;
 		padding:6px 9px 5px 9px;
-		text-decoration:none;
+		text-decoration:underline;
 		width:auto;
 		color:@charcoal;
-		background: @white;
-		border:1px solid @charcoal;
-	}
-	a:hover{
-		color:@charcoal;
-		background: #ddd;
 	}
 	.current{
 		padding:6px 9px 5px 9px;
-		background: @white;
 		color:@charcoal;
+		text-decoration:none;
+		font-weight:bold;
 	}
 }
 /* Widgets-------------- */
@@ -596,7 +591,7 @@ article{
 	min-height:650px;
 }
 #primary{
-	min-height:650px;	
+	min-height:300px;	
 }
 /* Attachments */
 .singular .image-attachment .entry-content{
@@ -1201,13 +1196,13 @@ a:active img[class*="wp-image-"],
 /* Author Info */
 .author #primary{
 	position:relative;
-	top:-616px;	
+	top:-616px;
+	margin-bottom: -300px;
 }
 .author #secondary{
 	position:relative;
 	top:35px;	
-	left:-27px;
-	float:right;
+	left:784px;
 }
 #author-info{
 	.positionSize(relative, 0px, 80px, 901px);
@@ -1267,9 +1262,6 @@ a:active img[class*="wp-image-"],
 	right: 0;
 	text-align: center;
 	text-decoration: none;
-}
-.entry-title a:link{
-	color:#06C;
 }
 .entry-header .comments-link a:hover,
 .entry-header .comments-link a:focus,

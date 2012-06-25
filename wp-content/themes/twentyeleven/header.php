@@ -5,7 +5,7 @@ FoundOPS and Cloud Dispatched are trademarks of FoundOPS LLC.-->
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="shortcut icon" href="wp-includes/images/favicon.ico" />
+<link rel="shortcut icon" href="/wp-includes/images/favicon.ico" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
 <meta name="google-site-verification" content="gMZQUTO8tOdyGEtehqnkS-fgjy5eMu5UHLKPL_cjn48" />
@@ -112,7 +112,8 @@ function twitter(){
                     <li class="hoverRed" id="aboutUsNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/aboutUs">&nbsp;About Us&nbsp;</a></li>
                     <li class="hoverBlue" id="blogNav"><a href="<?php echo $GLOBALS["blogLink"]; ?>/blog">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     <li></li><li></li><li style="width:121px;"></li>
-                    <li class="hoverOrange" id="freeTrialNav"><a href="http://www.formstack.com/forms/foundops-free_trial">Free Trial</a></li>
+                    <li class="hoverOrange" id="freeTrialNav"><a href="http://www.formstack.com/forms/foundops-free_trial" 
+                    	onclick="_gaq.push(['_trackEvent', 'Beta Form Signup', 'Page Viewed']);">Free Trial</a></li>
                 </ul>
             </div>
         </div>
