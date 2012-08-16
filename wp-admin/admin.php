@@ -12,16 +12,16 @@
  * @since 2.3.2
  */
 if ( ! defined('WP_ADMIN') )
-	define('WP_ADMIN', TRUE);
+	define('WP_ADMIN', true);
 
 if ( ! defined('WP_NETWORK_ADMIN') )
-	define('WP_NETWORK_ADMIN', FALSE);
+	define('WP_NETWORK_ADMIN', false);
 
 if ( ! defined('WP_USER_ADMIN') )
-	define('WP_USER_ADMIN', FALSE);
+	define('WP_USER_ADMIN', false);
 
 if ( ! WP_NETWORK_ADMIN && ! WP_USER_ADMIN ) {
-	define('WP_BLOG_ADMIN', TRUE);
+	define('WP_BLOG_ADMIN', true);
 }
 
 if ( isset($_GET['import']) && !defined('WP_LOAD_IMPORTERS') )
@@ -30,7 +30,7 @@ if ( isset($_GET['import']) && !defined('WP_LOAD_IMPORTERS') )
 require_once(dirname(dirname(__FILE__)) . '/wp-load.php');
 
 if ( get_option('db_upgraded') ) {
-	$wp_rewrite->flush_rules();
+	flush_rewrite_rules();
 	update_option( 'db_upgraded',  false );
 
 	/**
@@ -72,16 +72,7 @@ if ( !wp_next_scheduled('wp_scheduled_delete') && !defined('WP_INSTALLING') )
 	wp_schedule_event(time(), 'daily', 'wp_scheduled_delete');
 
 set_screen_options();
-add_action( 'admin_init', 'jquery_admin' );
 
-function jquery_admin() {
-
-    global $concatenate_scripts;
-
-    $concatenate_scripts = false;
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', ( 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' ), false, '1.x', true );
-}
 $date_format = get_option('date_format');
 $time_format = get_option('time_format');
 
@@ -162,7 +153,6 @@ if ( isset($plugin_page) ) {
 		if ( validate_file($plugin_page) )
 			wp_die(__('Invalid plugin page'));
 
-
 		if ( !( file_exists(WP_PLUGIN_DIR . "/$plugin_page") && is_file(WP_PLUGIN_DIR . "/$plugin_page") ) && !( file_exists(WPMU_PLUGIN_DIR . "/$plugin_page") && is_file(WPMU_PLUGIN_DIR . "/$plugin_page") ) )
 			wp_die(sprintf(__('Cannot load %s.'), htmlentities($plugin_page)));
 
@@ -238,5 +228,3 @@ if ( isset($plugin_page) ) {
 
 if ( !empty($_REQUEST['action']) )
 	do_action('admin_action_' . $_REQUEST['action']);
-
-?>

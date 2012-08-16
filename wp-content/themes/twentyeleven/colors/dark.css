@@ -205,11 +205,13 @@ a:active img[class*="wp-image-"] {
 
 /* Comments link */
 .entry-header .comments-link a {
+	background: #282828 url(../images/comment-bubble-dark.png) no-repeat;
 	border-color: #222;
 	color: #888;
 }
 
 .rtl .entry-header .comments-link a {
+	background-image: url(../images/comment-bubble-dark-rtl.png);
 }
 /* Singular content styles for Posts and Pages */
 .singular .entry-title {
@@ -455,6 +457,11 @@ section.recent-posts .other-recent-posts .comments-link a:hover {
 }
 .comment-meta {
 	color: #999;
+}
+.commentlist .avatar {
+	-webkit-box-shadow: 0 1px 2px #222;
+	-moz-box-shadow: 0 1px 2px #222;
+	box-shadow: 0 1px 2px #222;
 }
 a.comment-reply-link {
 	background: #242424;

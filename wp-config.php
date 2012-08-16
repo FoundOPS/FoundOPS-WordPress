@@ -1,118 +1,131 @@
 <?php
-/** Enable W3 Total Cache */
-define('WP_CACHE', true); // Added by W3 Total Cache
 
-/**
- * The base configurations of the WordPress.
- *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
- *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
- *
- * @package WordPress
- */
-// ** MySQL settings - You can get this info from your web host ** //
 global $debug, $foundopsLink, $blogLink;
 
-$debug = true;
+$debug = false;
 
 if ($debug)
 {
 	$foundopsLink = "http://localhost:31820";
 	$blogLink = "http://testops:8080";
-	
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'wordpress');
-	/** MySQL database username */
-	define('DB_USER', 'root');
-	/** MySQL database password */
-	define('DB_PASSWORD', '@t3ztSRVRz');
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost:3306');
 }
 else
 {
 	$foundopsLink = "http://app.foundops.com";
 	$blogLink = "http://www.foundops.com";
-	
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'bitnami_wordpress');
-	/** MySQL database username */
-	define('DB_USER', 'bn_wordpress');
-	/** MySQL database password */
-	define('DB_PASSWORD', '20b26d4a71');
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost:3306');
 }
-
-/** The site URL */
-define('WP_SITEURL', $blogLink);
-define('WP_HOME',$blogLink);
-
-/** Database Charset to use in creating database tables. */
+# test
+# Database Configuration
+define('DB_NAME','wp_foundops');
+define('DB_USER','foundops');
+define('DB_PASSWORD','fZ23TneiLGgdLK7H0FVt');
+define('DB_HOST','127.0.0.1');
+define('DB_HOST_SLAVE','localhost');
 define('DB_CHARSET', 'utf8');
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-/* Substitution already done */
-define('AUTH_KEY', 'f777e6007af3f53f0b3022b3cde25a76c67ebe6308fc1bff577d2fdd79cc02d6');
-define('SECURE_AUTH_KEY', '90e11150e600797f87f104d09f438c8acb4dec59daa5b3ecd88af9b501592018');
-define('LOGGED_IN_KEY', '8de9ed12d1aa6334af367673f2d61c1e4c7a9c306a87cdfaddb0487d9f0fd2bf');
-define('NONCE_KEY', '7d8100228041a6eb1d7b1cbe1032a9db84f186781e919f2378b0d028b0809112');
-define('AUTH_SALT', 'dbd8f1b1c3f3e3a95fa288ce7343cb88ee384e252df45edf34e2595728ffab5a');
-define('SECURE_AUTH_SALT', '89eeccc343b1ac03594ecb0b4a5119d244842bf2d1d4a67f31d4f9e50c5f3168');
-define('LOGGED_IN_SALT', '60cae228ec970c050fae65bf408f19e61c6af3c62ae2e1c3508ad58bc1b4a569');
-define('NONCE_SALT', '485b96a84c12893c15e0c7ce37cb45cdd059031b879a4166cf67c673edaa6759');
-/**#@-*/
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix  = 'wp_';
+define('DB_COLLATE', 'utf8_unicode_ci');
+$table_prefix = 'wp_';
 
-/**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', '');
+# Security Salts, Keys, Etc
+define('AUTH_KEY',         'ENeS_$je9PfYIFQ+EE|]8~~V6hNyjtXS3x1YaamIOt|OWCM|+iqQ,_-$o^YZOr9I');
+define('SECURE_AUTH_KEY',  '-q:]baO0e?F#r+cUQZ({7:XKz*@4qTT @YDy@qx%&X->#=#{wg#d]m3 `xPU15Y0');
+define('LOGGED_IN_KEY',    'ny}E`,{X(~_)pK7GV!jFC+F_axzrPgZ5X`e}>,p%F,<Wx/&(i0b(*D9PEuU+]|0b');
+define('NONCE_KEY',        '~/(|fwkXFAY,npX`|[CbW.3CneFdkb}Z)ds&4eerFLrjZ+v^RqE/A])%}HTlGsa+');
+define('AUTH_SALT',        'bB`XSy]M8>tlfzcKR7esXNGU+I}!%K_plunI!,Ag,jV}Sz5O-P/!Pf84I%}E##|V');
+define('SECURE_AUTH_SALT', '!S{H1|-HjBm$m;E!3j7DnH`FZPGpv>U|h6&t]6DJ5Z`DY|h][?YAOedz<$z(Rn ^');
+define('LOGGED_IN_SALT',   'Y[7C8VP;*1P.j?xr<V*H1T[P6V@gC4i1YWp(InX|t;JnJJS2;adw2ZqYW|NI9B;r');
+define('NONCE_SALT',       'j#~SnTWH)`-$#SO1Epc]L9f#QqVPY/d^/_l^chthM?@)f<%f$}(b)%E@X*XD/Zp ');
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
-/* That's all, stop editing! Happy blogging. */
-/** Absolute path to the WordPress directory. */
+
+# Localized Language Stuff
+
+define('PWP_NAME','foundops');
+
+define('FS_METHOD','direct');
+
+define('FS_CHMOD_DIR',0775);
+
+define('FS_CHMOD_FILE',0664);
+
+define('PWP_ROOT_DIR','/nas/wp');
+
+define('WPE_APIKEY','af8f9fa8e9d00c7e2f0bfc1cf02590de6758499e');
+
+define('WPE_FOOTER_HTML',"");
+
+define('WPE_CLUSTER_ID','1238');
+
+define('WPE_CLUSTER_TYPE','pod');
+
+define('WPE_ISP',true);
+
+define('WPE_BPOD',false);
+
+define('WPE_RO_FILESYSTEM',false);
+
+define('WPE_LARGEFS_BUCKET','largefs.wpengine');
+
+define('WPE_CDN_DISABLE_ALLOWED',false);
+
+define('DISALLOW_FILE_EDIT',FALSE);
+
+define('DISALLOW_FILE_MODS',FALSE);
+
+define('DISABLE_WP_CRON',false);
+
+define('WPE_FORCE_SSL_LOGIN',false);
+
+define('FORCE_SSL_LOGIN',false);
+
+/*SSLSTART*/ if ( isset($_SERVER['HTTP_X_WPE_SSL']) && $_SERVER['HTTP_X_WPE_SSL'] ) $_SERVER['HTTPS'] = 'on'; /*SSLEND*/
+
+define('WPE_EXTERNAL_URL',false);
+
+define('WP_POST_REVISIONS',FALSE);
+
+define('WP_TURN_OFF_ADMIN_BAR',false);
+
+umask(0002);
+
+$wpe_cdn_uris=array ();
+
+$wpe_no_cdn_uris=array ();
+
+$wpe_content_regexs=array ();
+
+$wpe_all_domains=array (  0 => 'foundops.wpengine.com',  1 => 'www.foundops.com',  2 => 'foundops.com',  3 => 'm.foundops.com',);
+
+$wpe_varnish_servers=array (  0 => 'pod-1238',);
+
+$wpe_ec_servers=array ();
+
+$wpe_largefs=array ();
+
+$wpe_netdna_domains=array (  0 =>   array (    'match' => 'foundops.com',    'zone' => 'foundops',  ),);
+
+$wpe_netdna_push_domains=array ();
+
+$wpe_domain_mappings=array ();
+
+$memcached_servers=array ();
+
+define('WP_CACHE',TRUE);
+define('WPLANG','');
+
+# WP Engine ID
+
+
+define('PWP_DOMAIN_CONFIG', 'www.foundops.com' );
+
+# WP Engine Settings
+
+
+
+
+
+
+# That's It. Pencils down
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-/** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-define('FS_METHOD', 'ftpext');
-define('FTP_BASE', '/opt/bitnami/apps/wordpress/htdocs/');
-define('FTP_USER', 'bitnami');
-define('FTP_PASS', 'wPpyBF2xo2BbP208WLHfgmDJytIQxxZZoePi4N5mHE8rJS96FT');
-define('FTP_HOST', '127.0.0.1');
-define('FTP_SSL', false);
-                    
+
+$_wpe_preamble_path = null; if(false){}

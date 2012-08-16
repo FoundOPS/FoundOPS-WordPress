@@ -284,15 +284,15 @@ table td{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ED941A', endColorstr='#D9591E'); /* for IE */
 }
 /*The next 6 styles are for coloring only the link that corresponds to the page you're on*/
-.blog #blogNav, .archive #blogNav, .single-post #blogNav, .page-id-462 #customersNav{
+.page-id-462 #customersNav{
 	.buttonGradient(#36C3E3, #488FCD);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36C3E3', endColorstr='#488FCD'); /* for IE */  
 }
-.home #home, .page-id-473 #pricingNav, .hoverGreen:hover{
+.home #home, .page-id-69 #aboutUsNav, .page-id-473 #pricingNav, .hoverGreen:hover{
 	.buttonGradient(#7DC244, #659A41);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7DC244', endColorstr='#659A41'); /* for IE */
 }
-.page-id-69 #aboutUsNav, .page-id-66 #featuresNav, .hoverRed:hover{
+.page-id-66 #featuresNav, .blog #blogNav, .archive #blogNav, .single-post #blogNav, .hoverRed:hover{
 	.buttonGradient(#D91A26, #991A36);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D91A26', endColorstr='#991A36'); /* for IE */ 
 }
@@ -411,14 +411,24 @@ footer, header, hgroup, menu, nav, section{
 #primary{
 	width: 645px;
 	margin-left:80px;
+	min-height:700px;
 }
 #content{
 	margin: 0px;
 }
-#secondary{
+.page #secondary{
 	position:absolute;
 	top:35px;
 	left:785px;
+	width: 228px;
+}
+.blog #primary, .author #primary, .archive #primary, .single #primary{
+	float: left;
+}
+.blog #secondary, .author #secondary, .archive #secondary, .single #secondary{
+	float: left;
+	margin-left: 60px;
+	margin-top: 34px;
 	width: 228px;
 }
 #comments{
@@ -447,6 +457,8 @@ article{
 	position:relative;
 	font-size:12px;
 	line-height:13px;
+	margin: -30px 0 0 0;
+	height: 40px;
 	span, a{
 		display:block;
 		float:left;
@@ -501,7 +513,7 @@ article{
 }
 #or{
 	position:relative;
-	left:92px;
+	left:87px;
 	margin-top:-5px;
 	margin-bottom:-25px;
 	color:#aaa;
@@ -583,15 +595,12 @@ article{
 #page{
 	margin: 0 auto;
 	max-width:1040px;
-	margin-bottom:70px;
+	margin-bottom:80px;
 }
 .blog #main, .single-post #main{
 	position:relative;
 	top:105px;
 	min-height:650px;
-}
-#primary{
-	min-height:300px;	
 }
 /* Attachments */
 .singular .image-attachment .entry-content{
@@ -1156,7 +1165,7 @@ img#wpstats{
 img[class*="align"],
 img[class*="wp-image-"],
 #content .gallery .gallery-icon img{/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
-	border: 1px solid @charcoal;
+	/*border: 1px solid @charcoal;*/
 	padding: 0px;
 	margin-right:15px;
 	float:left;
@@ -1174,13 +1183,13 @@ a:active img[class*="wp-image-"],
 #content .gallery .gallery-icon a:hover img,
 #content .gallery .gallery-icon a:active img{/* Add some useful style to those fancy borders for linked images ... */
 	background: #eee;
-	border-color: #bbb;
+	/*border-color: #bbb;*/
 }
 .wp-caption a:focus img,
 .wp-caption a:active img,
 .wp-caption a:hover img{/* ... including captioned images! */
 	background: @white;
-	border-color: #ddd;
+	/*border-color: #ddd;*/
 }
 
 /* Password Protected Posts */
@@ -1195,14 +1204,12 @@ a:active img[class*="wp-image-"],
 }
 /* Author Info */
 .author #primary{
-	position:relative;
-	top:-616px;
-	margin-bottom: -300px;
+	float: left;
 }
 .author #secondary{
-	position:relative;
-	top:35px;	
-	left:784px;
+	float: left;
+	margin-left: 60px;
+	margin-top: 34px;
 }
 #author-info{
 	.positionSize(relative, 0px, 80px, 901px);
@@ -1892,4 +1899,14 @@ p.comment-form-comment{
 }
 .mc_form_inside{
 	margin-left:5px;
+}
+.submit_container{
+	position:relative;
+	margin-top: 10px;	
+}
+.blog article footer, .author article footer, .archive article footer{
+	display:none;
+}
+.blog #main, .single #main, .author #main, .archive #main{
+	min-width: 1015px;	
 }

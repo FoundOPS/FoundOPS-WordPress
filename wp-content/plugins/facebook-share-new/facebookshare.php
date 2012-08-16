@@ -36,7 +36,7 @@ if ( !defined('WP_CONTENT_URL') ) {
 }
 
 
-include_once(ABSPATH . WPINC . '/rss.php');
+include_once(ABSPATH . WPINC . '/class-simplepie.php');
 
 function fb_options() {
 	add_menu_page('Facebook Share', 'Facebook Share', 8, basename(__FILE__), 'fb_options_page');
@@ -622,7 +622,7 @@ function fb_generate_button()
     }
 	
 	if (get_option('fb_api_type') == "sh") 
-		{$button = '<div id="fb_share_1" style="'.get_option('fb_style').'"><a name="fb_share" type="'. get_fb_type() .'" share_url="'.$url.'" href="http://www.facebook.com/sharer.php">Share</a></div><div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></div>';}
+		{$button = '<div id="fb_share_1" style="'.get_option('fb_style').'"><a name="fb_share" type="'. get_fb_type() .'" share_url="'.$url.'" href="http://www.facebook.com/sharer.php"></a></div><div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></div>';}
 	
 	else
 		//{$button .= '<div id="fb_share_1" style="'.get_option('fb_style').';width: 55px;" name="fb_share"><iframe src="http://www.facebook.com/plugins/like.php?app_id=135953826481269&amp;href='.$url.'&amp;layout='. get_fb_type() .'&amp;width=450&amp;action=like" scrolling="no" frameborder="0" allowTransparency="true" width="450"></iframe></div>';}
@@ -683,7 +683,7 @@ function fb_generate_static_button()
     }
 	
 	if (get_option('fb_api_type') == "sh") 
-		{$button = '<div id="fb_share_1" style="'.get_option('fb_style').'"><a name="fb_share" type="'. get_fb_type() .'" share_url="'.$url.'" href="http://www.facebook.com/sharer.php">Share</a></div><div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></div>';}
+		{$button = '<div id="fb_share_1" style="'.get_option('fb_style').'"><a name="fb_share" type="'. get_fb_type() .'" share_url="'.$url.'" href="http://www.facebook.com/sharer.php"></a></div><div><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></div>';}
 	else
 		{$button .= '<div id="fb_share_1" style="'.get_option('fb_style').';width: 55px;" name="fb_share"><iframe src="http://www.facebook.com/plugins/like.php?href='.$url.'&amp;layout='. get_fb_type() .'&amp;width=55" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>';}
 }

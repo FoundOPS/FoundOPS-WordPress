@@ -45,11 +45,11 @@ function wp_print_scripts( $handles = false ) {
  * @param string $handle Script name
  * @param string $src Script url
  * @param array $deps (optional) Array of script names on which this script depends
- * @param string|bool $ver (optional) Script version (used for cache busting), set to NULL to disable
+ * @param string|bool $ver (optional) Script version (used for cache busting), set to null to disable
  * @param bool $in_footer (optional) Whether to enqueue the script before </head> or before </body>
  * @return null
  */
-function wp_register_script( $handle, $src, $deps = array(), $ver = false, $in_footer = true ) {
+function wp_register_script( $handle, $src, $deps = array(), $ver = false, $in_footer = false ) {
 	global $wp_scripts;
 	if ( ! is_a( $wp_scripts, 'WP_Scripts' ) ) {
 		if ( ! did_action( 'init' ) )
@@ -122,7 +122,7 @@ function wp_deregister_script( $handle ) {
  * @since r16
  * @see wp_register_script() For parameter information.
  */
-function wp_enqueue_script( $handle, $src = false, $deps = array(), $ver = false, $in_footer = true ) {
+function wp_enqueue_script( $handle, $src = false, $deps = array(), $ver = false, $in_footer = false ) {
 	global $wp_scripts;
 	if ( ! is_a( $wp_scripts, 'WP_Scripts' ) ) {
 		if ( ! did_action( 'init' ) )

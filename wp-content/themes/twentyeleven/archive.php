@@ -20,20 +20,18 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h4 class="page-title">
+					<h1 class="page-title">
 						<?php if ( is_day() ) : ?>
-							<?php printf( __( 'Posts on %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' ); ?>
+							<?php printf( __( 'Daily Archives: %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' ); ?>
 						<?php elseif ( is_month() ) : ?>
-							<?php printf( __( 'Posts in %s', 'twentyeleven' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+							<?php printf( __( 'Monthly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyeleven' ) ) . '</span>' ); ?>
 						<?php elseif ( is_year() ) : ?>
-							<?php printf( __( 'Posts in: %s', 'twentyeleven' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+							<?php printf( __( 'Yearly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentyeleven' ) ) . '</span>' ); ?>
 						<?php else : ?>
 							<?php _e( 'Blog Archives', 'twentyeleven' ); ?>
 						<?php endif; ?>
-					</h4>
+					</h1>
 				</header>
-
-				<?php twentyeleven_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -48,7 +46,9 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php twentyeleven_content_nav( 'nav-below' ); ?>
+				<?php if (function_exists("pagination")) {
+					pagination($additional_loop->max_num_pages);
+				} ?>
 
 			<?php else : ?>
 

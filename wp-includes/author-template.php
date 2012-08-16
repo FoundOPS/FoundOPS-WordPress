@@ -96,25 +96,20 @@ function the_modified_author() {
  * @param int $user_id Optional. User ID.
  * @return string The author's field from the current author's DB object.
  */
-function get_the_author_meta($field = '', $user_id = false) {
-	if ( ! $user_id )
+function get_the_author_meta( $field = '', $user_id = false ) {
+	if ( ! $user_id ) {
 		global $authordata;
-	else
+		$user_id = isset( $authordata->ID ) ? $authordata->ID : 0;
+	} else {
 		$authordata = get_userdata( $user_id );
+	}
 
-	// Keys used as object vars cannot have dashes.
-	$field = str_replace('-', '', $field);
-	$field = strtolower($field);
-	$user_field = "user_$field";
+	if ( in_array( $field, array( 'login', 'pass', 'nicename', 'email', 'url', 'registered', 'activation_key', 'status' ) ) )
+		$field = 'user_' . $field;
 
-	if ( 'id' == $field )
-		$value = isset($authordata->ID) ? (int)$authordata->ID : 0;
-	elseif ( isset($authordata->$user_field) )
-		$value = $authordata->$user_field;
-	else
-		$value = isset($authordata->$field) ? $authordata->$field : '';
+	$value = isset( $authordata->$field ) ? $authordata->$field : '';
 
-	return apply_filters('get_the_author_' . $field, $value, $user_id);
+	return apply_filters( 'get_the_author_' . $field, $value, $user_id );
 }
 
 /**
@@ -140,7 +135,7 @@ function the_author_meta($field = '', $user_id = false) {
  */
 function get_the_author_link() {
 	if ( get_the_author_meta('url') ) {
-		return '<a href="' . get_the_author_meta('url') . '" title="' . esc_attr( sprintf(__("Visit %s&#8217;s website"), get_the_author()) ) . '" rel="external">' . get_the_author() . '</a>';
+		return '<a href="' . get_the_author_meta('url') . '" title="' . esc_attr( sprintf(__("Visit %s&#8217;s website"), get_the_author()) ) . '" rel="author external">' . get_the_author() . '</a>';
 	} else {
 		return get_the_author();
 	}
@@ -225,8 +220,21 @@ function get_author_posts_url($author_id, $author_nicename = '') {
 	global $wp_rewrite;
 	$auth_ID = (int) $author_id;
 	$link = $wp_rewrite->get_author_permastruct();
-	$file = home_url( '/' );
-	$link = $file . '?author=' . $auth_ID;
+
+	if ( empty($link) ) {
+		$file = home_url( '/' );
+		$link = $file . '?author=' . $auth_ID;
+	} else {
+		if ( '' == $author_nicename ) {
+			$user = get_userdata($author_id);
+			if ( !empty($user->user_nicename) )
+				$author_nicename = $user->user_nicename;
+		}
+		$link = str_replace('%author%', $author_nicename, $link);
+		$link = home_url( user_trailingslashit( $link ) );
+	}
+
+	$link = apply_filters('author_link', $link, $author_id, $author_nicename);
 
 	return $link;
 }
@@ -384,5 +392,3 @@ function __clear_multi_author_cache() {
 	wp_cache_delete('is_multi_author', 'posts');
 }
 add_action('transition_post_status', '__clear_multi_author_cache');
-
-?>

@@ -1,12 +1,21 @@
 <?php
+/**
+ * The Sidebar containing the main widget area.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Eleven
+ * @since Twenty Eleven 1.0
+ */
+
 $options = twentyeleven_get_theme_options();
 $current_layout = $options['theme_layout'];
 
 if ( 'content' != $current_layout ) :
 ?>
-		<div id="secondary" class="widget-area" role="complementary">
+		<div id="secondary" class="widget-area" role="complementary" onload="reposition()">
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-                <aside id="getConnected" class="widget">
+
+				<aside id="getConnected" class="widget">
                 <?php if(is_author()){ 
 					  	$userid = $_GET["author"];
 					  	$user_info = get_userdata($userid);?>
@@ -44,7 +53,7 @@ if ( 'content' != $current_layout ) :
                     <span style="color:#aaa;">&nbsp;&nbsp;__________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__________</span>
                     <?php mailchimpSF_signup_form(); ?>
 				</aside>
-                <aside id="topics" class="widget">
+				<aside id="topics" class="widget">
 					<h3 class="widget-title"><?php _e( 'Topics', 'twentyeleven' ); ?></h3>
 					<ul>
 						<?php wp_list_categories() ?>

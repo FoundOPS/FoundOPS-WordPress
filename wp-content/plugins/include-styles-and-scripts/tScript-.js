@@ -13,7 +13,7 @@ $(document).ready(function(){
 	var id = getUrlVars()["id"];
 	// Check if not debug
 	if(url.substr(0,3) != "loc"){
-		/*if (path == '/415919'){
+		if (path == '/415919'){
 			trackEvent('Convention Cards', 'QR Code Scanned', 'Card 1', 1);
 			window.location = "http://www.foundops.com/customers";
 		}else if (path == '/112091'){
@@ -22,7 +22,7 @@ $(document).ready(function(){
 		}else if (path == '/317067'){
 			trackEvent('Convention Cards', 'QR Code Scanned', 'Card 3', 1);
 			window.location = "http://www.foundops.com/customers";
-		}*/
+		}
 		//Logic for footer About Us links
 		if (id == 'advisors'){
 			setTimeout($.scrollTo( '#advisors', 1000,{ easing: 'easeInOutQuart', offset:{ top:-50, left:-157 }}),500);
@@ -34,7 +34,7 @@ $(document).ready(function(){
 			setTimeout($.scrollTo( '#contactUs', 1000,{ easing: 'easeInOutQuart', offset:{ top:0, left:-157 }}),500);
 		}
 	//if debug
-	} /*else{
+	} else{
 		if (path == '/415919'){
 			window.location = "http://testops:8080/customers";
 		}else if (path == '/112091'){
@@ -42,30 +42,8 @@ $(document).ready(function(){
 		}else if (path == '/317067'){
 			window.location = "http://testops:8080/customers";
 		}
-	}*/
+	}
 });
-// Google Analytics
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-25857232-1']);
-_gaq.push(['_setDomainName', 'foundops.com']);
-_gaq.push(['_trackPageview']);
-
-(function (){
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-
-var pageTracker = _gat._getTracker("UA-25857232-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-function trackEvent(category, action, label, value){
-	pageTracker._trackEvent(category, action, label, value);
-}
-// End Google Analytics
 
 // Gets all variables in the url
 function getUrlVars()
@@ -596,9 +574,9 @@ function ribbonClick(num){
 	if(num == 1){
 		ribbon.animate({left:0}, speed);
 	}else if(num == 2){
-		ribbon.animate({left:300}, speed);
+		ribbon.animate({left:312}, speed);
 	}else{
-		ribbon.animate({left:623}, speed);
+		ribbon.animate({left:625}, speed);
 	}
 }
 

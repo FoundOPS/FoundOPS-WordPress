@@ -15,9 +15,9 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h4 class="page-title"><?php
-						printf( __( 'Recent Posts about %s', 'twentyeleven' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-					?></h4>
+					<h1 class="page-title"><?php
+						printf( __( 'Category Archives: %s', 'twentyeleven' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					?></h1>
 
 					<?php
 						$category_description = category_description();
@@ -25,8 +25,6 @@ get_header(); ?>
 							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
 					?>
 				</header>
-
-				<?php twentyeleven_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -41,7 +39,9 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php twentyeleven_content_nav( 'nav-below' ); ?>
+				<?php if (function_exists("pagination")) {
+					pagination($additional_loop->max_num_pages);
+				} ?>
 
 			<?php else : ?>
 
